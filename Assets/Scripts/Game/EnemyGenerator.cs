@@ -8,11 +8,11 @@ namespace TheUnfairDice
         private float mCurrentGenerateSec = 0;
         public float GenerateSec = 1f;
         public int MaxEnemyCount = 50;
-        public int EnemyCount = 0;
+        public static BindableProperty<int> EnemyCount = new(0);
 
         private void Update()
         {
-            if (EnemyCount >= MaxEnemyCount) return;
+            if (EnemyCount.Value >= MaxEnemyCount) return;
 
             mCurrentGenerateSec += Time.deltaTime;
 
@@ -20,7 +20,7 @@ namespace TheUnfairDice
             {
                 mCurrentGenerateSec = 0;
 
-                if (Player.mDefault)
+                if (Player.Default)
                 {
                     Vector2 pos = Vector2.zero;
 
@@ -46,8 +46,6 @@ namespace TheUnfairDice
                     Enemy.InstantiateWithParent(this)
                         .Position(pos)
                         .Show();
-
-                    EnemyCount++;
                 }
             }
         }
