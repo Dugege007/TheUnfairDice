@@ -655,7 +655,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &429700277
 Transform:
   m_ObjectHideFlags: 0
@@ -1129,6 +1129,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 625084206}
+  - component: {fileID: 625084207}
   m_Layer: 0
   m_Name: Fortress
   m_TagString: Untagged
@@ -1145,13 +1146,37 @@ Transform:
   m_GameObject: {fileID: 625084205}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1367517063}
+  - {fileID: 1171554704}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &625084207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 625084205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee1f1df425c6eaa43b21660edb452209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Namespace: TheUnfairDice
+  ScriptName: Fortress
+  ScriptsFolder: Assets/Scripts/Game
+  GeneratePrefab: 0
+  PrefabFolder: Assets/Art/Prefab
+  GenerateSec: 5
+  GenerateRadius: 3
+  MaxHumanCount: 10
+  InitHumanCount: 5
+  CurrentHumanCount: 0
+  Human: {fileID: 1171554709}
 --- !u!1 &1066637933
 GameObject:
   m_ObjectHideFlags: 0
@@ -1178,7 +1203,7 @@ Transform:
   m_GameObject: {fileID: 1066637933}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6, y: 6, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1245,13 +1270,17 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1171554704}
+  - component: {fileID: 1171554705}
+  - component: {fileID: 1171554707}
+  - component: {fileID: 1171554708}
+  - component: {fileID: 1171554709}
   m_Layer: 0
   m_Name: Human
   m_TagString: Human
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1171554704
 Transform:
   m_ObjectHideFlags: 0
@@ -1266,8 +1295,84 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1066637934}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 625084206}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1171554705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171554703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d51f3a7c41ab0346b49ae50d456bece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MarkType: 0
+  CustomComponentName: Human
+  CustomComment: 
+  mComponentName: QFramework.ViewController
+--- !u!50 &1171554707
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171554703}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &1171554708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171554703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411e729afed24c62a04e2b99d9122e78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Binds:
+  - MemberName: SelfRigidbody2D
+    Object: {fileID: 1171554707}
+--- !u!114 &1171554709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171554703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 515a7f8383a10044bbc2b648fe2a86e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Namespace: TheUnfairDice
+  ScriptName: Human
+  ScriptsFolder: Assets/Scripts/Game/Characters
+  GeneratePrefab: 0
+  PrefabFolder: Assets/Art/Prefab
+  SelfRigidbody2D: {fileID: 1171554707}
 --- !u!1 &1238539901
 GameObject:
   m_ObjectHideFlags: 0
@@ -1441,9 +1546,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1367517061}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 6, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 625084206}
@@ -1498,6 +1603,7 @@ MonoBehaviour:
   ScriptsFolder: Assets/Scripts/Game
   GeneratePrefab: 0
   PrefabFolder: Assets/Art/Prefab
+  GenerateSec: 1
   MaxEnemyCount: 50
   EnemyCount: 0
   Enemy: {fileID: 429700279}
@@ -1766,6 +1872,5 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 299260553}
   - {fileID: 625084206}
-  - {fileID: 1171554704}
   - {fileID: 1238539902}
   - {fileID: 1647994983}

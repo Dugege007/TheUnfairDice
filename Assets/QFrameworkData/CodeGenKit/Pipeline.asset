@@ -19,15 +19,15 @@ MonoBehaviour:
     From: 0
     NameToFullName: []
     BindInfos:
-    - TypeName: TheUnfairDice.Enemy
-      PathToRoot: Enemy
-      MemberName: Enemy
+    - TypeName: QFramework.ViewController
+      PathToRoot: Human
+      MemberName: Human
     ScriptsFolder: Assets/Scripts/Game
-    ClassName: EnemyGenerator
+    ClassName: Fortress
     Namespace: TheUnfairDice
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace TheUnfairDice\r\n{\r\n\tpublic
-      partial class EnemyGenerator : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      partial class Fortress : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:c38f7b63-d9aa-4588-aa0a-6b0f38cd0d9d\r\nusing UnityEngine;\r\n\r\nnamespace
-      TheUnfairDice\r\n{\r\n\tpublic partial class EnemyGenerator\r\n\t{\r\n\r\n\t\tpublic
-      TheUnfairDice.Enemy Enemy;\r\n\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:55b0f35d-809f-43d6-90d3-c5588c45286c\r\nusing UnityEngine;\r\n\r\nnamespace
+      TheUnfairDice\r\n{\r\n\tpublic partial class Fortress\r\n\t{\r\n\r\n\t\tpublic
+      QFramework.ViewController Human;\r\n\r\n\t}\r\n}\r\n"
