@@ -7,7 +7,7 @@ namespace TheUnfairDice
     {
         public GameObject Owner;
 
-        private void Start()
+        private void Awake()
         {
             if (Owner == null)
             {

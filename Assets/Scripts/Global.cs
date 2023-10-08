@@ -8,6 +8,8 @@ public class Global : Architecture<Global>
     public static BindableProperty<float> HP = new(3);
     public static BindableProperty<float> MaxHP = new(3);
 
+    public static BindableProperty<float> CurrentSec = new(0);
+
     protected override void Init()
     {
         

@@ -24,7 +24,7 @@ namespace TheUnfairDice
 
         public FSM<State> FSM = new FSM<State>();
 
-        private void Start()
+        private void InitFSM()
         {
             FSM.State(State.Patrol)
                 .OnEnter(() =>
@@ -51,41 +51,48 @@ namespace TheUnfairDice
                 })
                 .OnUpdate(() =>
                 {
-                    if (FSM.FrameCountOfCurrentState >= 60 * mRandomTime)
-                        FSM.ChangeState(State.Patrol);
+                    if (Player.Default)
+                    {
+                        if (FSM.FrameCountOfCurrentState >= 60 * mRandomTime)
+                            FSM.ChangeState(State.Patrol);
+                    }
                 });
 
             FSM.StartState(State.Patrol);
+        }
+
+        private void Start()
+        {
+            // 初始化状态机
+            InitFSM();
 
             HitHurtBox.OnCollisionEnter2DEvent(collision2D =>
             {
-                HitHurtBox hurtBox = collision2D.gameObject.GetComponent<HitHurtBox>();
+                HitHurtBox hurtBox = collision2D.gameObject.GetComponentInChildren<HitHurtBox>();
+                Debug.Log("Collision detected with " + collision2D.gameObject.name);
 
                 if (hurtBox != null)
                 {
                     if (hurtBox.Owner.CompareTag("Enemy"))
                     {
                         HP--;
+                        Debug.Log(this.name + "受伤");
                         Enemy enemy = hurtBox.Owner.GetComponent<Enemy>();
                         enemy.GetHurt(1);
                     }
                 }
 
-                if (collision2D.gameObject.CompareTag("Human"))
-                {
-                    //
-                }
-            });
+            }).UnRegisterWhenGameObjectDestroyed(gameObject);
         }
 
         private void Update()
         {
-            FSM.Update();
-
             if (HP <= 0)
             {
                 this.DestroyGameObjGracefully();
             }
+
+            FSM.Update();
         }
 
         private void FixedUpdate()

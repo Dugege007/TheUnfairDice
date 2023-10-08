@@ -7,14 +7,14 @@ namespace TheUnfairDice
     {
         public static Fortress Default;
 
-        public BindableProperty<float> HP = new(20f);
+        public static BindableProperty<float> HP = new(20f);
 
         private float mCurrentGenerateSec = 0;
         public float GenerateSec = 3f;
         public float GenerateRadius = 3f;
         public int MaxHumanCount = 15;
         public int InitHumanCount = 5;
-        public BindableProperty<int> CurrentHumanCount = new(0);
+        public static BindableProperty<int> CurrentHumanCount = new(0);
 
         private void Awake()
         {
