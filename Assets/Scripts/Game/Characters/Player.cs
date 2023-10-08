@@ -7,7 +7,14 @@ namespace TheUnfairDice
 {
     public partial class Player : ViewController
     {
+        public static Player mDefault;
+
         public float MovementSpeed = 3.5f;
+
+        private void Awake()
+        {
+            mDefault = this;
+        }
 
         private void Update()
         {
@@ -16,6 +23,11 @@ namespace TheUnfairDice
 
             Vector2 velocity = new Vector2(horizontal, vertical).normalized * MovementSpeed;
             Rigidbody2D.velocity = velocity;
+        }
+
+        private void OnDestroy()
+        {
+            mDefault = null;
         }
     }
 }
