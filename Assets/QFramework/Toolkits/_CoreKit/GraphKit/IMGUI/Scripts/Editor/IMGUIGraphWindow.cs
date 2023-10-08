@@ -275,8 +275,15 @@ namespace QFramework
         }
 
 
+        static void TryUpdateGraphWindowName(GUIGraph graph)
+        {
+            GUIGraphWindow w = GetWindow(typeof(GUIGraphWindow), false, graph.Name, true) as GUIGraphWindow;
+            if (w.titleContent.text != graph.Name) w.titleContent.text = graph.Name;
+        }
+        
         public static GUIGraphWindow OpenWithGraph(GUIGraph graph)
         {
+            TryUpdateGraphWindowName(graph);
             if (!graph) return null;
             var window = Open(graph);
             var sceneView = GetWindow<SceneView>();
@@ -288,6 +295,7 @@ namespace QFramework
         /// <summary>Open the provided graph in the NodeEditor</summary>
         private static GUIGraphWindow Open(GUIGraph graph)
         {
+            TryUpdateGraphWindowName(graph);
             if (!graph) return null;
             GUIGraphWindow w = GetWindow(typeof(GUIGraphWindow), false, graph.Name, true) as GUIGraphWindow;
             w.wantsMouseMove = true;
