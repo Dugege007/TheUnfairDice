@@ -30,17 +30,25 @@ namespace TheUnfairDice
                     float ruy = CameraController.RUTrans.position.y;    // 相机 右上点 Y
 
                     int xOry = RandomUtility.Choose(-1, 1);
-                    if (xOry > 0)
+
+                    // 当生成点的位置距离要塞小于 8 时，需要重新计算
+                    while (true)
                     {
-                        // 左边或右边
-                        pos.x = RandomUtility.Choose(ldx, rux);
-                        pos.y = Random.Range(ldy, ruy);
-                    }
-                    else
-                    {
-                        // 上边或下边
-                        pos.x = Random.Range(ldx, rux);
-                        pos.y = RandomUtility.Choose(ldy, ruy);
+                        if (xOry > 0)
+                        {
+                            // 左边或右边
+                            pos.x = RandomUtility.Choose(ldx, rux);
+                            pos.y = Random.Range(ldy, ruy);
+                        }
+                        else
+                        {
+                            // 上边或下边
+                            pos.x = Random.Range(ldx, rux);
+                            pos.y = RandomUtility.Choose(ldy, ruy);
+                        }
+
+                        // 距离要塞大于 8 时，跳出循环
+                        if (Vector2.Distance(pos, Fortress.Default.Position()) > 8f) break;
                     }
 
                     Enemy.InstantiateWithParent(this)

@@ -22,13 +22,16 @@ MonoBehaviour:
     - TypeName: UnityEngine.CircleCollider2D
       PathToRoot: HitHurtBox
       MemberName: HitHurtBox
-    ScriptsFolder: Assets/Scripts/Game/Characters
-    ClassName: Player
+    - TypeName: QFramework.ViewController
+      PathToRoot: Human
+      MemberName: Human
+    ScriptsFolder: Assets/Scripts/Game
+    ClassName: Fortress
     Namespace: TheUnfairDice
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace TheUnfairDice\r\n{\r\n\tpublic
-      partial class Player : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      partial class Fortress : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:ede198bf-6dfe-49c0-b5c4-4919f9bb9ac8\r\nusing UnityEngine;\r\n\r\nnamespace
-      TheUnfairDice\r\n{\r\n\tpublic partial class Player\r\n\t{\r\n\r\n\t\tpublic
-      UnityEngine.CircleCollider2D HitHurtBox;\r\n\r\n\t\tpublic UnityEngine.Rigidbody2D
-      Rigidbody2D;\r\n\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:86bcad00-50cc-4614-8d2b-99b3c31506ae\r\nusing UnityEngine;\r\n\r\nnamespace
+      TheUnfairDice\r\n{\r\n\tpublic partial class Fortress\r\n\t{\r\n\r\n\t\tpublic
+      UnityEngine.CircleCollider2D HitHurtBox;\r\n\r\n\t\tpublic QFramework.ViewController
+      Human;\r\n\r\n\t}\r\n}\r\n"
