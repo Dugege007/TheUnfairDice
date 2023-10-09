@@ -117,16 +117,16 @@ namespace TheUnfairDice
                             switch (powerData.Type)
                             {
                                 case AbilityPower.PowerType.Damage:
-                                    HolyWater.Damage.Value += powerData.Value;
+                                    Global.HolyWaterDamage.Value += powerData.Value;
                                     break;
                                 case AbilityPower.PowerType.CDTime:
-                                    HolyWater.CDTime.Value += powerData.Value;
+                                    Global.HolyWaterCDTime.Value += powerData.Value;
                                     break;
                                 case AbilityPower.PowerType.Duration:
-                                    HolyWater.Duration.Value += powerData.Value;
+                                    Global.HolyWaterDuration.Value += powerData.Value;
                                     break;
                                 case AbilityPower.PowerType.Range:
-                                    HolyWater.Range.Value += powerData.Value;
+                                    Global.HolyWaterRange.Value += powerData.Value;
                                     break;
                                 default:
                                     break;
@@ -139,25 +139,25 @@ namespace TheUnfairDice
                             switch (powerData.Type)
                             {
                                 case AbilityPower.PowerType.Damage:
-                                    HolyFire.Damage.Value += powerData.Value;
+                                    Global.HolyFireDamage.Value += powerData.Value;
                                     break;
                                 case AbilityPower.PowerType.CDTime:
-                                    HolyFire.CDTime.Value += powerData.Value;
+                                    Global.HolyFireCDTime.Value += powerData.Value;
                                     break;
                                 case AbilityPower.PowerType.Duration:
-                                    HolyFire.Duration.Value += powerData.Value;
+                                    Global.HolyFireDuration.Value += powerData.Value;
                                     break;
                                 case AbilityPower.PowerType.Range:
-                                    HolyFire.Range.Value += powerData.Value;
+                                    Global.HolyFireRange.Value += powerData.Value;
                                     break;
                                 case AbilityPower.PowerType.Speed:
-                                    HolyFire.Speed.Value += powerData.Value;
+                                    Global.HolyFireSpeed.Value += powerData.Value;
                                     break;
                                 case AbilityPower.PowerType.Count:
-                                    HolyFire.Count.Value += (int)powerData.Value;
+                                    Global.HolyFireCount.Value += (int)powerData.Value;
                                     break;
                                 case AbilityPower.PowerType.AttackCount:
-                                    HolyFire.AttackCount.Value += (int)powerData.Value;
+                                    Global.HolyFireAttackCount.Value += (int)powerData.Value;
                                     break;
                                 default:
                                     break;

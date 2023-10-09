@@ -6,11 +6,6 @@ namespace TheUnfairDice
 {
     public partial class HolyWater : ViewController
     {
-        public static BindableProperty<float> Damage = new(ConfigManager.Default.AbilityConfigs[0].InitDamage);
-        public static BindableProperty<float> Duration = new(ConfigManager.Default.AbilityConfigs[0].InitDuration);
-        public static BindableProperty<float> CDTime = new(ConfigManager.Default.AbilityConfigs[0].InitCDTime);
-        public static BindableProperty<float> Range = new(ConfigManager.Default.AbilityConfigs[0].InitRange);  // °ë¾¶
-
         private float mCurrentSec = 0;
 
         private void Start()
@@ -22,7 +17,7 @@ namespace TheUnfairDice
         {
             mCurrentSec += Time.deltaTime;
 
-            if (mCurrentSec >= CDTime.Value)
+            if (mCurrentSec >= Global.HolyWaterCDTime.Value)
             {
                 mCurrentSec = 0;
 
@@ -45,7 +40,7 @@ namespace TheUnfairDice
                                     if (hurtBox.Owner.CompareTag("Enemy"))
                                     {
                                         Enemy enemy = hurtBox.Owner.GetComponent<Enemy>();
-                                        enemy.GetHurt(Damage.Value);
+                                        enemy.GetHurt(Global.HolyWaterDamage.Value);
                                     }
                                 }
 
@@ -54,7 +49,7 @@ namespace TheUnfairDice
                             // Ìí¼Ó¶¯»­
                             ActionKit.Sequence()
                                 // Öð½¥±ä´ó
-                                .Lerp(1f, Range.Value * 2, Duration.Value, scale => selfCache.LocalScale(scale))
+                                .Lerp(1f, Global.HolyWaterRange.Value * 2, Global.HolyWaterDuration.Value, scale => selfCache.LocalScale(scale))
                                 .Callback(() =>
                                 {
                                     // ¹Ø±ÕÅö×²

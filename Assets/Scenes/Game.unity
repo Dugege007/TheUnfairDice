@@ -323,8 +323,6 @@ MonoBehaviour:
   ScriptsFolder: Assets/Scripts/Game/Abilities
   GeneratePrefab: 0
   PrefabFolder: Assets/Art/Prefab
-  HolyFireDamage: 1
-  HolyFireSpeed: 8
   HitHurtBox: {fileID: 919586217}
   SelfRigidbody2D: {fileID: 33344926}
 --- !u!1 &40982286
@@ -3571,11 +3569,6 @@ MonoBehaviour:
   ScriptsFolder: Assets/Scripts/Game/Abilities
   GeneratePrefab: 0
   PrefabFolder: Assets/Art/Prefab
-  HolyWaterDamage: 1
-  HolyWaterDuration: 1
-  HolyWaterCDTime: 2
-  HolyWaterRange: 2.5
-  HolyWaterImpulse: 200
   Ripple: {fileID: 1252509164}
 --- !u!114 &1407479630
 MonoBehaviour:
@@ -3762,7 +3755,6 @@ MonoBehaviour:
   ScriptsFolder: Assets/Scripts/Game/Abilities
   GeneratePrefab: 0
   PrefabFolder: Assets/Art/Prefab
-  HolyFireRange: 0.5
   FireBall: {fileID: 33344928}
 --- !u!114 &1602377569
 MonoBehaviour:
