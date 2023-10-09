@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace TheUnfairDice
 {
-	public partial class UIController
+	public partial class UIGameController
 	{
 
 	}

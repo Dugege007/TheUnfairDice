@@ -18,16 +18,12 @@ MonoBehaviour:
     GameObject: {fileID: 0}
     From: 0
     NameToFullName: []
-    BindInfos:
-    - TypeName: CircleCollider2D
-      PathToRoot: Ripple
-      MemberName: Ripple
-    ScriptsFolder: Assets/Scripts/Game/Abilities
-    ClassName: HolyWater
+    BindInfos: []
+    ScriptsFolder: Assets/Scripts/Game
+    ClassName: GameManager
     Namespace: TheUnfairDice
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace TheUnfairDice\r\n{\r\n\tpublic
-      partial class HolyWater : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      partial class GameManager : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:85e87d34-cd26-4069-914b-68d4931089a4\r\nusing UnityEngine;\r\n\r\nnamespace
-      TheUnfairDice\r\n{\r\n\tpublic partial class HolyWater\r\n\t{\r\n\r\n\t\tpublic
-      CircleCollider2D Ripple;\r\n\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:242ee859-6ea5-48e7-9624-9ba3942285f8\r\nusing UnityEngine;\r\n\r\nnamespace
+      TheUnfairDice\r\n{\r\n\tpublic partial class GameManager\r\n\t{\r\n\r\n\t}\r\n}\r\n"

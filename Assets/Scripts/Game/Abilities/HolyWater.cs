@@ -49,7 +49,7 @@ namespace TheUnfairDice
                             // 添加动画
                             ActionKit.Sequence()
                                 // 逐渐变大
-                                .Lerp(1f, 5f, 0.5f, scale => selfCache.LocalScale(scale))
+                                .Lerp(1f, 5f, 0.8f, scale => selfCache.LocalScale(scale))
                                 .Callback(() =>
                                 {
                                     // 关闭碰撞

@@ -69,14 +69,12 @@ namespace TheUnfairDice
             HitHurtBox.OnCollisionEnter2DEvent(collision2D =>
             {
                 HitHurtBox hurtBox = collision2D.gameObject.GetComponentInChildren<HitHurtBox>();
-                Debug.Log("Collision detected with " + collision2D.gameObject.name);
 
                 if (hurtBox != null)
                 {
                     if (hurtBox.Owner.CompareTag("Enemy"))
                     {
                         HP--;
-                        Debug.Log(this.name + " ‹…À");
                         Enemy enemy = hurtBox.Owner.GetComponent<Enemy>();
                         enemy.GetHurt(1);
                     }

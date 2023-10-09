@@ -645,6 +645,30 @@ MonoBehaviour:
     BackgroundTexture: {fileID: 0}
     IsBackgroundRecursive: 0
     IsHidden: 0
+  - Type: 1
+    Name: GameManager
+    GameObject: {fileID: 0}
+    Ordinal: 35
+    Priority: 0
+    IconType: 103000
+    IconTexture: {fileID: 0}
+    IsIconRecursive: 0
+    BackgroundType: 0
+    BackgroundTexture: {fileID: 0}
+    IsBackgroundRecursive: 0
+    IsHidden: 0
+  - Type: 1
+    Name: UIGameController
+    GameObject: {fileID: 0}
+    Ordinal: 36
+    Priority: 0
+    IconType: 322000
+    IconTexture: {fileID: 0}
+    IsIconRecursive: 0
+    BackgroundType: 0
+    BackgroundTexture: {fileID: 0}
+    IsBackgroundRecursive: 0
+    IsHidden: 0
 --- !u!4 &299260553
 Transform:
   m_ObjectHideFlags: 1
@@ -1456,7 +1480,7 @@ GameObject:
   - component: {fileID: 764805348}
   - component: {fileID: 764805349}
   m_Layer: 0
-  m_Name: UIController
+  m_Name: UIGameController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -45,8 +45,9 @@ namespace TheUnfairDice
         {
             if (Global.HP.Value <= 0)
             {
-                Debug.Log("游戏结束");
                 this.DestroyGameObjGracefully();
+
+                UIKit.OpenPanel<UIGameOverPanel>();
             }
         }
 

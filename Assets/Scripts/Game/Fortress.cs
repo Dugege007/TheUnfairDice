@@ -8,13 +8,13 @@ namespace TheUnfairDice
         public static Fortress Default;
 
         public static BindableProperty<float> HP = new(20f);
+        public static BindableProperty<int> CurrentHumanCount = new(0);
 
         private float mCurrentGenerateSec = 0;
         public float GenerateSec = 3f;
         public float GenerateRadius = 3f;
         public int MaxHumanCount = 15;
         public int InitHumanCount = 5;
-        public static BindableProperty<int> CurrentHumanCount = new(0);
 
         private void Awake()
         {
@@ -50,7 +50,7 @@ namespace TheUnfairDice
         {
             if (HP.Value <= 0 || CurrentHumanCount.Value <= 2)
             {
-                Debug.Log("ÓÎÏ·½áÊø");
+                UIKit.OpenPanel<UIGameOverPanel>();
             }
 
             if (CurrentHumanCount.Value >= MaxHumanCount) return;
