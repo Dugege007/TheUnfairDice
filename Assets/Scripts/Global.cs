@@ -20,6 +20,7 @@ namespace TheUnfairDice
         [RuntimeInitializeOnLoadMethod]
         public static void AutoInit()
         {
+            ResKit.Init();
             Application.targetFrameRate = 60;
             UIKit.Root.SetResolution(1920, 1080, 0.5f);
         }

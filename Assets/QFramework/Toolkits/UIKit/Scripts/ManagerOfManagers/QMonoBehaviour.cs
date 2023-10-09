@@ -23,108 +23,111 @@
  * THE SOFTWARE.
  ****************************************************************************/
 
-namespace QFramework 
+namespace QFramework
 {
-	using UnityEngine;
-	using System;
-	using System.Collections.Generic;
+    using UnityEngine;
+    using System;
+    using System.Collections.Generic;
 
-	public abstract class QMonoBehaviour : MonoBehaviour
-	{
-		protected bool mReceiveMsgOnlyObjActive = true;
-		
-		public void Process (int eventId, params object[] param)  
-		{
-			if (mReceiveMsgOnlyObjActive && gameObject.activeInHierarchy || !mReceiveMsgOnlyObjActive)
-			{
-				var msg = param[0] as IMsg;
-				ProcessMsg(eventId, msg as QMsg);
-				msg.Processed = true;
-				
-				if (msg.ReuseAble)
-				{
-					msg.Recycle2Cache();
-				}
-			}
-		}
+    public abstract class QMonoBehaviour : MonoBehaviour
+    {
+        protected bool mReceiveMsgOnlyObjActive = true;
 
-		protected virtual void ProcessMsg (int eventId,QMsg msg) {}
+        public void Process(int eventId, params object[] param)
+        {
+            if (mReceiveMsgOnlyObjActive && gameObject.activeInHierarchy || !mReceiveMsgOnlyObjActive)
+            {
+                var msg = param[0] as IMsg;
+                ProcessMsg(eventId, msg as QMsg);
+                msg.Processed = true;
 
-		
-		public abstract IManager Manager { get; }
-			
-		public virtual void Show()
-		{
-			gameObject.SetActive (true);
+                if (msg.ReuseAble)
+                {
+                    msg.Recycle2Cache();
+                }
+            }
+        }
 
-			OnShow ();
-		}
+        protected virtual void ProcessMsg(int eventId, QMsg msg) { }
 
-		protected virtual void OnShow() {}
 
-		public virtual void Hide()
-		{
-			OnHide ();
+        public abstract IManager Manager { get; }
 
-			gameObject.SetActive (false);
-		}
+        public virtual void Show()
+        {
+            gameObject.SetActive(true);
 
-		protected virtual void OnHide() {}
+            OnShow();
+        }
 
-		protected void RegisterEvents<T>(params T[] eventIDs) where T : IConvertible
-		{
-			foreach (var eventId in eventIDs)
-			{
-				RegisterEvent(eventId);
-			}
-		}
+        protected virtual void OnShow() { }
 
-		protected void RegisterEvent<T>(T eventId) where T : IConvertible
-		{
-			mCachedEventIds.Add(eventId.ToUInt16(null));
-			Manager.RegisterEvent(eventId, Process);
-		}
-		
-		protected void UnRegisterEvent<T>(T eventId) where T : IConvertible
-		{
-			mCachedEventIds.Remove(eventId.ToUInt16(null));
-			Manager.UnRegisterEvent(eventId.ToInt32(null), Process);
-		}
+        public virtual void Hide()
+        {
+            OnHide();
 
-		protected void UnRegisterAllEvent()
-		{
-			if (null != mPrivateEventIds)
-			{
-				mPrivateEventIds.ForEach(id => Manager.UnRegisterEvent(id,Process));
-			}
-		}
+            if (gameObject)
+            {
+                gameObject.SetActive(false);
+            }
+        }
 
-		public virtual void SendMsg(IMsg msg)
-		{
-			Manager.SendMsg(msg);
-		}
-		
+        protected virtual void OnHide() { }
+
+        protected void RegisterEvents<T>(params T[] eventIDs) where T : IConvertible
+        {
+            foreach (var eventId in eventIDs)
+            {
+                RegisterEvent(eventId);
+            }
+        }
+
+        protected void RegisterEvent<T>(T eventId) where T : IConvertible
+        {
+            mCachedEventIds.Add(eventId.ToUInt16(null));
+            Manager.RegisterEvent(eventId, Process);
+        }
+
+        protected void UnRegisterEvent<T>(T eventId) where T : IConvertible
+        {
+            mCachedEventIds.Remove(eventId.ToUInt16(null));
+            Manager.UnRegisterEvent(eventId.ToInt32(null), Process);
+        }
+
+        protected void UnRegisterAllEvent()
+        {
+            if (null != mPrivateEventIds)
+            {
+                mPrivateEventIds.ForEach(id => Manager.UnRegisterEvent(id, Process));
+            }
+        }
+
+        public virtual void SendMsg(IMsg msg)
+        {
+            Manager.SendMsg(msg);
+        }
+
         public virtual void SendEvent<T>(T eventId) where T : IConvertible
-		{
-			Manager.SendEvent(eventId);
-		}
-		
-		private List<ushort> mPrivateEventIds = null;
-		
-		private List<ushort> mCachedEventIds
-		{
-			get { return mPrivateEventIds ?? (mPrivateEventIds = new List<ushort>()); }
-		}
+        {
+            Manager.SendEvent(eventId);
+        }
 
-		protected virtual void OnDestroy()
-		{			
-			if (Application.isPlaying) 
-			{
-				OnBeforeDestroy();
-				UnRegisterAllEvent();
-			}
-		}
-		
-	    protected virtual void OnBeforeDestroy(){}
-	}
+        private List<ushort> mPrivateEventIds = null;
+
+        private List<ushort> mCachedEventIds
+        {
+            get { return mPrivateEventIds ?? (mPrivateEventIds = new List<ushort>()); }
+        }
+
+        protected virtual void OnDestroy()
+        {
+            if (Application.isPlaying)
+            {
+                OnBeforeDestroy();
+                UnRegisterAllEvent();
+            }
+        }
+
+        protected virtual void OnBeforeDestroy() { }
+    }
 }

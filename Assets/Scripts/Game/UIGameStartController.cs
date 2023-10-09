@@ -7,7 +7,6 @@ namespace TheUnfairDice
     {
         private void Awake()
         {
-            UIKit.Root.SetResolution(1920, 1080, 0.5f);
         }
 
         private void Start()

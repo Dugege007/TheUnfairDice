@@ -39,6 +39,7 @@ namespace TheUnfairDice
 
         protected override void OnClose()
         {
+            Debug.Log("UIGamePassPanel ¹Ø±Õ");
         }
     }
 }

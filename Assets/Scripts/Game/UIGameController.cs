@@ -12,7 +12,7 @@ namespace TheUnfairDice
 
         private void OnDestroy()
         {
-            UIKit.CloseAllPanel();
+            UIKit.ClosePanel<UIGamePanel>();
         }
     }
 }
