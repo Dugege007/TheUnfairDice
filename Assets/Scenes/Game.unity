@@ -743,6 +743,7 @@ MonoBehaviour:
   PrefabFolder: Assets/Art/Prefab
   HP: 1
   MovementSpeed: 1.5
+  IsTargetFortress: 0
   SelfRgidbody2D: {fileID: 429700278}
 --- !u!114 &429700280
 MonoBehaviour:

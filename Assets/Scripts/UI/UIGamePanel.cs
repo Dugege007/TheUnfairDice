@@ -32,7 +32,7 @@ namespace TheUnfairDice
 
             }).UnRegisterWhenGameObjectDestroyed(gameObject);
 
-            EnemyGenerator.EnemyCount.RegisterWithInitValue(enemyCount =>
+            EnemyGenerator.CurrentEnemyCount.RegisterWithInitValue(enemyCount =>
             {
                 EnemyCountText.text = "µ–»À£∫" + enemyCount;
 

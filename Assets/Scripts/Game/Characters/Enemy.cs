@@ -8,16 +8,23 @@ namespace TheUnfairDice
         public float HP = 1f;
         public float MovementSpeed = 1.5f;
 
+        public bool IsTargetFortress = false;
+
         private void Start()
         {
-            EnemyGenerator.EnemyCount.Value++;
+            EnemyGenerator.CurrentEnemyCount.Value++;
         }
 
         private void FixedUpdate()
         {
+
             if (Player.Default)
             {
-                Vector3 direction = (Player.Default.Position() - this.Position()).normalized;
+                Vector3 direction;
+                if (IsTargetFortress)
+                    direction = (Fortress.Default.Position() - this.Position()).normalized;
+                else
+                    direction = (Player.Default.Position() - this.Position()).normalized;
 
                 SelfRgidbody2D.velocity = direction * MovementSpeed;
             }
@@ -42,7 +49,7 @@ namespace TheUnfairDice
 
         private void OnDestroy()
         {
-            EnemyGenerator.EnemyCount.Value--;
+            EnemyGenerator.CurrentEnemyCount.Value--;
         }
     }
 }

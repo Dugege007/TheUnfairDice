@@ -7,12 +7,27 @@ namespace TheUnfairDice
     {
         private float mCurrentGenerateSec = 0;
         public float GenerateSec = 1f;
-        public int MaxEnemyCount = 50;
-        public static BindableProperty<int> EnemyCount = new(0);
+        public int MaxEnemyCount = 100;
+        private int mEnemyCount = 0;
+        public static BindableProperty<int> CurrentEnemyCount = new(0);
+
+        private bool mAttackFortress = false;
+
+        private void Start()
+        {
+            CurrentEnemyCount.Register(enemyCount =>
+            {
+                if (enemyCount >= 20)
+                    mAttackFortress = true;
+                else
+                    mAttackFortress = false;
+
+            }).UnRegisterWhenGameObjectDestroyed(gameObject);
+        }
 
         private void Update()
         {
-            if (EnemyCount.Value >= MaxEnemyCount) return;
+            if (mEnemyCount >= MaxEnemyCount) return;
 
             mCurrentGenerateSec += Time.deltaTime;
 
@@ -53,7 +68,14 @@ namespace TheUnfairDice
 
                     Enemy.InstantiateWithParent(this)
                         .Position(pos)
+                        .Self(self =>
+                        {
+                            if (mAttackFortress)
+                                self.IsTargetFortress = true;
+                        })
                         .Show();
+
+                    mEnemyCount++;
                 }
             }
         }
