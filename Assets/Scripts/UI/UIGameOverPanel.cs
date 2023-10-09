@@ -39,7 +39,6 @@ namespace TheUnfairDice
 
         protected override void OnClose()
         {
-            Debug.Log("UIGameOverPanel ¹Ø±Õ");
         }
     }
 }

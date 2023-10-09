@@ -20,9 +20,15 @@ namespace TheUnfairDice
         [RuntimeInitializeOnLoadMethod]
         public static void AutoInit()
         {
+            // 初始化资源
             ResKit.Init();
+            // 设置帧率
             Application.targetFrameRate = 60;
+            // 设置 UI 适配分辨率
             UIKit.Root.SetResolution(1920, 1080, 0.5f);
+
+            // 主动初始化
+            IArchitecture _ = Interface;
         }
 
         public static void ResetData()

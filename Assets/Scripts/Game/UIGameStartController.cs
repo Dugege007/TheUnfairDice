@@ -11,6 +11,8 @@ namespace TheUnfairDice
 
         private void Start()
         {
+            UIKit.CloseAllPanel();
+
             UIKit.OpenPanel<UIGameStartPanel>();
         }
     }

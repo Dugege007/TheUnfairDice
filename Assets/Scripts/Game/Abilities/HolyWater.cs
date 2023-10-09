@@ -6,6 +6,12 @@ namespace TheUnfairDice
 {
     public partial class HolyWater : ViewController
     {
+        public float HolyWaterDamage = 1f;
+        public float HolyWaterDuration = 1f;
+        public float HolyWaterCDTime = 2f;
+        public float HolyWaterRange = 2.5f;     // 半径
+        public float HolyWaterImpulse = 200f;   // 击退的力
+
         private float mCurrentSec = 0;
 
         private void Start()
@@ -17,7 +23,7 @@ namespace TheUnfairDice
         {
             mCurrentSec += Time.deltaTime;
 
-            if (mCurrentSec >= 1f)
+            if (mCurrentSec >= HolyWaterCDTime)
             {
                 mCurrentSec = 0;
 
@@ -40,7 +46,7 @@ namespace TheUnfairDice
                                     if (hurtBox.Owner.CompareTag("Enemy"))
                                     {
                                         Enemy enemy = hurtBox.Owner.GetComponent<Enemy>();
-                                        enemy.GetHurt(1);
+                                        enemy.GetHurt(HolyWaterDamage);
                                     }
                                 }
 
@@ -49,7 +55,7 @@ namespace TheUnfairDice
                             // 添加动画
                             ActionKit.Sequence()
                                 // 逐渐变大
-                                .Lerp(1f, 5f, 0.8f, scale => selfCache.LocalScale(scale))
+                                .Lerp(1f, HolyWaterRange * 2, HolyWaterDuration, scale => selfCache.LocalScale(scale))
                                 .Callback(() =>
                                 {
                                     // 关闭碰撞

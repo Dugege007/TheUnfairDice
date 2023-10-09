@@ -73,7 +73,7 @@ namespace TheUnfairDice
 
                 // 生成骰子
                 Dice.Instantiate()
-                    .Position(offsetV3)
+                    .Position(Player.Default.Position())
                     .Show()
                     .Self(self =>
                     {
@@ -81,7 +81,21 @@ namespace TheUnfairDice
                         SpriteRenderer selfCache = self;
                         Dice dice = selfCache.GetComponent<Dice>();
                         // 动画播放时间
-                        float randomTime = Random.Range(RollingSec, RollingSec + 1.5f);
+                        float randomTime = Random.Range(RollingSec, RollingSec + 1f);
+
+                        //// 不太好加的动画
+                        //ActionKit.Sequence()
+                        //    .Parallel(p =>
+                        //    {
+                        //        p.Lerp(0.3f, 0.8f, 0.3f, scale => dice.LocalScale(scale));
+                        //        p.Append(ActionKit.Sequence()
+                        //            .Lerp(playerPosX, offsetX, 0.3f, posX => dice.PositionX(posX)));
+                        //        p.Append(ActionKit.Sequence()
+                        //            .Lerp(playerPosY, playerPosY + 1, 0.3f, posY => dice.PositionY(posY)));
+                        //    })
+                        //    .Callback(() =>
+                        //    {
+                        //    });
 
                         // 延时任务
                         ActionKit.Delay(randomTime, () =>
