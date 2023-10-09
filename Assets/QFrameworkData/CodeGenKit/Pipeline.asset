@@ -19,15 +19,33 @@ MonoBehaviour:
     From: 0
     NameToFullName: []
     BindInfos:
-    - TypeName: QFramework.ViewController
-      PathToRoot: FireBall
-      MemberName: FireBall
-    ScriptsFolder: Assets/Scripts/Game
-    ClassName: HolyFire
+    - TypeName: TheUnfairDice.HolyWater
+      PathToRoot: HolyWater
+      MemberName: HolyWater
+    - TypeName: TheUnfairDice.HolyFire
+      PathToRoot: HolyFire
+      MemberName: HolyFire
+    - TypeName: TheUnfairDice.HolyLand
+      PathToRoot: HolyLand
+      MemberName: HolyLand
+    - TypeName: TheUnfairDice.HolySword
+      PathToRoot: HolySword
+      MemberName: HolySword
+    - TypeName: TheUnfairDice.HolyTree
+      PathToRoot: HolyTree
+      MemberName: HolyTree
+    - TypeName: TheUnfairDice.HolyLight
+      PathToRoot: HolyLight
+      MemberName: HolyLight
+    ScriptsFolder: Assets/Scripts/Game/Abilities
+    ClassName: AbilitiesController
     Namespace: TheUnfairDice
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace TheUnfairDice\r\n{\r\n\tpublic
-      partial class HolyFire : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      partial class AbilitiesController : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:5c4b6280-1e2a-45f2-aa7b-b7e840ac3c04\r\nusing UnityEngine;\r\n\r\nnamespace
-      TheUnfairDice\r\n{\r\n\tpublic partial class HolyFire\r\n\t{\r\n\r\n\t\tpublic
-      QFramework.ViewController FireBall;\r\n\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:aed41cdb-d2ca-4ec2-8bea-6f934a871cec\r\nusing UnityEngine;\r\n\r\nnamespace
+      TheUnfairDice\r\n{\r\n\tpublic partial class AbilitiesController\r\n\t{\r\n\r\n\t\tpublic
+      TheUnfairDice.HolyWater HolyWater;\r\n\r\n\t\tpublic TheUnfairDice.HolyFire
+      HolyFire;\r\n\r\n\t\tpublic TheUnfairDice.HolyLand HolyLand;\r\n\r\n\t\tpublic
+      TheUnfairDice.HolySword HolySword;\r\n\r\n\t\tpublic TheUnfairDice.HolyTree
+      HolyTree;\r\n\r\n\t\tpublic TheUnfairDice.HolyLight HolyLight;\r\n\r\n\t}\r\n}\r\n"
