@@ -5,14 +5,11 @@ namespace TheUnfairDice
 {
     public partial class FireBall : ViewController
     {
-        public float HolyFireSpeed = 8f;
-        public float HolyFireDamage = 1f;
-
         private void Start()
         {
             SelfRigidbody2D.velocity = new Vector2(
                 Random.Range(-1.0f, 1.0f),
-                Random.Range(-1.0f, 1.0f) * Random.Range(HolyFireSpeed - 2, HolyFireSpeed + 2));
+                Random.Range(-1.0f, 1.0f) * Random.Range(HolyFire.Speed.Value - 2, HolyFire.Speed.Value + 2));
 
             HitHurtBox.OnTriggerEnter2DEvent(collider2D =>
             {
@@ -30,7 +27,7 @@ namespace TheUnfairDice
                         }
 
                         Enemy enemy = hurtBox.Owner.GetComponent<Enemy>();
-                        enemy.GetHurt(HolyFireDamage);
+                        enemy.GetHurt(HolyFire.Damage.Value);
                     }
                 }
 
@@ -48,7 +45,7 @@ namespace TheUnfairDice
                     new Vector2(SelfRigidbody2D.velocity.x,
                         Mathf.Sign(SelfRigidbody2D.velocity.y) *
                             Random.Range(0.8f, 1.2f) *
-                            Random.Range(HolyFireSpeed - 2, HolyFireSpeed + 2));
+                            Random.Range(HolyFire.Speed.Value - 2, HolyFire.Speed.Value + 2));
                 // Mathf.Sign() 只取正负符号
 
                 // 随机自转
@@ -60,7 +57,7 @@ namespace TheUnfairDice
                 rb.velocity =
                     new Vector2(Mathf.Sign(rb.velocity.x) *
                             Random.Range(0.8f, 1.2f) *
-                            Random.Range(HolyFireSpeed - 2, HolyFireSpeed + 2),
+                            Random.Range(HolyFire.Speed.Value - 2, HolyFire.Speed.Value + 2),
                         rb.velocity.y);
                 // Mathf.Sign() 只取正负符号
 

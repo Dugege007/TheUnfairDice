@@ -6,11 +6,10 @@ namespace TheUnfairDice
 {
     public partial class HolyWater : ViewController
     {
-        public float HolyWaterDamage = 1f;
-        public float HolyWaterDuration = 1f;
-        public float HolyWaterCDTime = 2f;
-        public float HolyWaterRange = 2.5f;     // °ë¾¶
-        public float HolyWaterImpulse = 200f;   // »÷ÍËµÄÁ¦
+        public static BindableProperty<float> Damage = new(ConfigManager.Default.AbilityConfigs[0].InitDamage);
+        public static BindableProperty<float> Duration = new(ConfigManager.Default.AbilityConfigs[0].InitDuration);
+        public static BindableProperty<float> CDTime = new(ConfigManager.Default.AbilityConfigs[0].InitCDTime);
+        public static BindableProperty<float> Range = new(ConfigManager.Default.AbilityConfigs[0].InitRange);  // °ë¾¶
 
         private float mCurrentSec = 0;
 
@@ -23,7 +22,7 @@ namespace TheUnfairDice
         {
             mCurrentSec += Time.deltaTime;
 
-            if (mCurrentSec >= HolyWaterCDTime)
+            if (mCurrentSec >= CDTime.Value)
             {
                 mCurrentSec = 0;
 
@@ -46,7 +45,7 @@ namespace TheUnfairDice
                                     if (hurtBox.Owner.CompareTag("Enemy"))
                                     {
                                         Enemy enemy = hurtBox.Owner.GetComponent<Enemy>();
-                                        enemy.GetHurt(HolyWaterDamage);
+                                        enemy.GetHurt(Damage.Value);
                                     }
                                 }
 
@@ -55,7 +54,7 @@ namespace TheUnfairDice
                             // Ìí¼Ó¶¯»­
                             ActionKit.Sequence()
                                 // Öð½¥±ä´ó
-                                .Lerp(1f, HolyWaterRange * 2, HolyWaterDuration, scale => selfCache.LocalScale(scale))
+                                .Lerp(1f, Range.Value * 2, Duration.Value, scale => selfCache.LocalScale(scale))
                                 .Callback(() =>
                                 {
                                     // ¹Ø±ÕÅö×²

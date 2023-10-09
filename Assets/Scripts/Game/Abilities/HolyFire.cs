@@ -6,8 +6,13 @@ namespace TheUnfairDice
 {
     public partial class HolyFire : ViewController
     {
-        public float HolyFireRange = 0.5f;  // °ë¾¶
-        public BindableProperty<int> HolyFireCount = new(0);
+        public static BindableProperty<float> Damage = new(ConfigManager.Default.AbilityConfigs[1].InitDamage);
+        public static BindableProperty<float> CDTime = new(ConfigManager.Default.AbilityConfigs[1].InitCDTime);
+        public static BindableProperty<float> Duration = new(ConfigManager.Default.AbilityConfigs[1].InitDuration);
+        public static BindableProperty<float> Range = new(ConfigManager.Default.AbilityConfigs[1].InitRange);  // °ë¾¶
+        public static BindableProperty<float> Speed = new(ConfigManager.Default.AbilityConfigs[1].InitSpeed);
+        public static BindableProperty<int> Count = new(ConfigManager.Default.AbilityConfigs[1].InitCount);
+        public static BindableProperty<int> AttackCount = new(ConfigManager.Default.AbilityConfigs[1].InitAttackCount);
 
         private List<FireBall> mFireBalls = new List<FireBall>();
 
@@ -21,7 +26,7 @@ namespace TheUnfairDice
 
         private void CreateBalls()
         {
-            int ballCount2Create = HolyFireCount.Value - mFireBalls.Count;
+            int ballCount2Create = Count.Value - mFireBalls.Count;
 
             for (int i = 0; i < ballCount2Create; i++)
             {

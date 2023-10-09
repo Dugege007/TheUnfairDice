@@ -23,6 +23,13 @@ namespace TheUnfairDice
 
         public static BindableProperty<float> CurrentSec = new(0);
 
+        public static BindableProperty<bool> HolyWaterUnlocked = new(false);
+        public static BindableProperty<bool> HolyFireUnlocked = new(false);
+        public static BindableProperty<bool> HolyTreeUnlocked = new(false);
+        public static BindableProperty<bool> HolySwordUnlocked = new(false);
+        public static BindableProperty<bool> HolyLandUnlocked = new(false);
+        public static BindableProperty<bool> HolyLightUnlocked = new(false);
+
         protected override void Init()
         {
 
