@@ -9,6 +9,17 @@ namespace TheUnfairDice
     {
         public static BindableProperty<float> HP = new(3);
         public static BindableProperty<float> MaxHP = new(3);
+        public static BindableProperty<int> Level = new(1);
+
+        public static BindableProperty<float> CollectableAreaRange = new(2);
+
+        public static BindableProperty<int> Exp = new(0);
+        public static BindableProperty<int> Gold = new(0);
+        public static BindableProperty<int> Spirit = new(0);
+
+        public static BindableProperty<float> ExpPercent = new(0.5f);
+        public static BindableProperty<float> GoldPercent = new(0.1f);
+        public static BindableProperty<float> SpiritPercent = new(0.1f);
 
         public static BindableProperty<float> CurrentSec = new(0);
 
@@ -40,6 +51,25 @@ namespace TheUnfairDice
             Fortress.CurrentHumanCount.Value = 0;
             EnemyGenerator.TotalEnemyCount.Value = 0;
             EnemyGenerator.CurrentEnemyCount.Value = 0;
+        }
+
+        public static int ExpToNextLevel()
+        {
+            return Level.Value * 5;
+        }
+
+        public static void GeneratePowerUp(GameObject generaterObj)
+        {
+            float percent = Random.Range(0, 1f);
+            if (percent <= ExpPercent.Value)
+            {
+                // µôÂä¾­ÑéÖµ
+                PowerUpManager.Default.Exp.Instantiate()
+                    .Position(generaterObj.Position())
+                    .Show();
+
+                return;
+            }
         }
     }
 }

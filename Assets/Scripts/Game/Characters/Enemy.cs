@@ -38,6 +38,7 @@ namespace TheUnfairDice
         {
             if (HP <= 0)
             {
+                Global.GeneratePowerUp(gameObject);
                 this.DestroyGameObjGracefully();
             }
         }

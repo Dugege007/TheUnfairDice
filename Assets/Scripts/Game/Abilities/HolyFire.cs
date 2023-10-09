@@ -7,7 +7,7 @@ namespace TheUnfairDice
     public partial class HolyFire : ViewController
     {
         public float HolyFireRange = 0.5f;  // °ë¾¶
-        public BindableProperty<int> HolyFireCount = new(1);
+        public BindableProperty<int> HolyFireCount = new(0);
 
         private List<FireBall> mFireBalls = new List<FireBall>();
 

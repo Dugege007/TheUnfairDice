@@ -20,6 +20,29 @@ namespace TheUnfairDice
 
             }).UnRegisterWhenGameObjectDestroyed(gameObject);
 
+            Global.Level.RegisterWithInitValue(lv =>
+            {
+                PlayerLevelText.text = "玩家等级：" + lv;
+
+            }).UnRegisterWhenGameObjectDestroyed(gameObject);
+
+            Global.Exp.RegisterWithInitValue(exp =>
+            {
+                CurrentExpText.text = "当前经验：" + exp + "/" + Global.ExpToNextLevel();
+
+            }).UnRegisterWhenGameObjectDestroyed(gameObject);
+
+            // 升级机制
+            Global.Exp.RegisterWithInitValue(exp =>
+            {
+                if (exp >= Global.ExpToNextLevel())
+                {
+                    Global.Exp.Value -= Global.ExpToNextLevel();
+                    Global.Level.Value++;
+                }
+
+            }).UnRegisterWhenGameObjectDestroyed(gameObject);
+
             Fortress.HP.RegisterWithInitValue(hp =>
             {
                 FortressrHPText.text = "要塞HP：" + hp;
