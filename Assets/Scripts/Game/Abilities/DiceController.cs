@@ -55,13 +55,14 @@ namespace TheUnfairDice
             // 正在 Roll
             IsRolling = true;
 
-            float playerPosX = Player.Default.Position().x;
-            float playerPosY = Player.Default.Position().y;
 
             // 第一颗骰子位置 X 轴的偏移值
             float offsetX = (DiceCount % 2 == 0) ?
                             -(DiceCount / 2 - 0.5f) * mDicePosSpaceScale :
                             -(DiceCount / 2) * mDicePosSpaceScale;
+
+            //float playerPosX = Player.Default.Position().x;
+            //float playerPosY = Player.Default.Position().y;
 
             // 骰子需要偏移的向量
             Vector3 offsetV3 = Vector3.zero;
@@ -69,11 +70,11 @@ namespace TheUnfairDice
             // 按拥有骰子的数量 Roll
             for (int i = 0; i < DiceCount; i++)
             {
-                offsetV3 = new Vector3(playerPosX + offsetX + i * mDicePosSpaceScale, playerPosY + 1, 0);
+                offsetV3 = new Vector3(offsetX + i * mDicePosSpaceScale, 0, 0);
 
                 // 生成骰子
-                Dice.Instantiate()
-                    .Position(Player.Default.Position())
+                Dice.InstantiateWithParent(this)
+                    .LocalPosition(offsetV3)
                     .Show()
                     .Self(self =>
                     {
