@@ -17,11 +17,19 @@ namespace TheUnfairDice
 
             Time.timeScale = 1.0f;
 
+            // 开始游戏
             StartGameBtn.onClick.AddListener(() =>
             {
                 UIKit.ClosePanel(this);
                 Global.ResetData();
                 SceneManager.LoadScene("Game");
+            });
+
+            // 退出游戏
+            QuitBtn.onClick.AddListener(() =>
+            {
+                UIKit.ClosePanel(this);
+                Application.Quit();
             });
         }
 

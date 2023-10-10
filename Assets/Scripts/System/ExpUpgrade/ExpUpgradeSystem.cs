@@ -19,10 +19,7 @@ namespace TheUnfairDice
 
             ResetData();
 
-            Global.Level.Register(_ =>
-            {
-                Roll();
-            });
+            Global.Level.Register(_ => Roll());
         }
 
         public ExpUpgradeItem Add(ExpUpgradeItem item)
@@ -36,24 +33,25 @@ namespace TheUnfairDice
             Items.Clear();
 
             // 水
-            AddNewExpUpgradeItem("", mAbilityConfigs[0]);
+            AddNewExpUpgradeItem(mAbilityConfigs[0]);
             // 火
-            AddNewExpUpgradeItem("", mAbilityConfigs[1]);
+            AddNewExpUpgradeItem(mAbilityConfigs[1]);
             //// 树
-            //AddNewExpUpgradeItem("", mAbilityConfigs[2]);
+            //AddNewExpUpgradeItem(mAbilityConfigs[2]);
             //// 剑
-            //AddNewExpUpgradeItem("", mAbilityConfigs[3]);
-            //// 地
-            //AddNewExpUpgradeItem("", mAbilityConfigs[4]);
+            //AddNewExpUpgradeItem(mAbilityConfigs[3]);
+            //// 土
+            //AddNewExpUpgradeItem(mAbilityConfigs[4]);
             //// 光
-            //AddNewExpUpgradeItem("", mAbilityConfigs[5]);
+            //AddNewExpUpgradeItem(mAbilityConfigs[5]);
         }
 
-        private void AddNewExpUpgradeItem(string key, AbilityConfig abilityConfig)
+        private void AddNewExpUpgradeItem(AbilityConfig abilityConfig)
         {
             Add(new ExpUpgradeItem()
-                .WithKey(key)
+                .WithKey(abilityConfig.Key)
                 .WithName(abilityConfig.Name)
+                .WithIsWeapon(abilityConfig.IsWeapon)
                 .WithDescription(lv =>
                 {
                     return UpgradeDiscription(lv, abilityConfig);
@@ -83,8 +81,6 @@ namespace TheUnfairDice
 
         private void UpgradePowerValue(int lv, AbilityConfig abilityConfig)
         {
-
-
             // 解锁能力
             if (lv == 1)
             {
@@ -92,14 +88,14 @@ namespace TheUnfairDice
                     Global.HolyWaterUnlocked.Value = true;
                 else if (abilityConfig.Name == mAbilityConfigs[1].Name)
                     Global.HolyFireUnlocked.Value = true;
-                else if (abilityConfig.Name == mAbilityConfigs[2].Name)
-                    Global.HolyTreeUnlocked.Value = true;
-                else if (abilityConfig.Name == mAbilityConfigs[3].Name)
-                    Global.HolySwordUnlocked.Value = true;
-                else if (abilityConfig.Name == mAbilityConfigs[4].Name)
-                    Global.HolyLandUnlocked.Value = true;
-                else if (abilityConfig.Name == mAbilityConfigs[5].Name)
-                    Global.HolyLightUnlocked.Value = true;
+                //else if (abilityConfig.Name == mAbilityConfigs[2].Name)
+                //    Global.HolyTreeUnlocked.Value = true;
+                //else if (abilityConfig.Name == mAbilityConfigs[3].Name)
+                //    Global.HolySwordUnlocked.Value = true;
+                //else if (abilityConfig.Name == mAbilityConfigs[4].Name)
+                //    Global.HolyLandUnlocked.Value = true;
+                //else if (abilityConfig.Name == mAbilityConfigs[5].Name)
+                //    Global.HolyLightUnlocked.Value = true;
             }
 
             // 升级能力
@@ -182,9 +178,8 @@ namespace TheUnfairDice
 
             // 随机取几个可升级的能力
             List<ExpUpgradeItem> list = Items.Where(item => !item.UpgradeFinish).ToList();
-            if (list.Count >= 3)
+            if (list.Count >= 2)
             {
-                list.GetAndRemoveRandomItem().Visible.Value = true;
                 list.GetAndRemoveRandomItem().Visible.Value = true;
                 list.GetAndRemoveRandomItem().Visible.Value = true;
             }

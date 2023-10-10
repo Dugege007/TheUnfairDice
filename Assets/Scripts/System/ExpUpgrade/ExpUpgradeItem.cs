@@ -37,6 +37,12 @@ namespace TheUnfairDice
             return this;
         }
 
+        public ExpUpgradeItem WithIsWeapon(bool isWeapon)
+        {
+            IsWeapon = isWeapon;
+            return this;
+        }
+
         public ExpUpgradeItem WithDescription(Func<int, string> descriptionFactory)
         {
             mDescriptionFactory = descriptionFactory;

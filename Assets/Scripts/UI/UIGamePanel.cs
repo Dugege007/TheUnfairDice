@@ -14,15 +14,12 @@ namespace TheUnfairDice
             mData = uiData as UIGamePanelData ?? new UIGamePanelData();
             // please add init code here
 
+            // 开始时先关掉
+            ExpUpgradePanel.Hide();
+
             Global.HP.RegisterWithInitValue(hp =>
             {
                 PlayerHPText.text = "玩家HP：" + hp;
-
-            }).UnRegisterWhenGameObjectDestroyed(gameObject);
-
-            Global.Level.RegisterWithInitValue(lv =>
-            {
-                PlayerLevelText.text = "玩家等级：" + lv;
 
             }).UnRegisterWhenGameObjectDestroyed(gameObject);
 
@@ -40,6 +37,19 @@ namespace TheUnfairDice
                     Global.Exp.Value -= Global.ExpToNextLevel();
                     Global.Level.Value++;
                 }
+
+            }).UnRegisterWhenGameObjectDestroyed(gameObject);
+
+            Global.Level.RegisterWithInitValue(lv =>
+            {
+                PlayerLevelText.text = "玩家等级：" + lv;
+
+            }).UnRegisterWhenGameObjectDestroyed(gameObject);
+
+            Global.Level.Register(level =>
+            {
+                Time.timeScale = 0;
+                ExpUpgradePanel.Show();
 
             }).UnRegisterWhenGameObjectDestroyed(gameObject);
 

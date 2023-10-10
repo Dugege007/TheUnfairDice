@@ -27,7 +27,7 @@ namespace TheUnfairDice
             }
 
             // 标题
-            EditorGUILayout.LabelField("升级值（调整数值）", EditorStyles.boldLabel);
+            EditorGUILayout.LabelField("升级（调整数值）", EditorStyles.boldLabel);
 
             // 遍历Powers列表
             for (int i = 0; i < config.Powers.Count; i++)
@@ -94,7 +94,6 @@ namespace TheUnfairDice
                 EditorUtility.SetDirty(config);
             }
 
-            // 如果你做了任何更改，记得标记对象为"dirty"，以便更改被保存
             if (GUI.changed)
             {
                 EditorUtility.SetDirty(config);

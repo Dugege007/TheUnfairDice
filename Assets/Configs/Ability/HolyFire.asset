@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: HolyFire
   m_EditorClassIdentifier: 
   Name: "\u795E\u5723\u4E4B\u706B"
+  Key: holy_fire
   IsWeapon: 1
   Description: "\u53EC\u5524\u706B\u7403\u653B\u51FB\u654C\u4EBA"
   InitDamage: 1
@@ -20,6 +21,18 @@ MonoBehaviour:
   InitDuration: 8
   InitRange: 0.5
   InitSpeed: 6
-  InitCount: 1
+  InitCount: 0
   InitAttackCount: 10
-  Powers: []
+  Powers:
+  - Lv: 1
+    PowerDatas:
+    - Type: 5
+      Value: 1
+  - Lv: 2
+    PowerDatas:
+    - Type: 5
+      Value: 1
+  - Lv: 3
+    PowerDatas:
+    - Type: 5
+      Value: 1

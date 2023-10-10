@@ -5,7 +5,7 @@ using QFramework;
 
 namespace TheUnfairDice
 {
-	// Generate Id:b0f336b0-7906-4850-b573-58ff12a6b28a
+	// Generate Id:c12199d6-66a0-4b60-be3b-1350fff8de47
 	public partial class UIGamePassPanel
 	{
 		public const string Name = "UIGamePassPanel";

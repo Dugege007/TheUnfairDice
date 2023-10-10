@@ -23,21 +23,16 @@ namespace TheUnfairDice
 
         public static BindableProperty<float> CurrentSec = new(0);
 
-        public static BindableProperty<bool> HolyWaterUnlocked = new(false);
-        public static BindableProperty<bool> HolyFireUnlocked = new(false);
-        public static BindableProperty<bool> HolyTreeUnlocked = new(false);
-        public static BindableProperty<bool> HolySwordUnlocked = new(false);
-        public static BindableProperty<bool> HolyLandUnlocked = new(false);
-        public static BindableProperty<bool> HolyLightUnlocked = new(false);
-
-        // 能力
+        #region 玩家能力
         // 水
+        public static BindableProperty<bool> HolyWaterUnlocked = new(false);
         public static BindableProperty<float> HolyWaterDamage = new(ConfigManager.Default.AbilityConfigs[0].InitDamage);
         public static BindableProperty<float> HolyWaterDuration = new(ConfigManager.Default.AbilityConfigs[0].InitDuration);
         public static BindableProperty<float> HolyWaterCDTime = new(ConfigManager.Default.AbilityConfigs[0].InitCDTime);
         public static BindableProperty<float> HolyWaterRange = new(ConfigManager.Default.AbilityConfigs[0].InitRange);  // 半径
 
         // 火
+        public static BindableProperty<bool> HolyFireUnlocked = new(false);
         public static BindableProperty<float> HolyFireDamage = new(ConfigManager.Default.AbilityConfigs[1].InitDamage);
         public static BindableProperty<float> HolyFireCDTime = new(ConfigManager.Default.AbilityConfigs[1].InitCDTime);
         public static BindableProperty<float> HolyFireDuration = new(ConfigManager.Default.AbilityConfigs[1].InitDuration);
@@ -46,9 +41,24 @@ namespace TheUnfairDice
         public static BindableProperty<int> HolyFireCount = new(ConfigManager.Default.AbilityConfigs[1].InitCount);
         public static BindableProperty<int> HolyFireAttackCount = new(ConfigManager.Default.AbilityConfigs[1].InitAttackCount);
 
+        // 树
+        public static BindableProperty<bool> HolyTreeUnlocked = new(false);
+
+        // 剑
+        public static BindableProperty<bool> HolySwordUnlocked = new(false);
+
+        // 土
+        public static BindableProperty<bool> HolyLandUnlocked = new(false);
+
+        // 光
+        public static BindableProperty<bool> HolyLightUnlocked = new(false);
+
+        #endregion
+
         protected override void Init()
         {
-
+            // 不要忘记将系统注册
+            this.RegisterSystem(new ExpUpgradeSystem());
         }
 
         [RuntimeInitializeOnLoadMethod]

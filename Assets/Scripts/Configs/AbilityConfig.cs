@@ -9,6 +9,7 @@ namespace TheUnfairDice
     {
         [Header("Ãû³Æ")]
         public string Name;
+        public string Key;
         [Header("ÊÇ·ñÎªÎäÆ÷")]
         public bool IsWeapon;
 

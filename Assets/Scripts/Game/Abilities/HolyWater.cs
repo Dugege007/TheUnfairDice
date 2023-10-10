@@ -24,7 +24,8 @@ namespace TheUnfairDice
                 Enemy[] enemies = FindObjectsByType<Enemy>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
                 foreach (Enemy enemy in enemies
                     .OrderBy(e => e.Direction2DFrom(Player.Default).magnitude)
-                    .Where(e => e.Direction2DFrom(Player.Default).magnitude <= 4f))
+                    .Where(e => e.Direction2DFrom(Player.Default).magnitude <= 4f)
+                    .Take(1))
                 {
                     Ripple.Instantiate()
                         .Position(Player.Default.Position())
@@ -46,10 +47,12 @@ namespace TheUnfairDice
 
                             }).UnRegisterWhenGameObjectDestroyed(selfCache);
 
+                            float range = Global.HolyWaterRange.Value * 2;
+
                             // 添加动画
                             ActionKit.Sequence()
                                 // 逐渐变大
-                                .Lerp(1f, Global.HolyWaterRange.Value * 2, Global.HolyWaterDuration.Value, scale => selfCache.LocalScale(scale))
+                                .Lerp(1f, range, Global.HolyWaterDuration.Value, scale => selfCache.LocalScale(scale))
                                 .Callback(() =>
                                 {
                                     // 关闭碰撞
@@ -58,7 +61,7 @@ namespace TheUnfairDice
                                 .Parallel(p =>
                                 {
                                     // 稍微变大
-                                    p.Lerp(5f, 6f, 0.3f, scale => selfCache.LocalScale(scale));
+                                    p.Lerp(range, range + 1, 0.3f, scale => selfCache.LocalScale(scale));
 
                                     float alpha = selfCache.GetComponent<SpriteRenderer>().color.a;
                                     p.Append(ActionKit.Sequence()
