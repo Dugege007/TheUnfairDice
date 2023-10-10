@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerConfig : MonoBehaviour
+namespace TheUnfairDice
 {
-    // Start is called before the first frame update
-    void Start()
+    [CreateAssetMenu(menuName = "Config/Player Config")]
+    public class PlayerConfig : EntityBaseConfig
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        [Header("≥ı º÷µ")]
+        public int InitGold = 0;
+        public int InitExp = 0;
+        public int InitSpirit = 0;
+        public float InitCollectableRange = 0;
+        public float InitExpPercent = 0;
+        public float InitGoldPercent = 0;
+        public float InitSpiritPercent = 0;
+        public float InitCurrentSec = 0;
     }
 }

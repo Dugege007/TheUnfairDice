@@ -4,7 +4,7 @@ using static TheUnfairDice.AbilityPower;
 
 namespace TheUnfairDice
 {
-    [CreateAssetMenu(menuName = "Config/AbilityConfig")]
+    [CreateAssetMenu(menuName = "Config/Ability Config")]
     public class AbilityConfig : ScriptableObject
     {
         [Header("名称")]
@@ -80,32 +80,7 @@ namespace TheUnfairDice
 
             foreach (var data in PowerDatas)
             {
-                string powerTypeStr = "";
-
-                switch (data.Type)
-                {
-                    case PowerType.Damage:
-                        powerTypeStr = "攻击力";
-                        break;
-                    case PowerType.CDTime:
-                        powerTypeStr = "冷却时间";
-                        break;
-                    case PowerType.Duration:
-                        powerTypeStr = "持续时间";
-                        break;
-                    case PowerType.Range:
-                        powerTypeStr = "范围";
-                        break;
-                    case PowerType.Speed:
-                        powerTypeStr = "速度";
-                        break;
-                    case PowerType.Count:
-                        powerTypeStr = "数量";
-                        break;
-                    case PowerType.AttackCount:
-                        powerTypeStr = "攻击数";
-                        break;
-                }
+                string powerTypeStr = GetPowerTypeName(data.Type);
 
                 switch (data.Type)
                 {
@@ -124,6 +99,29 @@ namespace TheUnfairDice
             }
 
             return info.Trim();
+        }
+
+        public string GetPowerTypeName(PowerType powerType)
+        {
+            switch (powerType)
+            {
+                case PowerType.Damage:
+                    return "攻击力";
+                case PowerType.CDTime:
+                    return "冷却时间";
+                case PowerType.Duration:
+                    return "持续时间";
+                case PowerType.Range:
+                    return "范围";
+                case PowerType.Speed:
+                    return "速度";
+                case PowerType.Count:
+                    return "数量";
+                case PowerType.AttackCount:
+                    return "攻击数";
+                default:
+                    return "";
+            }
         }
     }
 }

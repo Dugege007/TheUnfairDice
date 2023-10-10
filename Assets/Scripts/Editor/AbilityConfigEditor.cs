@@ -40,12 +40,20 @@ namespace TheUnfairDice
                 for (int j = 0; j < config.Powers[i].PowerDatas.Length; j++)
                 {
                     EditorGUILayout.BeginHorizontal();
-                    // 设置标签宽度
-                    EditorGUILayout.LabelField("PowerType " + (j + 1) + ":", GUILayout.Width(80));
+                    // 设置动态标签名称
+                    EditorGUILayout.LabelField(
+                        config.Powers[i].GetPowerTypeName(config.Powers[i].PowerDatas[j].Type) + "：", 
+                        GUILayout.Width(60));
                     // 绘制PowerType下拉菜单和对应的数值输入框在同一行
-                    config.Powers[i].PowerDatas[j].Type = (AbilityPower.PowerType)EditorGUILayout.EnumPopup(config.Powers[i].PowerDatas[j].Type, GUILayout.MinWidth(120));
+                    config.Powers[i].PowerDatas[j].Type = (AbilityPower.PowerType)EditorGUILayout.EnumPopup(
+                        config.Powers[i].PowerDatas[j].Type,
+                        GUILayout.MinWidth(80));
+
+                    // 留空
+                    GUILayout.FlexibleSpace();
 
                     Undo.RecordObject(config, "Input Value");
+                    //EditorGUILayout.LabelField("值 " + (j + 1) + ":", GUILayout.Width(30));
                     config.Powers[i].PowerDatas[j].Value = EditorGUILayout.FloatField(config.Powers[i].PowerDatas[j].Value, GUILayout.MinWidth(60));
                     EditorUtility.SetDirty(config);
 

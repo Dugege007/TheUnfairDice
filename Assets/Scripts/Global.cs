@@ -7,20 +7,22 @@ namespace TheUnfairDice
 {
     public class Global : Architecture<Global>
     {
+        // 基本属性
         public static BindableProperty<float> HP = new(3);
         public static BindableProperty<float> MaxHP = new(3);
+        public static BindableProperty<float> Speed = new(3.5f);
         public static BindableProperty<int> Level = new(1);
 
-        public static BindableProperty<float> CollectableAreaRange = new(2);
-
-        public static BindableProperty<int> Exp = new(0);
+        // 升级道具
         public static BindableProperty<int> Gold = new(0);
-        public static BindableProperty<int> Spirit = new(0);
 
+        // 游戏中
+        public static BindableProperty<int> Exp = new(0);
+        public static BindableProperty<int> Spirit = new(0);
+        public static BindableProperty<float> CollectableRange = new(2);
         public static BindableProperty<float> ExpPercent = new(0.5f);
         public static BindableProperty<float> GoldPercent = new(0.1f);
         public static BindableProperty<float> SpiritPercent = new(0.1f);
-
         public static BindableProperty<float> CurrentSec = new(0);
 
         #region 玩家能力

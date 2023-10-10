@@ -7,7 +7,7 @@ namespace TheUnfairDice
     {
         private void Start()
         {
-            Global.CollectableAreaRange.RegisterWithInitValue(range =>
+            Global.CollectableRange.RegisterWithInitValue(range =>
             {
                 GetComponent<CircleCollider2D>().radius = range;
 
