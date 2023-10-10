@@ -7,23 +7,25 @@ namespace TheUnfairDice
 {
     public class Global : Architecture<Global>
     {
+        private static PlayerConfig mPlayerConfig;
+
         // 基本属性
-        public static BindableProperty<float> HP = new(3);
-        public static BindableProperty<float> MaxHP = new(3);
-        public static BindableProperty<float> Speed = new(3.5f);
-        public static BindableProperty<int> Level = new(1);
+        public static BindableProperty<float> HP = new(ConfigManager.Default.PlayerConfig.HP);
+        public static BindableProperty<float> MaxHP = new(ConfigManager.Default.PlayerConfig.MaxHP);
+        public static BindableProperty<float> Speed = new(ConfigManager.Default.PlayerConfig.Speed);
 
         // 升级道具
-        public static BindableProperty<int> Gold = new(0);
+        public static BindableProperty<int> Gold = new(ConfigManager.Default.PlayerConfig.InitGold);
 
         // 游戏中
-        public static BindableProperty<int> Exp = new(0);
-        public static BindableProperty<int> Spirit = new(0);
-        public static BindableProperty<float> CollectableRange = new(2);
-        public static BindableProperty<float> ExpPercent = new(0.5f);
-        public static BindableProperty<float> GoldPercent = new(0.1f);
-        public static BindableProperty<float> SpiritPercent = new(0.1f);
-        public static BindableProperty<float> CurrentSec = new(0);
+        public static BindableProperty<int> Level = new(ConfigManager.Default.PlayerConfig.Level);
+        public static BindableProperty<int> Exp = new(ConfigManager.Default.PlayerConfig.InitExp);
+        public static BindableProperty<int> Spirit = new(ConfigManager.Default.PlayerConfig.InitSpirit);
+        public static BindableProperty<float> CollectableRange = new(ConfigManager.Default.PlayerConfig.InitCollectableRange);
+        public static BindableProperty<float> ExpPercent = new(ConfigManager.Default.PlayerConfig.InitExpPercent);
+        public static BindableProperty<float> GoldPercent = new(ConfigManager.Default.PlayerConfig.InitGoldPercent);
+        public static BindableProperty<float> SpiritPercent = new(ConfigManager.Default.PlayerConfig.InitSpiritPercent);
+        public static BindableProperty<float> CurrentSec = new(ConfigManager.Default.PlayerConfig.InitCurrentSec);
 
         #region 玩家能力
         // 水
@@ -79,9 +81,9 @@ namespace TheUnfairDice
 
         public static void ResetData()
         {
-            HP.Value = 3;
-            MaxHP.Value = 3;
-            CurrentSec.Value = 0;
+            HP.Value = ConfigManager.Default.PlayerConfig.HP;
+            MaxHP.Value = ConfigManager.Default.PlayerConfig.MaxHP;
+            CurrentSec.Value = ConfigManager.Default.PlayerConfig.InitCurrentSec;
             Fortress.HP.Value = 20;
             Fortress.CurrentHumanCount.Value = 0;
             EnemyGenerator.TotalEnemyCount.Value = 0;

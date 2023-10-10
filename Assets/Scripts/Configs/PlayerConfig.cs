@@ -7,7 +7,10 @@ namespace TheUnfairDice
     [CreateAssetMenu(menuName = "Config/Player Config")]
     public class PlayerConfig : EntityBaseConfig
     {
+        public float MaxHP = 3;
+
         [Header("≥ı º÷µ")]
+        public int Level = 1;
         public int InitGold = 0;
         public int InitExp = 0;
         public int InitSpirit = 0;

@@ -36,6 +36,7 @@ namespace TheUnfairDice
                 {
                     Global.Exp.Value -= Global.ExpToNextLevel();
                     Global.Level.Value++;
+                    CurrentExpText.text = "当前经验：" + exp + "/" + Global.ExpToNextLevel();
                 }
 
             }).UnRegisterWhenGameObjectDestroyed(gameObject);

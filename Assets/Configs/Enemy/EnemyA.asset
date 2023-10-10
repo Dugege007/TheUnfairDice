@@ -15,12 +15,10 @@ MonoBehaviour:
   Name: 
   Key: 
   Description: 
-  MaxHP: 3
   HP: 3
   Damage: 1
   Speed: 1.5
-  IsActive: 1
-  EnemyPrefab: {fileID: 0}
   InitExpPercent: 0
   InitGoldPercent: 0
   InitSpiritPercent: 0
+  IsTargetFortress: 0

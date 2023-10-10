@@ -1,20 +1,40 @@
 using UnityEngine;
 using QFramework;
+using System.Collections.Generic;
 
 namespace TheUnfairDice
 {
     public partial class EnemyGenerator : ViewController
     {
+        public LevelConfig LevelConfig;
+
         private float mCurrentGenerateSec = 0;
-        public float GenerateSec = 1f;
-        public int MaxEnemyCount = 50;
         public static BindableProperty<int> TotalEnemyCount = new(0);
         public static BindableProperty<int> CurrentEnemyCount = new(0);
+
+        private float mCurrentWaveSec = 0;
+        private Queue<EnemyWave> mEnemyWavesQueue = new Queue<EnemyWave>();
+
+        public int WaveCount = 0;
+        private int mTotalWaveCount = 0;
+        public bool IsLastWave => WaveCount == mTotalWaveCount;
+
+        private EnemyWave mCurrentWave = null;
+        public EnemyWave CurrentWave => mCurrentWave;
 
         private bool mAttackFortress = false;
 
         private void Start()
         {
+            foreach (var group in LevelConfig.WaveGroups)
+            {
+                foreach (var wave in group.Waves)
+                {
+                    mEnemyWavesQueue.Enqueue(wave);
+                    mTotalWaveCount++;
+                }
+            }
+
             CurrentEnemyCount.Register(enemyCount =>
             {
                 if (enemyCount >= 20)
@@ -27,18 +47,24 @@ namespace TheUnfairDice
 
         private void Update()
         {
-            if(TotalEnemyCount.Value >= MaxEnemyCount)
+            if (mCurrentWave == null)
             {
-                if (CurrentEnemyCount.Value == 0)
+                if (mEnemyWavesQueue.Count > 0)
                 {
-                    UIKit.OpenPanel<UIGamePassPanel>();
+                    WaveCount++;
+                    mCurrentWave = mEnemyWavesQueue.Dequeue();
+
+                    mCurrentGenerateSec = 0;
+                    mCurrentWaveSec = 0;
                 }
             }
-            else
+
+            if (mCurrentWave != null)
             {
                 mCurrentGenerateSec += Time.deltaTime;
+                mCurrentWaveSec += Time.deltaTime;
 
-                if (mCurrentGenerateSec >= GenerateSec)
+                if (mCurrentGenerateSec > mCurrentWave.GenerateCDTime)
                 {
                     mCurrentGenerateSec = 0;
 
@@ -73,17 +99,22 @@ namespace TheUnfairDice
                             if (Vector2.Distance(pos, Fortress.Default.Position()) > 8f) break;
                         }
 
-                        Enemy.InstantiateWithParent(this)
+                        mCurrentWave.EnemyPrefab.InstantiateWithParent(this)
                             .Position(pos)
                             .Self(self =>
                             {
                                 if (mAttackFortress)
-                                    self.IsTargetFortress = true;
+                                    self.GetComponent<Enemy>().IsTargetFortress = true;
                             })
                             .Show();
 
                         TotalEnemyCount.Value++;
                     }
+                }
+
+                if (mCurrentWaveSec > mCurrentWave.WaveDurationSec)
+                {
+                    mCurrentWave = null;
                 }
             }
         }

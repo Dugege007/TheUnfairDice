@@ -13,14 +13,21 @@ MonoBehaviour:
   m_Name: Level_1
   m_EditorClassIdentifier: 
   WaveGroups:
-  - Name: 
+  - Name: 1
     IsActive: 1
     Description: 
     Waves:
-    - Name: 
+    - Name: 1-1
       IsActive: 1
-      EnemyObj: {fileID: 0}
+      EnemyPrefab: {fileID: 7372499381270017206, guid: 64be4995815d39b45a67bbe781debd5c, type: 3}
       GenerateCDTime: 1
+      WaveDurationSec: 10
+      HPScale: 1
+      SpeedScale: 1
+    - Name: 1-2
+      IsActive: 1
+      EnemyPrefab: {fileID: 7372499381270017206, guid: 64be4995815d39b45a67bbe781debd5c, type: 3}
+      GenerateCDTime: 0.5
       WaveDurationSec: 10
       HPScale: 1
       SpeedScale: 1

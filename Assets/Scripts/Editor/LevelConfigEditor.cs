@@ -51,7 +51,7 @@ namespace TheUnfairDice
                 // 绘制波次组标签
                 EditorGUILayout.LabelField("组名：", GUILayout.Width(80));
                 // 绘制波次组名称输入框
-                config.WaveGroups[i].Name = EditorGUILayout.TextField(config.WaveGroups[i].Name);
+                config.WaveGroups[i].Name = EditorGUILayout.TextField(config.WaveGroups[i].Name = (i + 1).ToString());
                 EditorGUILayout.EndHorizontal();
 
                 EditorGUILayout.BeginHorizontal();
@@ -75,7 +75,12 @@ namespace TheUnfairDice
 
                     EditorGUILayout.BeginHorizontal();
                     // 绘制波次标签
-                    EditorGUILayout.LabelField((j + 1) + " " + config.WaveGroups[i].Waves[j].Name + "：", GUILayout.Width(100));
+                    EditorGUILayout.LabelField((i + 1) + "-" + (j + 1) + " 波次：", GUILayout.Width(100));
+                    // 检查名称是否为空或只包含空白字符
+                    if (string.IsNullOrWhiteSpace(config.WaveGroups[i].Waves[j].Name))
+                    {
+                        config.WaveGroups[i].Waves[j].Name = (i + 1) + "-" + (j + 1);
+                    }
                     // 绘制波次名称输入框
                     config.WaveGroups[i].Waves[j].Name = EditorGUILayout.TextField(config.WaveGroups[i].Waves[j].Name);
                     EditorGUILayout.EndHorizontal();
@@ -85,7 +90,7 @@ namespace TheUnfairDice
                     // 绘制波次的其他属性
                     config.WaveGroups[i].Waves[j].IsActive = EditorGUILayout.Toggle("是否激活：", config.WaveGroups[i].Waves[j].IsActive);
 
-                    config.WaveGroups[i].Waves[j].EnemyObj = (GameObject)EditorGUILayout.ObjectField("敌人预制体：", config.WaveGroups[i].Waves[j].EnemyObj, typeof(GameObject), false);
+                    config.WaveGroups[i].Waves[j].EnemyPrefab = (GameObject)EditorGUILayout.ObjectField("敌人预制体：", config.WaveGroups[i].Waves[j].EnemyPrefab, typeof(GameObject), false);
                     config.WaveGroups[i].Waves[j].GenerateCDTime = EditorGUILayout.FloatField("生成冷却时间：", config.WaveGroups[i].Waves[j].GenerateCDTime);
                     config.WaveGroups[i].Waves[j].WaveDurationSec = EditorGUILayout.FloatField("波次持续时间：", config.WaveGroups[i].Waves[j].WaveDurationSec);
 

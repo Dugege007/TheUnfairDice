@@ -30,7 +30,7 @@ namespace TheUnfairDice
         public bool IsActive = true;
 
         [Header("敌人配置")]
-        public GameObject EnemyObj;
+        public GameObject EnemyPrefab;
         public float GenerateCDTime = 1f;
         public float WaveDurationSec = 10f;
 

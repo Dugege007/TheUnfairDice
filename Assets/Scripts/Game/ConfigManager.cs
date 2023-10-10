@@ -7,7 +7,7 @@ namespace TheUnfairDice
     {
         public static ConfigManager Default;
 
-        
+        public PlayerConfig PlayerConfig;
 
         public AbilityConfig[] AbilityConfigs = new AbilityConfig[0];
 

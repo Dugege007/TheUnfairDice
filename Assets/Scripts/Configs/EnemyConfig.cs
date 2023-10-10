@@ -11,5 +11,8 @@ namespace TheUnfairDice
         public float InitExpPercent = 0;
         public float InitGoldPercent = 0;
         public float InitSpiritPercent = 0;
+
+        [Header("ÊÇ·ñ¹¥»÷ÒªÈû")]
+        public bool IsTargetFortress = false;
     }
 }

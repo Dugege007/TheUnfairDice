@@ -7,8 +7,6 @@ namespace TheUnfairDice
     {
         public static Player Default;
 
-        public float MovementSpeed = 3.5f;
-
         private void Awake()
         {
             Default = this;
@@ -38,7 +36,7 @@ namespace TheUnfairDice
             float horizontal = Input.GetAxisRaw("Horizontal");
             float vertical = Input.GetAxisRaw("Vertical");
 
-            Rigidbody2D.velocity = new Vector2(horizontal, vertical).normalized * MovementSpeed;
+            Rigidbody2D.velocity = new Vector2(horizontal, vertical).normalized * Global.Speed.Value;
         }
 
         private void Update()
