@@ -28,6 +28,6 @@ MonoBehaviour:
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace TheUnfairDice\r\n{\r\n\tpublic
       partial class HolySword : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:4cf88297-499f-4c1d-a596-b037e2635026\r\nusing UnityEngine;\r\n\r\nnamespace
+    DesignerCode: "// Generate Id:8cd98ac9-9874-43fe-8bc9-7df235b91d29\r\nusing UnityEngine;\r\n\r\nnamespace
       TheUnfairDice\r\n{\r\n\tpublic partial class HolySword\r\n\t{\r\n\r\n\t\tpublic
       UnityEngine.BoxCollider2D Sword;\r\n\r\n\t}\r\n}\r\n"

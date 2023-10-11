@@ -1,4 +1,4 @@
-// Generate Id:4cf88297-499f-4c1d-a596-b037e2635026
+// Generate Id:8cd98ac9-9874-43fe-8bc9-7df235b91d29
 using UnityEngine;
 
 namespace TheUnfairDice

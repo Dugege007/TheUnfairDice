@@ -11,14 +11,6 @@ namespace TheUnfairDice
 
         private void Start()
         {
-            Global.HolySwordUnlocked.RegisterWithInitValue(unlocked =>
-            {
-                if (unlocked)
-                    this.LocalScale(3);
-                else
-                    this.LocalScale(1);
-
-            }).UnRegisterWhenGameObjectDestroyed(gameObject);
         }
 
         private void Update()
