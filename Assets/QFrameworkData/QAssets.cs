@@ -11,6 +11,11 @@
 namespace QAssetBundle
 {
     
+    public class Fusionpixel12pxzh_hans_ttf
+    {
+        public const string BundleName = "fusion-pixel-12px-zh_hans_ttf";
+        public const string FUSIONPIXEL12PXZH_HANS = "fusion-pixel-12px-zh_hans";
+    }
     public class Sfx
     {
         public const string BundleName = "sfx";

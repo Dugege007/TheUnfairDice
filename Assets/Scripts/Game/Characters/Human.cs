@@ -14,6 +14,8 @@ namespace TheUnfairDice
         public float WaitTime = 5f;
         private float mRandomTime;
 
+        private float mRandomDegrees = 0;
+
         private bool mFaceRight;
 
         public enum State
@@ -33,14 +35,14 @@ namespace TheUnfairDice
                 .OnEnter(() =>
                 {
                     mRandomTime = Random.Range(PatrolTime - 1, PatrolTime + 1);
+                    // 朝要塞反方向的 60 度范围内移动
+                    mRandomDegrees = Random.Range(-30, 30);
                 })
                 .OnFixedUpdate(() =>
                 {
-                    // 朝要塞反方向的 60 度范围内移动
-                    float randomDegrees = Random.Range(-30, 30);
-                    Vector2 direction = Quaternion.Euler(0, 0, randomDegrees) * (this.Position() - Fortress.Default.Position()).normalized;
+                    Vector2 direction = Quaternion.Euler(0, 0, mRandomDegrees) * (this.Position() - Fortress.Default.Position()).normalized;
 
-                    SelfRigidbody2D.velocity = direction * WalkSpeed;
+                    Move(direction);
 
                     if (FSM.FrameCountOfCurrentState >= 60 * mRandomTime)
                         FSM.ChangeState(State.Idle);
@@ -51,6 +53,8 @@ namespace TheUnfairDice
                 {
                     SelfRigidbody2D.velocity = Vector2.zero;
                     mRandomTime = Random.Range(WaitTime - 1, WaitTime + 1);
+
+                    Animator.Play("IdleRight");
                 })
                 .OnUpdate(() =>
                 {
@@ -79,8 +83,6 @@ namespace TheUnfairDice
                     {
                         HP--;
                         Enemy enemy = hurtBox.Owner.GetComponent<Enemy>();
-                        enemy.GetHurt(1);
-
                     }
                 }
 
@@ -102,24 +104,23 @@ namespace TheUnfairDice
         private void FixedUpdate()
         {
             FSM.FixedUpdate();
+        }
 
-            float velocityX = SelfRigidbody2D.velocity.x;
-            float velocityY = SelfRigidbody2D.velocity.y;
-
-            if (velocityX > 0.1f)
+        private void Move(Vector3 direction)
+        {
+            if (direction.x > 0.1f)
                 mFaceRight = true;
-            else if (velocityX < 0.1f)
+            else if (direction.x < 0.1f)
                 mFaceRight = false;
 
-            if (velocityX < 0.1f && velocityY < 0.1f)
-                Sprite.Play("IdleRight");
-            else
-                Sprite.Play("WalkRight");
+            Animator.Play("WalkRight");
 
             if (mFaceRight)
                 Sprite.LocalScaleX(1);
             else
                 Sprite.LocalScaleX(-1);
+
+            SelfRigidbody2D.velocity = direction * WalkSpeed;
         }
     }
 }

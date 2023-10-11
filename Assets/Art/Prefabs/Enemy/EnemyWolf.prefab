@@ -208,7 +208,7 @@ MonoBehaviour:
   MarkType: 0
   CustomComponentName: Sprite
   CustomComment: 
-  mComponentName: Animator
+  mComponentName: UnityEngine.SpriteRenderer
 --- !u!1 &5216370771193994590
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,8 +265,9 @@ MonoBehaviour:
   PrefabFolder: Assets/Art/Prefab
   EnemyConfig: {fileID: 11400000, guid: 09772fc031f4f5049bcf8266514a24e9, type: 2}
   IsTargetFortress: 0
-  Sprite: {fileID: 3346792629461439647}
+  Sprite: {fileID: 8190232503663993946}
   SelfRigidbody2D: {fileID: 3772788219326991453}
+  Animator: {fileID: 3346792629461439647}
 --- !u!50 &3772788219326991453
 Rigidbody2D:
   serializedVersion: 4
@@ -309,6 +310,8 @@ MonoBehaviour:
   Binds:
   - MemberName: SelfRigidbody2D
     Object: {fileID: 3772788219326991453}
+  - MemberName: Animator
+    Object: {fileID: 3346792629461439647}
 --- !u!1 &5238302973673625420
 GameObject:
   m_ObjectHideFlags: 0

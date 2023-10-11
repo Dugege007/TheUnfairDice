@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f77440dc1c86038459251bc6187d5a04, type: 3}
+  m_Name: Fortress_1
+  m_EditorClassIdentifier: 
+  Name: "\u8981\u585E_1"
+  Key: fortress_1
+  Description: 
+  HP: 20
+  Damage: 1
+  Speed: 0

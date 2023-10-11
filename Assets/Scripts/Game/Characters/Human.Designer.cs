@@ -1,4 +1,4 @@
-// Generate Id:6352183a-8f1b-4fe0-b5bf-75ae494ea775
+// Generate Id:d18ad072-ea29-4790-a100-33ab10884fda
 using UnityEngine;
 
 namespace TheUnfairDice
@@ -6,11 +6,13 @@ namespace TheUnfairDice
 	public partial class Human
 	{
 
-		public Animator Sprite;
+		public UnityEngine.SpriteRenderer Sprite;
 
 		public UnityEngine.CircleCollider2D HitHurtBox;
 
 		public UnityEngine.Rigidbody2D SelfRigidbody2D;
+
+		public UnityEngine.Animator Animator;
 
 	}
 }

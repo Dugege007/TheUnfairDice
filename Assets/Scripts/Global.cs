@@ -10,7 +10,9 @@ namespace TheUnfairDice
     {
         private static PlayerConfig mPlayerConfig;
 
-        // 基本属性
+        public static BindableProperty<float> FortressHP = new(ConfigManager.Default.PlayerConfig.HP);
+
+        // 玩家属性
         public static BindableProperty<float> HP = new(ConfigManager.Default.PlayerConfig.HP);
         public static BindableProperty<float> MaxHP = new(ConfigManager.Default.PlayerConfig.MaxHP);
         public static BindableProperty<float> Damage = new(ConfigManager.Default.PlayerConfig.Damage);
@@ -72,6 +74,8 @@ namespace TheUnfairDice
         [RuntimeInitializeOnLoadMethod]
         public static void AutoInit()
         {
+            // 设置音频播放模式为：相同音频在 10 帧内不重复播放
+            AudioKit.PlaySoundMode = AudioKit.PlaySoundModes.IgnoreSameSoundInGlobalFrames;
             // 初始化资源
             ResKit.Init();
             // 设置帧率

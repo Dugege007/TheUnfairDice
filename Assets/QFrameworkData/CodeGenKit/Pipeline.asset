@@ -15,19 +15,24 @@ MonoBehaviour:
   CurrentTask:
     ShowLog: 0
     Status: 1
-    GameObject: {fileID: 5216370771193994590, guid: 9a8510447ce151241ba0331f4d3bfc3d, type: 3}
+    GameObject: {fileID: 0}
     From: 0
     NameToFullName: []
     BindInfos:
-    - TypeName: Animator
+    - TypeName: UnityEngine.SpriteRenderer
       PathToRoot: Sprite
       MemberName: Sprite
+    - TypeName: UnityEngine.CircleCollider2D
+      PathToRoot: HitHurtBox
+      MemberName: HitHurtBox
     ScriptsFolder: Assets/Scripts/Game/Characters
-    ClassName: Enemy
+    ClassName: Human
     Namespace: TheUnfairDice
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace TheUnfairDice\r\n{\r\n\tpublic
-      partial class Enemy : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      partial class Human : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:7df712bb-1a85-4567-9520-08b658ee69d0\r\nusing UnityEngine;\r\n\r\nnamespace
-      TheUnfairDice\r\n{\r\n\tpublic partial class Enemy\r\n\t{\r\n\r\n\t\tpublic
-      Animator Sprite;\r\n\r\n\t\tpublic UnityEngine.Rigidbody2D SelfRigidbody2D;\r\n\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:d18ad072-ea29-4790-a100-33ab10884fda\r\nusing UnityEngine;\r\n\r\nnamespace
+      TheUnfairDice\r\n{\r\n\tpublic partial class Human\r\n\t{\r\n\r\n\t\tpublic
+      UnityEngine.SpriteRenderer Sprite;\r\n\r\n\t\tpublic UnityEngine.CircleCollider2D
+      HitHurtBox;\r\n\r\n\t\tpublic UnityEngine.Rigidbody2D SelfRigidbody2D;\r\n\r\n\t\tpublic
+      UnityEngine.Animator Animator;\r\n\r\n\t}\r\n}\r\n"

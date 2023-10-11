@@ -22,6 +22,8 @@ namespace TheUnfairDice
         private float mRandomTime = 0;
         private float mChangeToFortressTimer = 0;
 
+        private bool mIgnoreHurt = false;
+
         public enum State
         {
             Idle,           // 站立
@@ -49,6 +51,10 @@ namespace TheUnfairDice
                             FSM.ChangeState(State.Idle);
                         }
                     }
+                    else
+                    {
+                        SelfRigidbody2D.velocity = Vector2.zero;
+                    }
                 });
 
             FSM.State(State.Idle)
@@ -57,7 +63,7 @@ namespace TheUnfairDice
                     SelfRigidbody2D.velocity = Vector2.zero;
                     mRandomTime = Random.Range(mWaitTime - 1, mWaitTime + 1);
 
-                    Sprite.Play("IdleRight");
+                    Animator.Play("IdleRight");
                 })
                 .OnUpdate(() =>
                 {
@@ -77,7 +83,7 @@ namespace TheUnfairDice
             FSM.State(State.AttackFortress)
                 .OnFixedUpdate(() =>
                 {
-                    if (Player.Default)
+                    if (Player.Default && Fortress.Default)
                     {
                         Vector3 direction = (Fortress.Default.Position() - this.Position()).normalized;
                         Move(direction);
@@ -91,6 +97,10 @@ namespace TheUnfairDice
                             IsTargetFortress = false;
                             FSM.ChangeState(State.Chace);
                         }
+                    }
+                    else
+                    {
+                        SelfRigidbody2D.velocity = Vector2.zero;
                     }
                 });
 
@@ -123,21 +133,17 @@ namespace TheUnfairDice
             {
                 Global.GeneratePowerUp(gameObject);
                 this.DestroyGameObjGracefully();
-
-                AudioKit.PlaySound(Sfx.ENEMYDEAD);
             }
         }
 
         private void Move(Vector3 direction)
         {
-            float velocityX = SelfRigidbody2D.velocity.x;
-
-            if (velocityX > 0.1f)
+            if (direction.x > 0.1f)
                 mFaceRight = true;
-            else if (velocityX < 0.1f)
+            else if (direction.x < 0.1f)
                 mFaceRight = false;
 
-            Sprite.Play("WalkRight");
+            Animator.Play("WalkRight");
 
             if (mFaceRight)
                 Sprite.LocalScaleX(1);
@@ -147,11 +153,34 @@ namespace TheUnfairDice
             SelfRigidbody2D.velocity = direction * mSpeed;
         }
 
-        public void GetHurt(float hurtValue)
+        public void GetHurt(float hurtValue, bool force = false, bool critical = false)
         {
-            mHP -= hurtValue;
+            if (mIgnoreHurt && !force) return;
 
+            Color cacheColor = Sprite.color;
+
+            // 停止移动
+            SelfRigidbody2D.velocity = Vector3.zero;
+            // 忽略伤害
+            mIgnoreHurt = true;
+            // 变为红色
+            Sprite.color = Color.red;
+            // 伤害飘字
+            FloatingTextController.Play(transform.position + Vector3.up * 0.5f, hurtValue.ToString("0"), critical);
+            // 播放音效
             AudioKit.PlaySound(Sfx.ENEMYHURT);
+
+            // 延时执行
+            ActionKit.Delay(0.15f, () =>
+            {
+                // 减血
+                mHP -= hurtValue;
+                // 变回白色
+                Sprite.color = cacheColor;
+                // 在受伤期间不再受到伤害，避免冲突
+                mIgnoreHurt = false;
+
+            }).Start(this);   // 自身执行
         }
 
         private void OnDestroy()
