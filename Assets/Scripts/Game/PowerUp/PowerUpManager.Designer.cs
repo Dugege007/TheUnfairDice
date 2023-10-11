@@ -1,4 +1,4 @@
-// Generate Id:93cf08be-7d08-4870-a679-44f56f77166f
+// Generate Id:30f5b179-3cc4-430a-bff2-3e50197ebfd2
 using UnityEngine;
 
 namespace TheUnfairDice
@@ -7,6 +7,12 @@ namespace TheUnfairDice
 	{
 
 		public QFramework.ViewController Exp;
+
+		public TheUnfairDice.Gold Gold;
+
+		public TheUnfairDice.HP HP;
+
+		public TheUnfairDice.GetAllExp GetAllExp;
 
 	}
 }

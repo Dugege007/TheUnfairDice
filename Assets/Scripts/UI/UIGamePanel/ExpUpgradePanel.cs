@@ -61,7 +61,8 @@ namespace TheUnfairDice
 
                         itemCache.CurrentLevel.RegisterWithInitValue(lv =>
                         {
-                            selfCache.GetComponentInChildren<Text>().text = itemCache.Description;
+                            if (selfCache != null)
+                                selfCache.GetComponentInChildren<Text>().text = itemCache.Description;
 
                         }).UnRegisterWhenGameObjectDestroyed(selfCache);
                     });

@@ -1,10 +1,12 @@
-// Generate Id:82e5dc72-d401-4c38-865b-6432c0a0ac36
+// Generate Id:6352183a-8f1b-4fe0-b5bf-75ae494ea775
 using UnityEngine;
 
 namespace TheUnfairDice
 {
 	public partial class Human
 	{
+
+		public Animator Sprite;
 
 		public UnityEngine.CircleCollider2D HitHurtBox;
 

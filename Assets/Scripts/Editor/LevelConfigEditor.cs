@@ -76,11 +76,10 @@ namespace TheUnfairDice
                     EditorGUILayout.BeginHorizontal();
                     // 绘制波次标签
                     EditorGUILayout.LabelField((i + 1) + "-" + (j + 1) + " 波次：", GUILayout.Width(100));
-                    // 检查名称是否为空或只包含空白字符
-                    if (string.IsNullOrWhiteSpace(config.WaveGroups[i].Waves[j].Name))
-                    {
-                        config.WaveGroups[i].Waves[j].Name = (i + 1) + "-" + (j + 1);
-                    }
+                    if (config.WaveGroups[i].Waves[j].EnemyPrefab)
+                        config.WaveGroups[i].Waves[j].Name = config.WaveGroups[i].Waves[j].EnemyPrefab.GetComponent<Enemy>().EnemyConfig.Name;
+                    else
+                        config.WaveGroups[i].Waves[j].Name = "Null";
                     // 绘制波次名称输入框
                     config.WaveGroups[i].Waves[j].Name = EditorGUILayout.TextField(config.WaveGroups[i].Waves[j].Name);
                     EditorGUILayout.EndHorizontal();

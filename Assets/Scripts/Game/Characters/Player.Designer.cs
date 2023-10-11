@@ -1,4 +1,4 @@
-// Generate Id:65131580-2164-48a7-86c8-77446859e1bd
+// Generate Id:005e5d79-66f5-46ab-96d3-43b46a5f703e
 using UnityEngine;
 
 namespace TheUnfairDice
@@ -6,9 +6,13 @@ namespace TheUnfairDice
 	public partial class Player
 	{
 
+		public Animator Sprite;
+
 		public UnityEngine.CircleCollider2D HitHurtBox;
 
-		public CircleCollider2D CollectableArea;
+		public UnityEngine.UI.Image HPValue;
+
+		public Animator Death;
 
 		public UnityEngine.Rigidbody2D Rigidbody2D;
 

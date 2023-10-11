@@ -15,7 +15,10 @@ namespace TheUnfairDice
             mData = uiData as UIGameOverPanelData ?? new UIGameOverPanelData();
             // please add init code here
 
-            Time.timeScale = 0;
+            ActionKit.Delay(0.5f, () =>
+            {
+                Time.timeScale = 0;
+            });
 
             BackToHomeBtn.onClick.AddListener(() =>
             {

@@ -12,6 +12,7 @@ namespace TheUnfairDice
         // 基本属性
         public static BindableProperty<float> HP = new(ConfigManager.Default.PlayerConfig.HP);
         public static BindableProperty<float> MaxHP = new(ConfigManager.Default.PlayerConfig.MaxHP);
+        public static BindableProperty<float> Damage = new(ConfigManager.Default.PlayerConfig.Damage);
         public static BindableProperty<float> Speed = new(ConfigManager.Default.PlayerConfig.Speed);
 
         // 升级道具
@@ -23,8 +24,10 @@ namespace TheUnfairDice
         public static BindableProperty<int> Spirit = new(ConfigManager.Default.PlayerConfig.InitSpirit);
         public static BindableProperty<float> CollectableRange = new(ConfigManager.Default.PlayerConfig.InitCollectableRange);
         public static BindableProperty<float> ExpPercent = new(ConfigManager.Default.PlayerConfig.InitExpPercent);
+        public static BindableProperty<float> HPPercent = new(ConfigManager.Default.PlayerConfig.InitHPPercent);
         public static BindableProperty<float> GoldPercent = new(ConfigManager.Default.PlayerConfig.InitGoldPercent);
         public static BindableProperty<float> SpiritPercent = new(ConfigManager.Default.PlayerConfig.InitSpiritPercent);
+        public static BindableProperty<float> GetAllExpPercent = new(ConfigManager.Default.PlayerConfig.InitGetAllExpPercent);
         public static BindableProperty<float> CurrentSec = new(ConfigManager.Default.PlayerConfig.InitCurrentSec);
 
         #region 玩家能力
@@ -83,6 +86,7 @@ namespace TheUnfairDice
         {
             HP.Value = ConfigManager.Default.PlayerConfig.HP;
             MaxHP.Value = ConfigManager.Default.PlayerConfig.MaxHP;
+            Damage.Value = ConfigManager.Default.PlayerConfig.Damage;
             CurrentSec.Value = ConfigManager.Default.PlayerConfig.InitCurrentSec;
             Fortress.HP.Value = 20;
             Fortress.CurrentHumanCount.Value = 0;
@@ -102,6 +106,39 @@ namespace TheUnfairDice
             {
                 // 掉落经验值
                 PowerUpManager.Default.Exp.Instantiate()
+                    .Position(generaterObj.Position())
+                    .Show();
+
+                return;
+            }
+
+            percent = Random.Range(0, 1f);
+            if (percent <= GoldPercent.Value)
+            {
+                // 掉落金币
+                PowerUpManager.Default.Gold.Instantiate()
+                    .Position(generaterObj.Position())
+                    .Show();
+
+                return;
+            }
+
+            percent = Random.Range(0, 1f);
+            if (percent <= HPPercent.Value && !Object.FindObjectOfType<HP>())
+            {
+                // 掉落生命值
+                PowerUpManager.Default.HP.Instantiate()
+                    .Position(generaterObj.Position())
+                    .Show();
+
+                return;
+            }
+
+            percent = Random.Range(0, 1f);
+            if (percent <= GetAllExpPercent.Value && !Object.FindObjectOfType<GetAllExp>())
+            {
+                // 掉落吸收经验
+                PowerUpManager.Default.GetAllExp.Instantiate()
                     .Position(generaterObj.Position())
                     .Show();
 

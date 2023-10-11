@@ -41,18 +41,18 @@ namespace TheUnfairDice
                                     if (hurtBox.Owner.CompareTag("Enemy"))
                                     {
                                         Enemy enemy = hurtBox.Owner.GetComponent<Enemy>();
-                                        enemy.GetHurt(Global.HolyWaterDamage.Value);
+                                        enemy.GetHurt(Global.Damage.Value + Global.HolyWaterDamage.Value);
                                     }
                                 }
 
                             }).UnRegisterWhenGameObjectDestroyed(selfCache);
 
-                            float range = Global.HolyWaterRange.Value * 2;
+                            float range = Global.HolyWaterRange.Value / 1.7f;
 
                             // 添加动画
                             ActionKit.Sequence()
                                 // 逐渐变大
-                                .Lerp(1f, range, Global.HolyWaterDuration.Value, scale => selfCache.LocalScale(scale))
+                                .Lerp(0.5f, range, Global.HolyWaterDuration.Value, scale => selfCache.LocalScale(scale))
                                 .Callback(() =>
                                 {
                                     // 关闭碰撞
@@ -60,8 +60,8 @@ namespace TheUnfairDice
                                 })
                                 .Parallel(p =>
                                 {
-                                    // 稍微变大
-                                    p.Lerp(range, range + 1, 0.3f, scale => selfCache.LocalScale(scale));
+                                    // 稍微变小
+                                    p.Lerp(range, range - 0.5f, 0.3f, scale => selfCache.LocalScale(scale));
 
                                     float alpha = selfCache.GetComponent<SpriteRenderer>().color.a;
                                     p.Append(ActionKit.Sequence()

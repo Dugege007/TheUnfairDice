@@ -19,12 +19,14 @@ namespace TheUnfairDice
         private void CreateBalls()
         {
             int ballCount2Create = Global.HolyFireCount.Value - mFireBalls.Count;
+            float range = Global.HolyFireRange.Value * 0.4f;
 
             for (int i = 0; i < ballCount2Create; i++)
             {
                 mFireBalls.Add((FireBall)FireBall.Instantiate()
                     .SyncPosition2DFrom(this)
-                    .Show());
+                    .Show()
+                    .LocalScale(range));
             }
         }
     }

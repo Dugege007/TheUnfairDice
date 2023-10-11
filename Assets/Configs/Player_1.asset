@@ -15,15 +15,18 @@ MonoBehaviour:
   Name: Player_1
   Key: player_1
   Description: 
-  MaxHP: 3
   HP: 3
   Damage: 1
   Speed: 3.5
+  MaxHP: 3
+  Level: 1
   InitGold: 0
   InitExp: 0
   InitSpirit: 0
   InitCollectableRange: 2
   InitExpPercent: 0.4
+  InitHPPercent: 0.05
   InitGoldPercent: 0.05
   InitSpiritPercent: 0.05
+  InitGetAllExpPercent: 0.05
   InitCurrentSec: 0

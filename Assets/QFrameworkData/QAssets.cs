@@ -11,10 +11,22 @@
 namespace QAssetBundle
 {
     
-    public class Dice_png
+    public class Sfx
     {
-        public const string BundleName = "dice_png";
-        public const string DICE = "Dice";
+        public const string BundleName = "sfx";
+        public const string CLICK = "Click";
+        public const string DICEROLL = "DiceRoll";
+        public const string ENEMYDEAD = "EnemyDead";
+        public const string ENEMYHURT = "EnemyHurt";
+        public const string GAMEPASS = "GamePass";
+        public const string HOLYFIRE = "HolyFire";
+        public const string HOLYFIREHIT = "HolyFireHit";
+        public const string HOLYLIGHT = "HolyLight";
+        public const string HUMANHURT = "HumanHurt";
+        public const string LEVELUP = "LevelUp";
+        public const string PICKUP = "PickUp";
+        public const string PLAYERHURT = "PlayerHurt";
+        public const string UPGRADE = "Upgrade";
     }
     public class Uigameoverpanel_prefab
     {

@@ -5,6 +5,8 @@ namespace TheUnfairDice
 {
     public abstract class PowerUp : ViewController
     {
+        public bool InScreen { get; set; }
+
         public bool FlyingToPlayer { get; set; }
         private int mFlyingToPlayerFrameCount = 0;
 
@@ -33,6 +35,16 @@ namespace TheUnfairDice
                         Excute();
                 }
             }
+        }
+
+        private void OnBecameVisible()
+        {
+            InScreen = true;
+        }
+
+        private void OnBecameInvisible()
+        {
+            InScreen = false;
         }
     }
 }

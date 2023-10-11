@@ -189,7 +189,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3550215665225815906
 Transform:
   m_ObjectHideFlags: 0
@@ -252,6 +252,7 @@ MonoBehaviour:
   GeneratePrefab: 0
   PrefabFolder: Assets/Art/Prefab
   EnemyConfig: {fileID: 11400000, guid: fc98da18ed1b08d4f898320900ef5cd9, type: 2}
+  IsTargetFortress: 0
   SelfRgidbody2D: {fileID: 1473769008168988774}
 --- !u!114 &5909928851164623135
 MonoBehaviour:

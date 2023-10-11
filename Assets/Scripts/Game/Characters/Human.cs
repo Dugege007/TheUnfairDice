@@ -13,6 +13,8 @@ namespace TheUnfairDice
         public float WaitTime = 5f;
         private float mRandomTime;
 
+        private bool mFaceRight;
+
         public enum State
         {
             Idle,       // Õ¾Á¢
@@ -96,6 +98,24 @@ namespace TheUnfairDice
         private void FixedUpdate()
         {
             FSM.FixedUpdate();
+
+            float velocityX = SelfRigidbody2D.velocity.x;
+            float velocityY = SelfRigidbody2D.velocity.y;
+
+            if (velocityX > 0.1f)
+                mFaceRight = true;
+            else if (velocityX < 0.1f)
+                mFaceRight = false;
+
+            if (velocityX < 0.1f && velocityY < 0.1f)
+                Sprite.Play("IdleRight");
+            else
+                Sprite.Play("WalkRight");
+
+            if (mFaceRight)
+                Sprite.LocalScaleX(1);
+            else
+                Sprite.LocalScaleX(-1);
         }
     }
 }

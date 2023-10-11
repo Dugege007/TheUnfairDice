@@ -19,7 +19,7 @@ MonoBehaviour:
   InitDamage: 1
   InitCDTime: 10
   InitDuration: 8
-  InitRange: 0.5
+  InitRange: 1
   InitSpeed: 6
   InitCount: 0
   InitAttackCount: 10

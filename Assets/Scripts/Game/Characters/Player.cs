@@ -7,6 +7,8 @@ namespace TheUnfairDice
     {
         public static Player Default;
 
+        private bool mFaceRight;
+
         private void Awake()
         {
             Default = this;
@@ -29,12 +31,39 @@ namespace TheUnfairDice
                 }
 
             }).UnRegisterWhenGameObjectDestroyed(gameObject);
+
+            Global.HP.RegisterWithInitValue(hp =>
+            {
+                UpdateHP();
+
+            }).UnRegisterWhenGameObjectDestroyed(gameObject);
+
+            Global.MaxHP.RegisterWithInitValue(maxHP =>
+            {
+                UpdateHP();
+
+            }).UnRegisterWhenGameObjectDestroyed(gameObject);
         }
 
         private void FixedUpdate()
         {
             float horizontal = Input.GetAxisRaw("Horizontal");
             float vertical = Input.GetAxisRaw("Vertical");
+
+            if (horizontal > 0)
+                mFaceRight = true;
+            else if (horizontal < 0)
+                mFaceRight = false;
+
+            if (horizontal == 0 && vertical == 0)
+                Sprite.Play("IdleRight");
+            else
+                Sprite.Play("FlyRight");
+
+            if (mFaceRight)
+                Sprite.LocalScaleX(1);
+            else
+                Sprite.LocalScaleX(-1);
 
             Rigidbody2D.velocity = new Vector2(horizontal, vertical).normalized * Global.Speed.Value;
         }
@@ -43,10 +72,21 @@ namespace TheUnfairDice
         {
             if (Global.HP.Value <= 0)
             {
+                Death.Instantiate()
+                    .Position(this.Position())
+                    .LocalScale(Sprite.LocalScale())
+                    .Show()
+                    .Play("Death");
+
                 this.DestroyGameObjGracefully();
 
                 UIKit.OpenPanel<UIGameOverPanel>();
             }
+        }
+
+        private void UpdateHP()
+        {
+            HPValue.fillAmount = Global.HP.Value / (float)Global.MaxHP.Value;
         }
 
         private void OnDestroy()

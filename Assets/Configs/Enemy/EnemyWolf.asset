@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e90a192e5cf02254dae64013d311f625, type: 3}
-  m_Name: EnemyA
+  m_Name: EnemyWolf
   m_EditorClassIdentifier: 
-  Name: 
-  Key: 
+  Name: "\u91CE\u72FC"
+  Key: enemy_wolf
   Description: 
-  HP: 3
+  HP: 20
   Damage: 1
-  Speed: 1.5
+  Speed: 2
   InitExpPercent: 0
   InitGoldPercent: 0
   InitSpiritPercent: 0

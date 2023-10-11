@@ -27,11 +27,18 @@ namespace TheUnfairDice
                         }
 
                         Enemy enemy = hurtBox.Owner.GetComponent<Enemy>();
-                        enemy.GetHurt(Global.HolyFireDamage.Value);
+                        enemy.GetHurt(Global.Damage.Value + Global.HolyFireDamage.Value);
                     }
                 }
 
             }).UnRegisterWhenGameObjectDestroyed(gameObject);
+        }
+
+        private void Update()
+        {
+            if (Player.Default != null) return;
+
+            this.DestroyGameObjGracefully();
         }
 
         private void OnCollisionEnter2D(Collision2D collision)

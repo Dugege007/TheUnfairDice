@@ -1,4 +1,4 @@
-// Generate Id:c603d313-dea7-471a-8a87-9e98a024ebb9
+// Generate Id:7df712bb-1a85-4567-9520-08b658ee69d0
 using UnityEngine;
 
 namespace TheUnfairDice
@@ -6,7 +6,9 @@ namespace TheUnfairDice
 	public partial class Enemy
 	{
 
-		public UnityEngine.Rigidbody2D SelfRgidbody2D;
+		public Animator Sprite;
+
+		public UnityEngine.Rigidbody2D SelfRigidbody2D;
 
 	}
 }
