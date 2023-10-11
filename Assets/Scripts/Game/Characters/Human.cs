@@ -1,5 +1,6 @@
 using UnityEngine;
 using QFramework;
+using QAssetBundle;
 
 namespace TheUnfairDice
 {
@@ -79,6 +80,7 @@ namespace TheUnfairDice
                         HP--;
                         Enemy enemy = hurtBox.Owner.GetComponent<Enemy>();
                         enemy.GetHurt(1);
+
                     }
                 }
 
@@ -90,6 +92,8 @@ namespace TheUnfairDice
             if (HP <= 0)
             {
                 this.DestroyGameObjGracefully();
+
+                AudioKit.PlaySound(Sfx.HUMANHURT);
             }
 
             FSM.Update();

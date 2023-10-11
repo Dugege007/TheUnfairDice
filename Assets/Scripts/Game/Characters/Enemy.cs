@@ -1,5 +1,6 @@
 using UnityEngine;
 using QFramework;
+using QAssetBundle;
 
 namespace TheUnfairDice
 {
@@ -86,7 +87,7 @@ namespace TheUnfairDice
                         {
                             mChangeTargetDistanceMin = Mathf.Max(3, mChangeTargetDistanceMin - 3);
 
-                            // 目标改为为玩家
+                            // 目标改为玩家
                             IsTargetFortress = false;
                             FSM.ChangeState(State.Chace);
                         }
@@ -122,6 +123,8 @@ namespace TheUnfairDice
             {
                 Global.GeneratePowerUp(gameObject);
                 this.DestroyGameObjGracefully();
+
+                AudioKit.PlaySound(Sfx.ENEMYDEAD);
             }
         }
 
@@ -147,6 +150,8 @@ namespace TheUnfairDice
         public void GetHurt(float hurtValue)
         {
             mHP -= hurtValue;
+
+            AudioKit.PlaySound(Sfx.ENEMYHURT);
         }
 
         private void OnDestroy()

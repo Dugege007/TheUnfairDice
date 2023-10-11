@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using QFramework;
 using UnityEngine.SceneManagement;
+using QAssetBundle;
 
 namespace TheUnfairDice
 {
@@ -20,6 +21,8 @@ namespace TheUnfairDice
             // 开始游戏
             StartGameBtn.onClick.AddListener(() =>
             {
+                AudioKit.PlaySound(Sfx.CLICK);
+
                 UIKit.ClosePanel(this);
                 Global.ResetData();
                 SceneManager.LoadScene("Game");
@@ -28,6 +31,8 @@ namespace TheUnfairDice
             // 退出游戏
             QuitBtn.onClick.AddListener(() =>
             {
+                AudioKit.PlaySound(Sfx.CLICK);
+
                 UIKit.ClosePanel(this);
 #if UNITY_EDITOR
                 UnityEditor.EditorApplication.isPlaying = false;

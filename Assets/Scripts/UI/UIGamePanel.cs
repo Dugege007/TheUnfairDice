@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using QFramework;
+using QAssetBundle;
 
 namespace TheUnfairDice
 {
@@ -49,6 +50,8 @@ namespace TheUnfairDice
 
             Global.Level.Register(level =>
             {
+                AudioKit.PlaySound(Sfx.LEVELUP);
+
                 Time.timeScale = 0;
                 ExpUpgradePanel.Show();
 

@@ -18,9 +18,10 @@ namespace TheUnfairDice
         {
             Global.Exp.Value++;
 
-            AudioKit.PlaySound(Sfx.PICKUP);
             GetComponent<SpriteRenderer>().sortingOrder = 1;
             this.DestroyGameObjGracefully();
+
+            AudioKit.PlaySound(Sfx.PICKUP);
         }
     }
 }

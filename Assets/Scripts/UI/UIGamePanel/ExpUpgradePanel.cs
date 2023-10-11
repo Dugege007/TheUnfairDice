@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using QFramework;
+using QAssetBundle;
 
 namespace TheUnfairDice
 {
@@ -30,6 +31,9 @@ namespace TheUnfairDice
 
                         self.onClick.AddListener(() =>
                         {
+                            AudioKit.PlaySound(Sfx.CLICK);
+                            AudioKit.PlaySound(Sfx.UPGRADE);
+
                             Time.timeScale = 1.0f;
                             itemCache.Upgrade();
                             this.Hide();
@@ -73,6 +77,8 @@ namespace TheUnfairDice
         {
             SkipBtn.onClick.AddListener(() =>
             {
+                AudioKit.PlaySound(Sfx.CLICK);
+
                 Time.timeScale = 1.0f;
                 this.Hide();
             });

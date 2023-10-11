@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using QFramework;
+using Unity.VisualScripting;
 
 namespace TheUnfairDice
 {
@@ -92,6 +93,8 @@ namespace TheUnfairDice
             Fortress.CurrentHumanCount.Value = 0;
             EnemyGenerator.TotalEnemyCount.Value = 0;
             EnemyGenerator.CurrentEnemyCount.Value = 0;
+
+            Interface.GetSystem<ExpUpgradeSystem>().ResetData();
         }
 
         public static int ExpToNextLevel()

@@ -1,5 +1,6 @@
 using UnityEngine;
 using QFramework;
+using QAssetBundle;
 
 namespace TheUnfairDice
 {
@@ -25,8 +26,8 @@ namespace TheUnfairDice
                     if (hurtBox.Owner.CompareTag("Enemy"))
                     {
                         Global.HP.Value--;
-                        Enemy enemy = hurtBox.Owner.GetComponent<Enemy>();
-                        enemy.GetHurt(1);
+
+                        AudioKit.PlaySound(Sfx.PLAYERHURT);
                     }
                 }
 

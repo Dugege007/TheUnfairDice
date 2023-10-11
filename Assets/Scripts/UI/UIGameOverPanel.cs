@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using QFramework;
 using UnityEngine.SceneManagement;
+using QAssetBundle;
 
 namespace TheUnfairDice
 {
@@ -22,6 +23,8 @@ namespace TheUnfairDice
 
             BackToHomeBtn.onClick.AddListener(() =>
             {
+                AudioKit.PlaySound(Sfx.CLICK);
+
                 this.CloseSelf();
                 Global.ResetData();
                 SceneManager.LoadScene("GameStart");
