@@ -40,8 +40,8 @@ namespace TheUnfairDice
                                 {
                                     if (hurtBox.Owner.CompareTag("Enemy"))
                                     {
-                                        Enemy enemy = hurtBox.Owner.GetComponent<Enemy>();
-                                        enemy.GetHurt(Global.Damage.Value + Global.HolyWaterDamage.Value);
+                                        Enemy e = hurtBox.Owner.GetComponent<Enemy>();
+                                        DamageSystem.CalculateDamage(Global.HolyWaterDamage.Value, e);
                                     }
                                 }
 

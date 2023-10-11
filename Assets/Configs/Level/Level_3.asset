@@ -24,19 +24,12 @@ MonoBehaviour:
       WaveDurationSec: 15
       HPScale: 1
       SpeedScale: 1
-    - Name: "\u53F2\u83B1\u59C6"
-      IsActive: 1
-      EnemyPrefab: {fileID: 3967229416372388251, guid: 0754d3c81b208844e91e3b885a667579, type: 3}
-      GenerateCDTime: 0.8
-      WaveDurationSec: 20
-      HPScale: 1.5
-      SpeedScale: 1
     - Name: "\u91CE\u732A"
       IsActive: 1
       EnemyPrefab: {fileID: 7850571599702241167, guid: 0a9cd09fc21dee346814bbc7de50ebb3, type: 3}
-      GenerateCDTime: 1.5
-      WaveDurationSec: 30
-      HPScale: 1
+      GenerateCDTime: 0.8
+      WaveDurationSec: 20
+      HPScale: 1.5
       SpeedScale: 1
     - Name: "\u5B9D\u7BB1\u602A"
       IsActive: 1
@@ -52,13 +45,6 @@ MonoBehaviour:
     - Name: "\u91CE\u732A"
       IsActive: 1
       EnemyPrefab: {fileID: 7850571599702241167, guid: 0a9cd09fc21dee346814bbc7de50ebb3, type: 3}
-      GenerateCDTime: 1
-      WaveDurationSec: 15
-      HPScale: 1
-      SpeedScale: 1
-    - Name: "\u91CE\u732A"
-      IsActive: 1
-      EnemyPrefab: {fileID: 7850571599702241167, guid: 0a9cd09fc21dee346814bbc7de50ebb3, type: 3}
       GenerateCDTime: 0.8
       WaveDurationSec: 25
       HPScale: 1.5
@@ -66,6 +52,13 @@ MonoBehaviour:
     - Name: "\u91CE\u72FC"
       IsActive: 1
       EnemyPrefab: {fileID: 5216370771193994590, guid: 9a8510447ce151241ba0331f4d3bfc3d, type: 3}
+      GenerateCDTime: 0.8
+      WaveDurationSec: 30
+      HPScale: 1
+      SpeedScale: 1
+    - Name: "\u54E5\u5E03\u6797"
+      IsActive: 1
+      EnemyPrefab: {fileID: 13961060313388747, guid: 0d797ac83956b764495978b3cc909c45, type: 3}
       GenerateCDTime: 0.8
       WaveDurationSec: 30
       HPScale: 1
@@ -84,22 +77,22 @@ MonoBehaviour:
     - Name: "\u91CE\u72FC"
       IsActive: 1
       EnemyPrefab: {fileID: 5216370771193994590, guid: 9a8510447ce151241ba0331f4d3bfc3d, type: 3}
-      GenerateCDTime: 0.8
-      WaveDurationSec: 15
-      HPScale: 1
-      SpeedScale: 1
-    - Name: "\u91CE\u72FC"
-      IsActive: 1
-      EnemyPrefab: {fileID: 5216370771193994590, guid: 9a8510447ce151241ba0331f4d3bfc3d, type: 3}
       GenerateCDTime: 0.6
-      WaveDurationSec: 30
+      WaveDurationSec: 20
       HPScale: 1.5
       SpeedScale: 1
     - Name: "\u54E5\u5E03\u6797"
       IsActive: 1
       EnemyPrefab: {fileID: 13961060313388747, guid: 0d797ac83956b764495978b3cc909c45, type: 3}
-      GenerateCDTime: 1
-      WaveDurationSec: 15
+      GenerateCDTime: 0.6
+      WaveDurationSec: 30
+      HPScale: 1
+      SpeedScale: 1
+    - Name: "\u9AB7\u9AC5\u602A"
+      IsActive: 1
+      EnemyPrefab: {fileID: 4680701595688893153, guid: d1e439eee52729e499115f66b3fe5893, type: 3}
+      GenerateCDTime: 0.8
+      WaveDurationSec: 30
       HPScale: 1
       SpeedScale: 1
     - Name: "\u5B9D\u7BB1\u602A"

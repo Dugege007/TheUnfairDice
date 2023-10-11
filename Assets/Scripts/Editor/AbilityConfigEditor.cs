@@ -13,17 +13,9 @@ namespace TheUnfairDice
 
             AbilityConfig config = (AbilityConfig)target;
 
-            // 添加一个按钮用于重新排序AbilityPowers
-            if (GUILayout.Button("重新编号"))
+            for (int i = 0; i < config.Powers.Count; i++)
             {
-                Undo.RecordObject(config, "Reorder Levels");
-
-                for (int i = 0; i < config.Powers.Count; i++)
-                {
-                    config.Powers[i].Lv = (i + 1).ToString();
-                }
-
-                EditorUtility.SetDirty(config);
+                config.Powers[i].Lv = (i + 1).ToString();
             }
 
             // 标题
@@ -32,6 +24,11 @@ namespace TheUnfairDice
             // 遍历Powers列表
             for (int i = 0; i < config.Powers.Count; i++)
             {
+                // 加背景
+                GUIStyle backgroundStyle = new GUIStyle(GUI.skin.box);
+                // 背景开始位置
+                GUILayout.BeginVertical(backgroundStyle);
+
                 EditorGUILayout.BeginHorizontal();
                 // 绘制一个表示当前等级的标题，加粗
                 EditorGUILayout.LabelField("等级 " + config.Powers[i].Lv, EditorStyles.boldLabel);
@@ -41,22 +38,23 @@ namespace TheUnfairDice
                 {
                     EditorGUILayout.BeginHorizontal();
                     // 设置动态标签名称
-                    EditorGUILayout.LabelField(
-                        config.Powers[i].GetPowerTypeName(config.Powers[i].PowerDatas[j].Type) + "：", 
-                        GUILayout.Width(60));
+                    Undo.RecordObject(config, "Change PowerType");
                     // 绘制PowerType下拉菜单和对应的数值输入框在同一行
                     config.Powers[i].PowerDatas[j].Type = (AbilityPower.PowerType)EditorGUILayout.EnumPopup(
                         config.Powers[i].PowerDatas[j].Type,
-                        GUILayout.MinWidth(80));
-
-                    // 留空
-                    GUILayout.FlexibleSpace();
+                        GUILayout.Width(120));
+                    EditorGUILayout.LabelField(
+                        config.Powers[i].GetPowerTypeName(config.Powers[i].PowerDatas[j].Type) + "：",
+                        GUILayout.Width(60));
+                    EditorUtility.SetDirty(config);
 
                     Undo.RecordObject(config, "Input Value");
                     //EditorGUILayout.LabelField("值 " + (j + 1) + ":", GUILayout.Width(30));
                     config.Powers[i].PowerDatas[j].Value = EditorGUILayout.FloatField(config.Powers[i].PowerDatas[j].Value, GUILayout.MinWidth(60));
                     EditorUtility.SetDirty(config);
 
+                    // 留空
+                    GUILayout.FlexibleSpace();
                     EditorGUILayout.EndHorizontal();
                 }
 
@@ -81,6 +79,9 @@ namespace TheUnfairDice
                     EditorUtility.SetDirty(config);
                 }
                 EditorGUILayout.EndHorizontal();
+
+                // 背景结束位置
+                GUILayout.EndVertical();
             }
 
             // 添加一个按钮用于添加新的AbilityPower

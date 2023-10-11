@@ -1,6 +1,7 @@
 using UnityEngine;
 using QFramework;
 using System.Collections.Generic;
+using QAssetBundle;
 
 namespace TheUnfairDice
 {
@@ -55,6 +56,7 @@ namespace TheUnfairDice
             // 正在 Roll
             IsRolling = true;
 
+            AudioKit.PlaySound(Sfx.DICEROLL);
 
             // 第一颗骰子位置 X 轴的偏移值
             float offsetX = (DiceCount % 2 == 0) ?

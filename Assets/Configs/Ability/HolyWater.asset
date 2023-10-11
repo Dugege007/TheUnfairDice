@@ -16,10 +16,10 @@ MonoBehaviour:
   Key: holy_water
   IsWeapon: 1
   Description: "\u65BD\u653E\u6C34\u6CE2\u653B\u51FB\u654C\u4EBA"
-  InitDamage: 1
-  InitCDTime: 3
+  InitDamage: 0
+  InitCDTime: 0
   InitDuration: 1
-  InitRange: 2.5
+  InitRange: 0
   InitSpeed: 0
   InitCount: 0
   InitAttackCount: 0
@@ -28,17 +28,63 @@ MonoBehaviour:
     PowerDatas:
     - Type: 0
       Value: 1
+    - Type: 1
+      Value: 3
     - Type: 3
-      Value: 1
+      Value: 2.8
   - Lv: 2
     PowerDatas:
     - Type: 0
-      Value: 1
-    - Type: 3
-      Value: 1
+      Value: 2
+    - Type: 1
+      Value: -0.25
   - Lv: 3
     PowerDatas:
     - Type: 0
       Value: 1
     - Type: 3
+      Value: 0.2
+  - Lv: 4
+    PowerDatas:
+    - Type: 0
       Value: 1
+    - Type: 1
+      Value: -0.25
+  - Lv: 5
+    PowerDatas:
+    - Type: 0
+      Value: 1
+    - Type: 3
+      Value: 0.2
+  - Lv: 6
+    PowerDatas:
+    - Type: 0
+      Value: 1
+    - Type: 1
+      Value: -0.25
+  - Lv: 7
+    PowerDatas:
+    - Type: 0
+      Value: 1
+    - Type: 3
+      Value: 0.2
+  - Lv: 8
+    PowerDatas:
+    - Type: 0
+      Value: 1
+    - Type: 1
+      Value: -0.25
+  - Lv: 9
+    PowerDatas:
+    - Type: 0
+      Value: 1
+    - Type: 3
+      Value: 0.2
+  - Lv: 10
+    PowerDatas:
+    - Type: 0
+      Value: 1
+    - Type: 1
+      Value: -0.3
+    - Type: 3
+      Value: 0.3

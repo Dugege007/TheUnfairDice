@@ -24,6 +24,7 @@ MonoBehaviour:
   InitExp: 0
   InitSpirit: 0
   InitCollectableRange: 2
+  InitCriticalPercent: 0.05
   InitExpPercent: 0.4
   InitHPPercent: 0.05
   InitGoldPercent: 0.05

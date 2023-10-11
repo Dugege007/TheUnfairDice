@@ -26,7 +26,6 @@ namespace TheUnfairDice
         public int InitCount = 0;
         public int InitAttackCount = 0;
 
-        [Header("Éý¼¶£¨µ÷ÕûË³Ðò£©")]
         public List<AbilityPower> Powers = new List<AbilityPower>();
     }
 

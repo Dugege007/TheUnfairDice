@@ -32,17 +32,17 @@ namespace TheUnfairDice
         {
             Items.Clear();
 
-            // 水
+            // 0 水
             AddNewExpUpgradeItem(mAbilityConfigs[0]);
-            // 火
+            // 1 火
             AddNewExpUpgradeItem(mAbilityConfigs[1]);
-            //// 树
+            //// 2 树
             //AddNewExpUpgradeItem(mAbilityConfigs[2]);
-            //// 剑
-            //AddNewExpUpgradeItem(mAbilityConfigs[3]);
-            //// 土
+            // 3 剑
+            AddNewExpUpgradeItem(mAbilityConfigs[3]);
+            //// 4 土
             //AddNewExpUpgradeItem(mAbilityConfigs[4]);
-            //// 光
+            //// 5 光
             //AddNewExpUpgradeItem(mAbilityConfigs[5]);
         }
 
@@ -90,8 +90,8 @@ namespace TheUnfairDice
                     Global.HolyFireUnlocked.Value = true;
                 //else if (abilityConfig.Name == mAbilityConfigs[2].Name)
                 //    Global.HolyTreeUnlocked.Value = true;
-                //else if (abilityConfig.Name == mAbilityConfigs[3].Name)
-                //    Global.HolySwordUnlocked.Value = true;
+                else if (abilityConfig.Name == mAbilityConfigs[3].Name)
+                    Global.HolySwordUnlocked.Value = true;
                 //else if (abilityConfig.Name == mAbilityConfigs[4].Name)
                 //    Global.HolyLandUnlocked.Value = true;
                 //else if (abilityConfig.Name == mAbilityConfigs[5].Name)
@@ -107,7 +107,7 @@ namespace TheUnfairDice
 
                     foreach (PowerData powerData in abilityConfig.Powers[lv - 1].PowerDatas)
                     {
-                        // 水
+                        // 0 水
                         if (abilityConfig.Name == mAbilityConfigs[0].Name)
                         {
                             switch (powerData.Type)
@@ -129,7 +129,7 @@ namespace TheUnfairDice
                             }
                         }
 
-                        // 火
+                        // 1 火
                         if (abilityConfig.Name == mAbilityConfigs[1].Name)
                         {
                             switch (powerData.Type)
@@ -148,6 +148,28 @@ namespace TheUnfairDice
                                     break;
                                 case AbilityPower.PowerType.Speed:
                                     Global.HolyFireSpeed.Value += powerData.Value;
+                                    break;
+                                case AbilityPower.PowerType.Count:
+                                    Global.HolyFireCount.Value += (int)powerData.Value;
+                                    break;
+                                case AbilityPower.PowerType.AttackCount:
+                                    Global.HolyFireAttackCount.Value += (int)powerData.Value;
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+
+                        // 3 剑
+                        if (abilityConfig.Name == mAbilityConfigs[3].Name)
+                        {
+                            switch (powerData.Type)
+                            {
+                                case AbilityPower.PowerType.Damage:
+                                    Global.HolyFireDamage.Value += powerData.Value;
+                                    break;
+                                case AbilityPower.PowerType.CDTime:
+                                    Global.HolyFireCDTime.Value += powerData.Value;
                                     break;
                                 case AbilityPower.PowerType.Count:
                                     Global.HolyFireCount.Value += (int)powerData.Value;

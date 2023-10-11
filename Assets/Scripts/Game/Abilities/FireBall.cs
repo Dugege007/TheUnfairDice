@@ -26,8 +26,8 @@ namespace TheUnfairDice
                                 (collider2D.transform.position - Player.Default.Position()).normalized * 1000);
                         }
 
-                        Enemy enemy = hurtBox.Owner.GetComponent<Enemy>();
-                        enemy.GetHurt(Global.Damage.Value + Global.HolyFireDamage.Value);
+                        Enemy e = hurtBox.Owner.GetComponent<Enemy>();
+                        DamageSystem.CalculateDamage(Global.HolyFireDamage.Value, e);
                     }
                 }
 

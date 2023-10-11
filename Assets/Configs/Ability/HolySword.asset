@@ -10,81 +10,81 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 983219d36f57e9c478da1766be949a66, type: 3}
-  m_Name: HolyFire
+  m_Name: HolySword
   m_EditorClassIdentifier: 
-  Name: "\u795E\u5723\u4E4B\u706B"
-  Key: holy_fire
+  Name: "\u795E\u5723\u4E4B\u5251"
+  Key: holy_sword
   IsWeapon: 1
-  Description: "\u53EC\u5524\u706B\u7403\u653B\u51FB\u654C\u4EBA"
+  Description: "\u50CF\u6700\u8FD1\u7684\u654C\u4EBA\u53D1\u5C04\u5723\u5251"
   InitDamage: 0
-  InitCDTime: 10
+  InitCDTime: 0
   InitDuration: 0
   InitRange: 0
-  InitSpeed: 6
-  InitCount: 1
-  InitAttackCount: 10
+  InitSpeed: 2
+  InitCount: 0
+  InitAttackCount: 0
   Powers:
   - Lv: 1
     PowerDatas:
     - Type: 0
-      Value: 5
-    - Type: 2
-      Value: 10
-    - Type: 3
+      Value: 3
+    - Type: 1
+      Value: 1.5
+    - Type: 5
+      Value: 1
+    - Type: 6
       Value: 1
   - Lv: 2
     PowerDatas:
     - Type: 0
       Value: 3
-    - Type: 2
-      Value: 5
+    - Type: 5
+      Value: 1
   - Lv: 3
     PowerDatas:
     - Type: 0
-      Value: 3
-    - Type: 3
-      Value: 0.2
+      Value: 2
+    - Type: 1
+      Value: -0.1
   - Lv: 4
     PowerDatas:
     - Type: 0
-      Value: 3
-    - Type: 2
-      Value: 5
+      Value: 2
+    - Type: 6
+      Value: 1
   - Lv: 5
     PowerDatas:
     - Type: 0
-      Value: 5
-    - Type: 3
-      Value: 0.2
+      Value: 3
+    - Type: 5
+      Value: 1
   - Lv: 6
     PowerDatas:
     - Type: 0
-      Value: 3
-    - Type: 2
-      Value: 5
+      Value: 2
+    - Type: 1
+      Value: -0.1
   - Lv: 7
     PowerDatas:
     - Type: 0
-      Value: 3
-    - Type: 3
-      Value: 0.2
+      Value: 2
+    - Type: 6
+      Value: 1
   - Lv: 8
     PowerDatas:
     - Type: 0
       Value: 3
-    - Type: 2
-      Value: 5
+    - Type: 5
+      Value: 1
   - Lv: 9
     PowerDatas:
     - Type: 0
-      Value: 4
-    - Type: 3
-      Value: 0.2
+      Value: 3
+    - Type: 1
+      Value: -0.1
   - Lv: 10
     PowerDatas:
     - Type: 0
-      Value: 5
-    - Type: 2
-      Value: 5
-    - Type: 3
-      Value: 0.2
+      Value: 2
+    - Type: 5
+      Value: 1

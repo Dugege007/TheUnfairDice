@@ -8,7 +8,7 @@ namespace TheUnfairDice
         public static ConfigManager Default;
 
         [Header("ÒªÈûÅäÖÃ")]
-        public EntityBaseConfig FortressConfig;
+        public FortressConfig FortressConfig;
 
         [Header("Íæ¼ÒÅäÖÃ")]
         public PlayerConfig PlayerConfig;

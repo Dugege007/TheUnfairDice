@@ -6,15 +6,13 @@ namespace TheUnfairDice
     public partial class Fortress : ViewController
     {
         public static Fortress Default;
+        private FortressConfig mFortressConfig;
 
-        public static BindableProperty<float> HP = new(20f);
-        public static BindableProperty<int> CurrentHumanCount = new(0);
+        private int mInitHumanCount;
+        private int mMaxHumanCount;
+        private float mGenerateRadius;
 
         private float mCurrentGenerateSec = 0;
-        public float GenerateSec = 3f;
-        public float GenerateRadius = 3f;
-        public int MaxHumanCount = 15;
-        public int InitHumanCount = 5;
 
         private void Awake()
         {
@@ -23,7 +21,12 @@ namespace TheUnfairDice
 
         private void Start()
         {
-            for (int i = 0; i < InitHumanCount; i++)
+            mFortressConfig = ConfigManager.Default.FortressConfig;
+            mInitHumanCount = mFortressConfig.InitHumanCount;
+            mMaxHumanCount = mFortressConfig.MaxHumanCount;
+            mGenerateRadius = mFortressConfig.GenerateRadius;
+
+            for (int i = 0; i < mInitHumanCount; i++)
             {
                 GenerateHuman();
             }
@@ -37,7 +40,7 @@ namespace TheUnfairDice
                 {
                     if (hurtBox.Owner.CompareTag("Enemy"))
                     {
-                        HP.Value--;
+                        Global.FortressHP.Value--;
                         Enemy enemy = hurtBox.Owner.GetComponent<Enemy>();
                         enemy.GetHurt(1);
                     }
@@ -48,16 +51,16 @@ namespace TheUnfairDice
 
         private void Update()
         {
-            if (HP.Value <= 0 || CurrentHumanCount.Value <= 2)
+            if (Global.FortressHP.Value <= 0 || Global.CurrentHumanCount.Value <= 2)
             {
                 UIKit.OpenPanel<UIGameOverPanel>();
             }
 
-            if (CurrentHumanCount.Value >= MaxHumanCount) return;
+            if (Global.CurrentHumanCount.Value >= mMaxHumanCount) return;
 
             mCurrentGenerateSec += Time.deltaTime;
 
-            if (mCurrentGenerateSec >= GenerateSec)
+            if (mCurrentGenerateSec >= mFortressConfig.GenerateSec)
             {
                 mCurrentGenerateSec = 0;
 
@@ -68,13 +71,13 @@ namespace TheUnfairDice
         private void GenerateHuman()
         {
             // 在 GenerateRadius 范围的边缘随机位置生成
-            Vector2 randomPosition = new Vector2(this.Position().x, this.Position().y) + Random.insideUnitCircle.normalized * GenerateRadius;
+            Vector2 randomPosition = new Vector2(this.Position().x, this.Position().y) + Random.insideUnitCircle.normalized * mGenerateRadius;
 
             Human.InstantiateWithParent(this)
                 .Position(new Vector3(randomPosition.x, randomPosition.y, 0))
                 .Show();
 
-            CurrentHumanCount.Value++;
+            Global.CurrentHumanCount.Value++;
         }
 
         private void OnDestroy()

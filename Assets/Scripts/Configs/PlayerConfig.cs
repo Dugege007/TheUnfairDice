@@ -15,6 +15,8 @@ namespace TheUnfairDice
         public int InitExp = 0;
         public int InitSpirit = 0;
         public float InitCollectableRange = 0;
+        public float InitCriticalPercent = 0.05f;
+
         public float InitExpPercent = 0;
         public float InitHPPercent = 0;
         public float InitGoldPercent = 0;

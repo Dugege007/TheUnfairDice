@@ -57,19 +57,19 @@ namespace TheUnfairDice
 
             }).UnRegisterWhenGameObjectDestroyed(gameObject);
 
-            Fortress.HP.RegisterWithInitValue(hp =>
+            Global.FortressHP.RegisterWithInitValue(hp =>
             {
                 FortressrHPText.text = "要塞HP：" + hp;
 
             }).UnRegisterWhenGameObjectDestroyed(gameObject);
 
-            Fortress.CurrentHumanCount.RegisterWithInitValue(currentHumanCount =>
+            Global.CurrentHumanCount.RegisterWithInitValue(currentHumanCount =>
             {
                 HumanCountText.text = "人类：" + currentHumanCount;
 
             }).UnRegisterWhenGameObjectDestroyed(gameObject);
 
-            EnemyGenerator.CurrentEnemyCount.RegisterWithInitValue(enemyCount =>
+            Global.CurrentEnemyCount.RegisterWithInitValue(enemyCount =>
             {
                 EnemyCountText.text = "敌人：" + enemyCount;
 

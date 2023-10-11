@@ -64,7 +64,7 @@ namespace TheUnfairDice
 
             // 随机升级一个
             this.GetSystem<ExpUpgradeSystem>().Items
-                .Where(item => item.IsWeapon)
+                .Where(item => item.IsWeapon && item != null)
                 .ToList()
                 .GetRandomItem()
                 .Upgrade();

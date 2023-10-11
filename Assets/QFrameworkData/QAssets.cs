@@ -20,6 +20,7 @@ namespace QAssetBundle
     {
         public const string BundleName = "sfx";
         public const string CLICK = "Click";
+        public const string DAGGER = "Dagger";
         public const string DICEROLL = "DiceRoll";
         public const string ENEMYDEAD = "EnemyDead";
         public const string ENEMYHURT = "EnemyHurt";
@@ -31,6 +32,8 @@ namespace QAssetBundle
         public const string LEVELUP = "LevelUp";
         public const string PICKUP = "PickUp";
         public const string PLAYERHURT = "PlayerHurt";
+        public const string SWORD = "Sword";
+        public const string SWORDIMPACT = "SwordImpact";
         public const string UPGRADE = "Upgrade";
     }
     public class Uigameoverpanel_prefab

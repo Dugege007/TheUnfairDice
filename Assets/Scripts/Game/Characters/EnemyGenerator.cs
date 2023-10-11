@@ -9,8 +9,6 @@ namespace TheUnfairDice
         public LevelConfig LevelConfig;
 
         private float mCurrentGenerateSec = 0;
-        public static BindableProperty<int> TotalEnemyCount = new(0);
-        public static BindableProperty<int> CurrentEnemyCount = new(0);
 
         private float mCurrentWaveSec = 0;
         private Queue<EnemyWave> mEnemyWavesQueue = new Queue<EnemyWave>();
@@ -35,7 +33,7 @@ namespace TheUnfairDice
                 }
             }
 
-            CurrentEnemyCount.Register(enemyCount =>
+            Global.CurrentEnemyCount.Register(enemyCount =>
             {
                 if (enemyCount >= 20)
                     mAttackFortress = true;
@@ -108,7 +106,7 @@ namespace TheUnfairDice
                             })
                             .Show();
 
-                        TotalEnemyCount.Value++;
+                        Global.TotalEnemyCount.Value++;
                     }
                 }
 

@@ -475,11 +475,15 @@ MonoBehaviour:
   ScriptsFolder: Assets/Scripts/Game
   GeneratePrefab: 0
   PrefabFolder: Assets/Art/Prefab
-  FortressConfig: {fileID: 11400000, guid: 807cc1eb2aa51a04799e2dab6d297ddc, type: 2}
+  FortressConfig: {fileID: 11400000, guid: 190b4bb69d1947146abd7e27df864e69, type: 2}
   PlayerConfig: {fileID: 11400000, guid: 3080caa7771541043ba1602b8dbea2b0, type: 2}
   AbilityConfigs:
   - {fileID: 11400000, guid: 675b2c2a88221a14eaec59b88c2d920c, type: 2}
   - {fileID: 11400000, guid: b2f5f5eb4b6f19044add6589fc02c954, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 36aeee9164bd24446844f6f821f2ac7b, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &71726536
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,13 +581,16 @@ GameObject:
   m_Component:
   - component: {fileID: 175180182}
   - component: {fileID: 175180183}
+  - component: {fileID: 175180185}
+  - component: {fileID: 175180184}
+  - component: {fileID: 175180186}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &175180182
 Transform:
   m_ObjectHideFlags: 0
@@ -637,10 +644,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_SortingLayerID: -1119585449
+  m_SortingLayer: 1
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: 0c0405ee8d0df5f4bae31a36b285837f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -650,7 +657,95 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
+--- !u!61 &175180184
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175180181}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.6}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.2}
+    oldSize: {x: 1, y: 2}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2}
+  m_EdgeRadius: 0
+--- !u!50 &175180185
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175180181}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &175180186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175180181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d51f3a7c41ab0346b49ae50d456bece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MarkType: 0
+  CustomComponentName: Sword
+  CustomComment: 
+  mComponentName: UnityEngine.BoxCollider2D
 --- !u!1 &232885331
 GameObject:
   m_ObjectHideFlags: 0
@@ -1850,8 +1945,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 562179258}
-  - component: {fileID: 562179259}
   - component: {fileID: 562179260}
+  - component: {fileID: 562179259}
   m_Layer: 0
   m_Name: HolySword
   m_TagString: Untagged
@@ -1908,6 +2003,7 @@ MonoBehaviour:
   ScriptsFolder: Assets/Scripts/Game/Abilities
   GeneratePrefab: 0
   PrefabFolder: Assets/Art/Prefab
+  Sword: {fileID: 175180184}
 --- !u!1 &610836314
 GameObject:
   m_ObjectHideFlags: 0
@@ -2090,10 +2186,6 @@ MonoBehaviour:
   ScriptsFolder: Assets/Scripts/Game
   GeneratePrefab: 0
   PrefabFolder: Assets/Art/Prefab
-  GenerateSec: 5
-  GenerateRadius: 4
-  MaxHumanCount: 10
-  InitHumanCount: 5
   HitHurtBox: {fileID: 889854880}
   Human: {fileID: 1171554709}
 --- !u!1 &660272922
@@ -2315,9 +2407,9 @@ Transform:
   m_Children:
   - {fileID: 1407479628}
   - {fileID: 1602377567}
-  - {fileID: 1320828791}
-  - {fileID: 562179258}
   - {fileID: 1436193227}
+  - {fileID: 562179258}
+  - {fileID: 1320828791}
   - {fileID: 1161619197}
   m_Father: {fileID: 1238539902}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

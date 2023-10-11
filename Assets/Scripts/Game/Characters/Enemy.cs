@@ -117,7 +117,7 @@ namespace TheUnfairDice
             // ³õÊ¼»¯×´Ì¬»ú
             InitFSM();
 
-            EnemyGenerator.CurrentEnemyCount.Value++;
+            Global.CurrentEnemyCount.Value++;
         }
 
         private void FixedUpdate()
@@ -185,7 +185,7 @@ namespace TheUnfairDice
 
         private void OnDestroy()
         {
-            EnemyGenerator.CurrentEnemyCount.Value--;
+            Global.CurrentEnemyCount.Value--;
         }
     }
 }

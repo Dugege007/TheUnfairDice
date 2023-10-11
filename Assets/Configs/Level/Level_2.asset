@@ -63,3 +63,10 @@ MonoBehaviour:
       WaveDurationSec: 11
       HPScale: 1
       SpeedScale: 1
+    - Name: "\u54E5\u5E03\u6797"
+      IsActive: 1
+      EnemyPrefab: {fileID: 13961060313388747, guid: 0d797ac83956b764495978b3cc909c45, type: 3}
+      GenerateCDTime: 1
+      WaveDurationSec: 10
+      HPScale: 1
+      SpeedScale: 1

@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f77440dc1c86038459251bc6187d5a04, type: 3}
+  m_Script: {fileID: 11500000, guid: d31c52943bbec86448268bc6c0a14413, type: 3}
   m_Name: Fortress_1
   m_EditorClassIdentifier: 
   Name: "\u8981\u585E_1"
@@ -18,3 +18,8 @@ MonoBehaviour:
   HP: 20
   Damage: 1
   Speed: 0
+  GenerateSec: 3
+  GenerateRadius: 3
+  InitHumanCount: 5
+  MaxHumanCount: 15
+  CurrentHumanCount: 0

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using QFramework;
 using Unity.VisualScripting;
+using UnityEngine.Rendering;
 
 namespace TheUnfairDice
 {
@@ -10,13 +11,19 @@ namespace TheUnfairDice
     {
         private static PlayerConfig mPlayerConfig;
 
-        public static BindableProperty<float> FortressHP = new(ConfigManager.Default.PlayerConfig.HP);
+        // 要塞属性
+        public static BindableProperty<float> FortressHP = new(ConfigManager.Default.FortressConfig.HP);
+        public static BindableProperty<float> FortressDamage = new(ConfigManager.Default.FortressConfig.Damage);
+        public static BindableProperty<float> CurrentHumanCount = new(ConfigManager.Default.FortressConfig.CurrentHumanCount);
 
         // 玩家属性
         public static BindableProperty<float> HP = new(ConfigManager.Default.PlayerConfig.HP);
         public static BindableProperty<float> MaxHP = new(ConfigManager.Default.PlayerConfig.MaxHP);
         public static BindableProperty<float> Damage = new(ConfigManager.Default.PlayerConfig.Damage);
         public static BindableProperty<float> Speed = new(ConfigManager.Default.PlayerConfig.Speed);
+        public static BindableProperty<float> CriticalPercent = new(ConfigManager.Default.PlayerConfig.InitCriticalPercent);
+        public static BindableProperty<int> RollCount = new(0);
+        public static BindableProperty<int> DiceCount = new(0);
 
         // 升级道具
         public static BindableProperty<int> Gold = new(ConfigManager.Default.PlayerConfig.InitGold);
@@ -33,15 +40,19 @@ namespace TheUnfairDice
         public static BindableProperty<float> GetAllExpPercent = new(ConfigManager.Default.PlayerConfig.InitGetAllExpPercent);
         public static BindableProperty<float> CurrentSec = new(ConfigManager.Default.PlayerConfig.InitCurrentSec);
 
+        // 击杀数据
+        public static BindableProperty<int> TotalEnemyCount = new(0);
+        public static BindableProperty<int> CurrentEnemyCount = new(0);
+
         #region 玩家能力
-        // 水
+        // 0 水
         public static BindableProperty<bool> HolyWaterUnlocked = new(false);
         public static BindableProperty<float> HolyWaterDamage = new(ConfigManager.Default.AbilityConfigs[0].InitDamage);
         public static BindableProperty<float> HolyWaterDuration = new(ConfigManager.Default.AbilityConfigs[0].InitDuration);
         public static BindableProperty<float> HolyWaterCDTime = new(ConfigManager.Default.AbilityConfigs[0].InitCDTime);
         public static BindableProperty<float> HolyWaterRange = new(ConfigManager.Default.AbilityConfigs[0].InitRange);  // 半径
 
-        // 火
+        // 1 火
         public static BindableProperty<bool> HolyFireUnlocked = new(false);
         public static BindableProperty<float> HolyFireDamage = new(ConfigManager.Default.AbilityConfigs[1].InitDamage);
         public static BindableProperty<float> HolyFireCDTime = new(ConfigManager.Default.AbilityConfigs[1].InitCDTime);
@@ -51,16 +62,20 @@ namespace TheUnfairDice
         public static BindableProperty<int> HolyFireCount = new(ConfigManager.Default.AbilityConfigs[1].InitCount);
         public static BindableProperty<int> HolyFireAttackCount = new(ConfigManager.Default.AbilityConfigs[1].InitAttackCount);
 
-        // 树
+        // 2 树
         public static BindableProperty<bool> HolyTreeUnlocked = new(false);
 
-        // 剑
+        // 3 剑
         public static BindableProperty<bool> HolySwordUnlocked = new(false);
+        public static BindableProperty<float> HolySwordDamage = new(ConfigManager.Default.AbilityConfigs[3].InitDamage);
+        public static BindableProperty<float> HolySwordCDTime = new(ConfigManager.Default.AbilityConfigs[3].InitCDTime);
+        public static BindableProperty<int> HolySwordCount = new(ConfigManager.Default.AbilityConfigs[3].InitCount);
+        public static BindableProperty<int> HolySwordAttackCount = new(ConfigManager.Default.AbilityConfigs[3].InitAttackCount);
 
-        // 土
+        // 4 土
         public static BindableProperty<bool> HolyLandUnlocked = new(false);
 
-        // 光
+        // 5 光
         public static BindableProperty<bool> HolyLightUnlocked = new(false);
 
         #endregion
@@ -89,14 +104,18 @@ namespace TheUnfairDice
 
         public static void ResetData()
         {
+            // 要塞属性
+            FortressHP.Value = ConfigManager.Default.FortressConfig.HP;
+            FortressDamage.Value = ConfigManager.Default.FortressConfig.Damage;
+
+            // 玩家属性
             HP.Value = ConfigManager.Default.PlayerConfig.HP;
             MaxHP.Value = ConfigManager.Default.PlayerConfig.MaxHP;
             Damage.Value = ConfigManager.Default.PlayerConfig.Damage;
             CurrentSec.Value = ConfigManager.Default.PlayerConfig.InitCurrentSec;
-            Fortress.HP.Value = 20;
-            Fortress.CurrentHumanCount.Value = 0;
-            EnemyGenerator.TotalEnemyCount.Value = 0;
-            EnemyGenerator.CurrentEnemyCount.Value = 0;
+
+            // 击杀数据
+            CurrentEnemyCount.Value = 0;
 
             Interface.GetSystem<ExpUpgradeSystem>().ResetData();
         }

@@ -2,7 +2,6 @@
 
 namespace TheUnfairDice
 {
-    [CreateAssetMenu(menuName = "Config/EntityBase Config")]
     public class EntityBaseConfig : ScriptableObject
     {
         [Header("名称")]
