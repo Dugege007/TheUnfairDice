@@ -17,6 +17,7 @@ namespace TheUnfairDice
 
             // 开始时先关掉
             ExpUpgradePanel.Hide();
+            Tips.Hide();
 
             Global.HP.RegisterWithInitValue(hp =>
             {
@@ -95,6 +96,183 @@ namespace TheUnfairDice
                 Global.CurrentSec.Value += Time.deltaTime;
 
             }).UnRegisterWhenGameObjectDestroyed(gameObject);
+
+
+            // Tips
+            Global.Dice1Point.RegisterWithInitValue(point =>
+            {
+                switch (point)
+                {
+                    case 1:
+                        CreateTips("人类 获得升级");
+                        break;
+                    case 2:
+                        CreateTips("玩家 获得提升");
+                        break;
+                    case 3:
+                        CreateTips("人类 获得升级");
+                        break;
+                    case 4:
+                        CreateTips("玩家 获得提升");
+                        break;
+                    case 5:
+                        CreateTips("要塞 获得提升");
+                        break;
+                    case 6:
+                        CreateTips("玩家 能力提升");
+                        break;
+                    default:
+                        break;
+                }
+
+            }).UnRegisterWhenGameObjectDestroyed(gameObject);
+
+            Global.Dice2Point.RegisterWithInitValue(point =>
+            {
+                switch (point)
+                {
+                    case 1:
+                        CreateTips("人类 获得升级");
+                        break;
+                    case 2:
+                        CreateTips("玩家 获得提升");
+                        break;
+                    case 3:
+                        CreateTips("人类 获得升级");
+                        break;
+                    case 4:
+                        CreateTips("玩家 获得提升");
+                        break;
+                    case 5:
+                        CreateTips("要塞 获得提升");
+                        break;
+                    case 6:
+                        CreateTips("玩家 能力提升");
+                        break;
+                    default:
+                        break;
+                }
+
+            }).UnRegisterWhenGameObjectDestroyed(gameObject);
+
+            //Global.Dice3Point.RegisterWithInitValue(point =>
+            //{
+            //    switch (point)
+            //    {
+            //        case 1:
+            //            CreateTips("人类 获得升级");
+            //            break;
+            //        case 2:
+            //            CreateTips("玩家 获得提升");
+            //            break;
+            //        case 3:
+            //            CreateTips("人类 获得升级");
+            //            break;
+            //        case 4:
+            //            CreateTips("玩家 获得提升");
+            //            break;
+            //        case 5:
+            //            CreateTips("要塞 获得提升");
+            //            break;
+            //        case 6:
+            //            CreateTips("玩家 能力提升");
+            //            break;
+            //        default:
+            //            break;
+            //    }
+
+            //}).UnRegisterWhenGameObjectDestroyed(gameObject);
+
+            Global.IsAll6.RegisterWithInitValue(isAll6 =>
+            {
+                if (isAll6)
+                {
+                    CreateTips("恶魔出现");
+                }
+
+            }).UnRegisterWhenGameObjectDestroyed(gameObject);
+
+            float lastHP = 20;
+
+            Global.FortressHP.Register(hp =>
+            {
+                if (hp < lastHP)
+                {
+                    CreateTips("要塞正在被攻击");
+                    lastHP = hp;
+                }
+
+                if (hp <= 3)
+                {
+                    CreateTips("要塞危险");
+                }
+
+            }).UnRegisterWhenGameObjectDestroyed(gameObject);
+
+            Global.HolyWaterUnlocked.RegisterWithInitValue(unlocked =>
+            {
+                if (unlocked)
+                {
+                    CreateTips("获得水之力");
+                    CreateTips("靠近敌人施放");
+                }
+
+            }).UnRegisterWhenGameObjectDestroyed(gameObject);
+
+            Global.HolyFireUnlocked.RegisterWithInitValue(unlocked =>
+            {
+                if (unlocked)
+                {
+                    CreateTips("获得火之力");
+                }
+
+            }).UnRegisterWhenGameObjectDestroyed(gameObject);
+
+            Global.HolySwordUnlocked.RegisterWithInitValue(unlocked =>
+            {
+                if (unlocked)
+                {
+                    CreateTips("获得剑之力");
+                }
+
+            }).UnRegisterWhenGameObjectDestroyed(gameObject);
+        }
+
+        private void CreateTips(string tipsText)
+        {
+            Tips.InstantiateWithParent(TipsRoot)
+                .Self(self =>
+                {
+                    Text selfCache = self;
+                    selfCache.text = tipsText;
+
+                    // 添加动画
+                    ActionKit.Sequence()
+                        // 逐渐变大
+                        .Lerp(0.5f, 0.9f, 0.5f, scale => selfCache.LocalScale(scale))
+                        .Lerp(0.9f, 1f, 2.5f, scale => selfCache.LocalScale(scale))
+                        .Parallel(p =>
+                        {
+                            // 稍微变小
+                            p.Lerp(1f, 0f, 0.3f, scale => selfCache.LocalScale(scale));
+
+                            float alpha = selfCache.GetComponent<Text>().color.a;
+                            p.Append(ActionKit.Sequence()
+                                // 变透明
+                                .Lerp(1, 0, 0.3f, a =>
+                                {
+                                    Color color = selfCache.GetComponent<Text>().color;
+                                    color.a = a;
+                                    selfCache.GetComponent<Text>().color = color;
+                                }));
+                        })
+                        .Start(this, () =>
+                        {
+                            // 销毁自身
+                            selfCache.DestroyGameObjGracefully();
+                        });
+                })
+                .Show();
         }
 
         protected override void OnOpen(IUIData uiData = null)

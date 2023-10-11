@@ -24,7 +24,7 @@ namespace TheUnfairDice
                 Enemy[] enemies = FindObjectsByType<Enemy>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
                 foreach (Enemy enemy in enemies
                     .OrderBy(e => e.Direction2DFrom(Player.Default).magnitude)
-                    .Where(e => e.Direction2DFrom(Player.Default).magnitude <= 4f)
+                    .Where(e => e.Direction2DFrom(Player.Default).magnitude <= Global.HolyWaterRange.Value + 1)
                     .Take(1))
                 {
                     Ripple.Instantiate()

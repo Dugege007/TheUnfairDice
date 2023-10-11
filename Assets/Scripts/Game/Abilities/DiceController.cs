@@ -2,12 +2,17 @@ using UnityEngine;
 using QFramework;
 using System.Collections.Generic;
 using QAssetBundle;
+using System.Linq;
 
 namespace TheUnfairDice
 {
-    public partial class DiceController : ViewController
+    public partial class DiceController : ViewController, IController
     {
+        public static DiceController Default;
+
         public List<Dice> Dices = new List<Dice>();
+
+        public Enemy EnemyBoss;
 
         public int DiceCount = 1;
         public bool IsRolling = false;
@@ -18,40 +23,205 @@ namespace TheUnfairDice
         private float mShowDicePointSecRemain = 3f;
         private int mShowingDiceCount = 0;
 
+
+        private void Awake()
+        {
+            Default = this;
+        }
+
+        private void Start()
+        {
+            // 第一个骰子
+            Global.Dice1Point.RegisterWithInitValue(point =>
+            {
+                switch (point)
+                {
+                    case 1:
+                        Human[] humans = FindObjectsByType<Human>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+                        foreach (Human human in humans)
+                        {
+                            human.HP++;
+                        }
+                        break;
+
+                    case 2:
+                        Global.MaxHP.Value++;
+                        break;
+
+                    case 3:
+                        humans = FindObjectsByType<Human>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+                        foreach (Human human in humans)
+                        {
+                            human.WalkSpeed += 0.33f;
+                        }
+                        break;
+
+                    case 4:
+                        Global.Damage.Value++;
+                        break;
+
+                    case 5:
+                        Global.FortressHP.Value++;
+                        break;
+
+                    case 6:
+                        float percent = Random.Range(0, 1f);
+                        if (percent <= 0.5f)
+                        {
+                            // 随机升级一个技能
+                            this.GetSystem<ExpUpgradeSystem>().Items
+                                .Where(item => item.IsWeapon && item != null)
+                                .ToList()
+                                .GetRandomItem()
+                                .Upgrade();
+                        }
+                        break;
+
+                    default:
+                        break;
+                }
+
+            }).UnRegisterWhenGameObjectDestroyed(gameObject);
+
+            // 第二个骰子
+            Global.Dice1Point.RegisterWithInitValue(point =>
+            {
+                switch (point)
+                {
+                    case 1:
+                        Human[] humans = FindObjectsByType<Human>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+                        foreach (Human human in humans)
+                        {
+                            human.HP++;
+                        }
+                        break;
+
+                    case 2:
+                        Global.HP.Value++;
+                        break;
+
+                    case 3:
+                        humans = FindObjectsByType<Human>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+                        foreach (Human human in humans)
+                        {
+                            human.WalkSpeed += 0.33f;
+                        }
+                        break;
+
+                    case 4:
+                        Global.CriticalPercent.Value += 0.05f;
+                        break;
+
+                    case 5:
+                        Global.FortressDamage.Value += 10;
+                        break;
+
+                    case 6:
+                        float percent = Random.Range(0, 1f);
+                        if (percent <= 0.5f)
+                        {
+                            // 随机升级一个技能
+                            this.GetSystem<ExpUpgradeSystem>().Items
+                                .Where(item => item.IsWeapon && item != null)
+                                .ToList()
+                                .GetRandomItem()
+                                .Upgrade();
+                        }
+                        break;
+
+                    default:
+                        break;
+                }
+
+            }).UnRegisterWhenGameObjectDestroyed(gameObject);
+
+            // 第三个骰子
+            Global.Dice1Point.RegisterWithInitValue(point =>
+            {
+                switch (point)
+                {
+                    case 1:
+                        Human[] humans = FindObjectsByType<Human>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+                        foreach (Human human in humans)
+                        {
+                            human.HP++;
+                        }
+                        break;
+
+                    case 2:
+                        Global.CollectableRange.Value++;
+                        break;
+
+                    case 3:
+                        humans = FindObjectsByType<Human>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+                        foreach (Human human in humans)
+                        {
+                            human.WalkSpeed += 0.33f;
+                        }
+                        break;
+
+                    case 4:
+                        Global.CriticalPercent.Value *= 1.2f;
+                        break;
+
+                    case 5:
+                        Global.FortressDamage.Value += 10;
+                        break;
+
+                    case 6:
+                        float percent = Random.Range(0, 1f);
+                        if (percent <= 0.5f)
+                        {
+                            // 随机升级一个技能
+                            this.GetSystem<ExpUpgradeSystem>().Items
+                                .Where(item => item.IsWeapon && item != null)
+                                .ToList()
+                                .GetRandomItem()
+                                .Upgrade();
+                        }
+                        break;
+
+                    default:
+                        break;
+                }
+
+            }).UnRegisterWhenGameObjectDestroyed(gameObject);
+        }
+
         private void Update()
         {
             // 如果已展示骰子数量和拥有骰子数量相等
             if (mShowingDiceCount == DiceCount)
             {
-                // 开始倒计时
-                mShowDicePointSecRemain -= Time.deltaTime;
+                Global.Dice1Point.Value = Dices[0].Point;
+                Global.Dice2Point.Value = Dices[1].Point;
+                Global.Dice3Point.Value = Dices[2].Point;
 
-                // 如果倒计时结束
-                if (mShowDicePointSecRemain < 0)
+                bool isAll6 = true;
+
+                foreach (Dice dice in Dices)
                 {
-                    // 删除所有骰子
-                    foreach (Dice dice in Dices)
+                    if (dice.Point != 6)
                     {
-                        dice.DestroyGameObjGracefully();
+                        isAll6 = false;
                     }
-
-                    // 清空列表
-                    Dices.Clear();
-
-                    // 重置数据
-                    mShowDicePointSecRemain = ShowDicePointSec;
-                    mShowingDiceCount = 0;
-                    IsRolling = false;
                 }
+
+                if (isAll6)
+                {
+                    GenerateBoss();
+                }
+
+                ResetDice();
             }
 
-            if (Input.GetKeyDown(KeyCode.Space) && IsRolling == false)
-            {
-                RollDice();
-            }
+            //if (Input.GetKeyDown(KeyCode.Space) && IsRolling == false)
+            //{
+            //    RollDice();
+            //}
         }
 
-        private void RollDice()
+        public void RollDice()
         {
             // 正在 Roll
             IsRolling = true;
@@ -120,6 +290,82 @@ namespace TheUnfairDice
                         }).Start(dice);
                     });
             }
+        }
+
+        private void ResetDice()
+        {
+            // 开始倒计时
+            mShowDicePointSecRemain -= Time.deltaTime;
+
+            // 如果倒计时结束
+            if (mShowDicePointSecRemain < 0)
+            {
+                // 删除所有骰子
+                foreach (Dice dice in Dices)
+                {
+                    dice.DestroyGameObjGracefully();
+                }
+
+                // 清空列表
+                Dices.Clear();
+
+                // 重置数据
+                mShowDicePointSecRemain = ShowDicePointSec;
+                mShowingDiceCount = 0;
+                IsRolling = false;
+            }
+        }
+
+        private void GenerateBoss()
+        {
+            if (Player.Default)
+            {
+                Vector2 pos = Vector2.zero;
+
+                float ldx = CameraController.LDTrans.position.x;    // 相机 左下点 X
+                float ldy = CameraController.LDTrans.position.y;    // 相机 左下点 Y
+                float rux = CameraController.RUTrans.position.x;    // 相机 右上点 X
+                float ruy = CameraController.RUTrans.position.y;    // 相机 右上点 Y
+
+                int xOry = RandomUtility.Choose(-1, 1);
+
+                // 当生成点的位置距离要塞小于 8 时，需要重新计算
+                while (true)
+                {
+                    if (xOry > 0)
+                    {
+                        // 左边或右边
+                        pos.x = RandomUtility.Choose(ldx, rux);
+                        pos.y = Random.Range(ldy, ruy);
+                    }
+                    else
+                    {
+                        // 上边或下边
+                        pos.x = Random.Range(ldx, rux);
+                        pos.y = RandomUtility.Choose(ldy, ruy);
+                    }
+
+                    // 距离要塞大于 8 时，跳出循环
+                    if (Vector2.Distance(pos, Fortress.Default.Position()) > 8f) break;
+                }
+
+                EnemyBoss.Instantiate()
+                    .Position(pos)
+                    .Show();
+
+                Global.TotalEnemyCount.Value++;
+            }
+
+        }
+
+        private void OnDestroy()
+        {
+            Default = null;
+        }
+
+        public IArchitecture GetArchitecture()
+        {
+            return Global.Interface;
         }
     }
 }

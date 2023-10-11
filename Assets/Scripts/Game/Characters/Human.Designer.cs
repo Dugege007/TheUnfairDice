@@ -1,4 +1,4 @@
-// Generate Id:d18ad072-ea29-4790-a100-33ab10884fda
+// Generate Id:6e82fc7f-2189-4dd9-b17d-9700e93bc07b
 using UnityEngine;
 
 namespace TheUnfairDice
@@ -9,6 +9,8 @@ namespace TheUnfairDice
 		public UnityEngine.SpriteRenderer Sprite;
 
 		public UnityEngine.CircleCollider2D HitHurtBox;
+
+		public UnityEngine.BoxCollider2D Spear;
 
 		public UnityEngine.Rigidbody2D SelfRigidbody2D;
 

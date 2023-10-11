@@ -1,21 +1,28 @@
 using UnityEngine;
 using QFramework;
 using QAssetBundle;
+using System.Linq;
 
 namespace TheUnfairDice
 {
     public partial class Human : ViewController
     {
         public float HP = 3f;
-        public float WalkSpeed = 1f;
+        public float Damage = 3f;
+        public float WalkSpeed = 2f;
         public float RunSpeed = 3f;
 
+        private float mSpearDamage = 3f;
+        private float mSpearRange = 3f;
+        private float mSpearCDTime = 3f;
+        private float mAttackTimer = 0;
+
         public float PatrolTime = 2f;
-        public float WaitTime = 5f;
+        public float WaitTime = 3f;
         private float mRandomTime;
 
         private float mRandomDegrees = 0;
-
+        private bool mTargetToFortress = false;
         private bool mFaceRight;
 
         public enum State
@@ -40,12 +47,25 @@ namespace TheUnfairDice
                 })
                 .OnFixedUpdate(() =>
                 {
-                    Vector2 direction = Quaternion.Euler(0, 0, mRandomDegrees) * (this.Position() - Fortress.Default.Position()).normalized;
+                    Vector2 direction = Vector2.zero;
+
+                    if (mTargetToFortress == false)
+                        direction = Quaternion.Euler(0, 0, mRandomDegrees) * (this.Position() - Fortress.Default.Position()).normalized;
+                    else
+                        direction = this.Direction2DTo(Fortress.Default).normalized;
 
                     Move(direction);
 
                     if (FSM.FrameCountOfCurrentState >= 60 * mRandomTime)
                         FSM.ChangeState(State.Idle);
+
+                    //Enemy[] enemies = FindObjectsByType<Enemy>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+                    //if (enemies
+                    //        .OrderBy(e => e.Direction2DFrom(this).magnitude)
+                    //        .Where(e => e.Direction2DFrom(this).magnitude <= mSpearRange) != null)
+                    //{
+                    //    FSM.ChangeState(State.Attack);
+                    //}
                 });
 
             FSM.State(State.Idle)
@@ -60,10 +80,107 @@ namespace TheUnfairDice
                 {
                     if (Player.Default)
                     {
+                        if (this.Distance2D(Fortress.Default) > 25f)
+                        {
+                            mTargetToFortress = true;
+                            FSM.ChangeState(State.Patrol);
+                        }
+
                         if (FSM.FrameCountOfCurrentState >= 60 * mRandomTime)
                             FSM.ChangeState(State.Patrol);
                     }
                 });
+
+            //    FSM.State(State.Attack)
+            //        .OnUpdate(() =>
+            //        {
+            //            mAttackTimer += Time.deltaTime;
+            //            if (mAttackTimer >= mSpearCDTime)
+            //            {
+            //                Enemy[] enemies = FindObjectsByType<Enemy>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+            //                foreach (Enemy enemy in enemies
+            //                    .OrderBy(e => e.Direction2DFrom(this).magnitude)
+            //                    .Where(e => e.Direction2DFrom(this).magnitude <= mSpearRange)
+            //                    .Take(1))
+            //                {
+            //                    Spear.Instantiate()
+            //                        .Position(Player.Default.Position())
+            //                        .Show()
+            //                        .Self(self =>
+            //                        {
+            //                            Collider2D selfCache = self;
+            //                            selfCache.OnTriggerEnter2DEvent(collider2D =>
+            //                            {
+            //                                HitHurtBox hurtBox = collider2D.GetComponent<HitHurtBox>();
+            //                                if (hurtBox != null)
+            //                                {
+            //                                    if (hurtBox.Owner.CompareTag("Enemy"))
+            //                                    {
+            //                                        Enemy e = hurtBox.Owner.GetComponent<Enemy>();
+            //                                        DamageSystem.CalculateDamage(mSpearDamage, e);
+            //                                    }
+            //                                }
+
+            //                            }).UnRegisterWhenGameObjectDestroyed(selfCache);
+
+            //                            float range = Global.HolyWaterRange.Value / 1.7f;
+
+            //                            // 劈砍动画
+            //                            ActionKit.Sequence()    //开启一个队列
+            //                                .Callback(() =>
+            //                                {
+            //                                    // 先取消碰撞
+            //                                    selfCache.enabled = false;
+            //                                })
+            //                                .Parallel(p =>     // 开一个并行的任务
+            //                                {
+            //                                    // 抬起
+            //                                    p.Lerp(0, 10, 0.2f, z => selfCache.LocalEulerAnglesZ(z));
+
+            //                                    p.Append(ActionKit.Sequence()
+            //                                        // 放大
+            //                                        .Lerp(0, 1.25f, 0.1f, scale => selfCache.LocalScale(scale))
+            //                                        // 稍微缩小
+            //                                        .Lerp(1.25f, 1f, 0.1f, scale => selfCache.LocalScale(scale))
+            //                                    );
+            //                                })
+            //                                .Callback(() =>
+            //                                {
+            //                                    // 打开碰撞
+            //                                    selfCache.enabled = true;
+            //                                })
+            //                                .Parallel(p =>
+            //                                {
+            //                                    // 向下砍
+            //                                    p.Lerp(10, -180, 0.2f, z => selfCache.LocalEulerAnglesZ(z));
+
+            //                                    p.Append(ActionKit.Sequence()
+            //                                        // 稍微放大
+            //                                        .Lerp(1, 1.25f, 0.1f, scale => selfCache.LocalScale(scale))
+            //                                        // 稍微缩小
+            //                                        .Lerp(1.25f, 1f, 0.1f, scale => selfCache.LocalScale(scale))
+            //                                    );
+            //                                })
+            //                                .Callback(() =>
+            //                                {
+            //                                    // 关闭碰撞
+            //                                    selfCache.enabled = false;
+            //                                })
+            //                                .Lerp(-180, 0, 0.3f, z =>
+            //                                {
+            //                                    selfCache.LocalEulerAnglesZ(z);
+            //                                    selfCache.LocalScale(z.Abs() / 180);
+            //                                })
+            //                                .Start(this, () =>
+            //                                {
+            //                                    selfCache.DestroyGameObjGracefully();
+            //                                });
+            //                        });
+            //                }
+            //            }
+
+            //            FSM.ChangeState(State.Patrol);
+            //        });
 
             FSM.StartState(State.Patrol);
         }
@@ -83,6 +200,7 @@ namespace TheUnfairDice
                     {
                         HP--;
                         Enemy enemy = hurtBox.Owner.GetComponent<Enemy>();
+                        DamageSystem.CalculateDamage(Damage, enemy);
                     }
                 }
 
@@ -96,6 +214,11 @@ namespace TheUnfairDice
                 this.DestroyGameObjGracefully();
 
                 AudioKit.PlaySound(Sfx.HUMANHURT);
+            }
+
+            if (this.Distance2D(Fortress.Default) <= 3)
+            {
+                FSM.ChangeState(State.Idle);
             }
 
             FSM.Update();

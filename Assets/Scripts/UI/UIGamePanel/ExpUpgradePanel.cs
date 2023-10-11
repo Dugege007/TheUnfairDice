@@ -34,6 +34,8 @@ namespace TheUnfairDice
                             AudioKit.PlaySound(Sfx.CLICK);
                             AudioKit.PlaySound(Sfx.UPGRADE);
 
+                            DiceController.Default.RollDice();
+
                             Time.timeScale = 1.0f;
                             itemCache.Upgrade();
                             this.Hide();

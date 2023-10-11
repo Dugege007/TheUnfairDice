@@ -24,6 +24,7 @@ namespace QAssetBundle
         public const string DICEROLL = "DiceRoll";
         public const string ENEMYDEAD = "EnemyDead";
         public const string ENEMYHURT = "EnemyHurt";
+        public const string GAMEOVER = "GameOver";
         public const string GAMEPASS = "GamePass";
         public const string HOLYFIRE = "HolyFire";
         public const string HOLYFIREHIT = "HolyFireHit";

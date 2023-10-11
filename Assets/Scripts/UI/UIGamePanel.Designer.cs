@@ -5,7 +5,7 @@ using QFramework;
 
 namespace TheUnfairDice
 {
-	// Generate Id:95647d3c-95d2-46ac-b34f-2a818da41d64
+	// Generate Id:8649e45b-1b74-487b-988c-4b69decd800b
 	public partial class UIGamePanel
 	{
 		public const string Name = "UIGamePanel";
@@ -30,6 +30,10 @@ namespace TheUnfairDice
 		public UnityEngine.UI.Text SpiritText;
 		[SerializeField]
 		public ExpUpgradePanel ExpUpgradePanel;
+		[SerializeField]
+		public UnityEngine.UI.Text Tips;
+		[SerializeField]
+		public RectTransform TipsRoot;
 		
 		private UIGamePanelData mPrivateData = null;
 		
@@ -45,6 +49,8 @@ namespace TheUnfairDice
 			GoldText = null;
 			SpiritText = null;
 			ExpUpgradePanel = null;
+			Tips = null;
+			TipsRoot = null;
 			
 			mData = null;
 		}

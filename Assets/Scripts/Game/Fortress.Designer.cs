@@ -1,4 +1,4 @@
-// Generate Id:86bcad00-50cc-4614-8d2b-99b3c31506ae
+// Generate Id:4d54703a-3c21-4994-b09b-6466ecc68c96
 using UnityEngine;
 
 namespace TheUnfairDice
@@ -8,7 +8,7 @@ namespace TheUnfairDice
 
 		public UnityEngine.CircleCollider2D HitHurtBox;
 
-		public QFramework.ViewController Human;
+		public TheUnfairDice.Human Human;
 
 	}
 }

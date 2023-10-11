@@ -40,6 +40,12 @@ namespace TheUnfairDice
         public static BindableProperty<float> GetAllExpPercent = new(ConfigManager.Default.PlayerConfig.InitGetAllExpPercent);
         public static BindableProperty<float> CurrentSec = new(ConfigManager.Default.PlayerConfig.InitCurrentSec);
 
+        // 骰子数据
+        public static BindableProperty<int> Dice1Point = new(0);
+        public static BindableProperty<int> Dice2Point = new(0);
+        public static BindableProperty<int> Dice3Point = new(0);
+        public static BindableProperty<bool> IsAll6 = new(false);
+
         // 击杀数据
         public static BindableProperty<int> TotalEnemyCount = new(0);
         public static BindableProperty<int> CurrentEnemyCount = new(0);

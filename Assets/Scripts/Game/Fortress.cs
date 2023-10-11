@@ -42,7 +42,7 @@ namespace TheUnfairDice
                     {
                         Global.FortressHP.Value--;
                         Enemy enemy = hurtBox.Owner.GetComponent<Enemy>();
-                        enemy.GetHurt(1);
+                        DamageSystem.CalculateDamage(Global.FortressDamage.Value, enemy);
                     }
                 }
 
@@ -51,7 +51,7 @@ namespace TheUnfairDice
 
         private void Update()
         {
-            if (Global.FortressHP.Value <= 0 || Global.CurrentHumanCount.Value <= 2)
+            if (Global.FortressHP.Value <= 0 || Global.CurrentHumanCount.Value < 5)
             {
                 UIKit.OpenPanel<UIGameOverPanel>();
             }

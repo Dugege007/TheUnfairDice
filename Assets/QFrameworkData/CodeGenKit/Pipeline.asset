@@ -19,15 +19,19 @@ MonoBehaviour:
     From: 0
     NameToFullName: []
     BindInfos:
-    - TypeName: UnityEngine.BoxCollider2D
-      PathToRoot: Sword
-      MemberName: Sword
-    ScriptsFolder: Assets/Scripts/Game/Abilities
-    ClassName: HolySword
+    - TypeName: UnityEngine.CircleCollider2D
+      PathToRoot: HitHurtBox
+      MemberName: HitHurtBox
+    - TypeName: TheUnfairDice.Human
+      PathToRoot: Human
+      MemberName: Human
+    ScriptsFolder: Assets/Scripts/Game
+    ClassName: Fortress
     Namespace: TheUnfairDice
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace TheUnfairDice\r\n{\r\n\tpublic
-      partial class HolySword : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      partial class Fortress : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:8cd98ac9-9874-43fe-8bc9-7df235b91d29\r\nusing UnityEngine;\r\n\r\nnamespace
-      TheUnfairDice\r\n{\r\n\tpublic partial class HolySword\r\n\t{\r\n\r\n\t\tpublic
-      UnityEngine.BoxCollider2D Sword;\r\n\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:4d54703a-3c21-4994-b09b-6466ecc68c96\r\nusing UnityEngine;\r\n\r\nnamespace
+      TheUnfairDice\r\n{\r\n\tpublic partial class Fortress\r\n\t{\r\n\r\n\t\tpublic
+      UnityEngine.CircleCollider2D HitHurtBox;\r\n\r\n\t\tpublic TheUnfairDice.Human
+      Human;\r\n\r\n\t}\r\n}\r\n"
