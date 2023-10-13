@@ -1,0 +1,1590 @@
+fileFormatVersion: 2
+guid: 36dd37d153768b5408025fd3fe73d0b3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8333468881095038115
+    second: (Txt)BasicTiles_0
+  - first:
+      213: -3662749018686710496
+    second: (Txt)BasicTiles_1
+  - first:
+      213: -4300498491749038576
+    second: (Txt)BasicTiles_2
+  - first:
+      213: -4097747750446958595
+    second: (Txt)BasicTiles_3
+  - first:
+      213: -6310326247980042619
+    second: (Txt)BasicTiles_4
+  - first:
+      213: 8852316642477010114
+    second: (Txt)BasicTiles_5
+  - first:
+      213: -2877273252713883784
+    second: (Txt)BasicTiles_6
+  - first:
+      213: -8237400757376502724
+    second: (Txt)BasicTiles_7
+  - first:
+      213: -2929642574475075070
+    second: (Txt)BasicTiles_8
+  - first:
+      213: -2971945338707715130
+    second: (Txt)BasicTiles_9
+  - first:
+      213: -6103435661147239856
+    second: (Txt)BasicTiles_10
+  - first:
+      213: -4197079157241554783
+    second: (Txt)BasicTiles_11
+  - first:
+      213: -3671353858880883373
+    second: (Txt)BasicTiles_12
+  - first:
+      213: 3836419660872133452
+    second: (Txt)BasicTiles_13
+  - first:
+      213: -3937526595750635907
+    second: (Txt)BasicTiles_14
+  - first:
+      213: 5880693313322093386
+    second: (Txt)BasicTiles_15
+  - first:
+      213: -7288002322761824471
+    second: (Txt)BasicTiles_16
+  - first:
+      213: 7873385456014051335
+    second: (Txt)BasicTiles_17
+  - first:
+      213: 1557760176142290380
+    second: (Txt)BasicTiles_18
+  - first:
+      213: -8152403601014270731
+    second: (Txt)BasicTiles_19
+  - first:
+      213: 9062516410861245379
+    second: (Txt)BasicTiles_0
+  - first:
+      213: 8981815892888080156
+    second: (Txt)BasicTiles_1
+  - first:
+      213: -3325876955256966144
+    second: (Txt)BasicTiles_2
+  - first:
+      213: -5187793315765389691
+    second: (Txt)BasicTiles_3
+  - first:
+      213: 6620484496435036828
+    second: (Txt)BasicTiles_4
+  - first:
+      213: -6998001430331155646
+    second: (Txt)BasicTiles_5
+  - first:
+      213: 3657147928530777400
+    second: (Txt)BasicTiles_6
+  - first:
+      213: -4161457930854281017
+    second: (Txt)BasicTiles_7
+  - first:
+      213: 5055846239203954764
+    second: (Txt)BasicTiles_8
+  - first:
+      213: 4665654223390018739
+    second: (Txt)BasicTiles_9
+  - first:
+      213: -1320128061635174906
+    second: (Txt)BasicTiles_10
+  - first:
+      213: 1003210015210271017
+    second: (Txt)BasicTiles_11
+  - first:
+      213: 4301660199651200176
+    second: (Txt)BasicTiles_12
+  - first:
+      213: 4857362765312314946
+    second: (Txt)BasicTiles_13
+  - first:
+      213: 6678798576477746557
+    second: (Txt)BasicTiles_14
+  - first:
+      213: 6177592230964111340
+    second: (Txt)BasicTiles_15
+  - first:
+      213: -4038451123707437742
+    second: (Txt)BasicTiles_16
+  - first:
+      213: 1976895165347304891
+    second: (Txt)BasicTiles_17
+  - first:
+      213: -6957647861982340625
+    second: (Txt)BasicTiles_18
+  - first:
+      213: -8386862805107799850
+    second: (Txt)BasicTiles_19
+  - first:
+      213: 9069444966101369462
+    second: (Txt)BasicTiles_20
+  - first:
+      213: 7607912798978204368
+    second: (Txt)BasicTiles_21
+  - first:
+      213: -1441539790508382754
+    second: (Txt)BasicTiles_22
+  - first:
+      213: 2490676441049271289
+    second: (Txt)BasicTiles_23
+  - first:
+      213: -4230759476823248432
+    second: (Txt)BasicTiles_24
+  - first:
+      213: -6437353997575394364
+    second: (Txt)BasicTiles_25
+  - first:
+      213: -6663538678641713127
+    second: (Txt)BasicTiles_26
+  - first:
+      213: -3503567897277438494
+    second: (Txt)BasicTiles_27
+  - first:
+      213: 6706233531723793270
+    second: (Txt)BasicTiles_28
+  - first:
+      213: 1096176009011265561
+    second: (Txt)BasicTiles_29
+  - first:
+      213: 6314006883923418358
+    second: (Txt)BasicTiles_30
+  - first:
+      213: 293132049884583871
+    second: (Txt)BasicTiles_31
+  - first:
+      213: 9179793543734702218
+    second: (Txt)BasicTiles_32
+  - first:
+      213: 7572856127858219183
+    second: (Txt)BasicTiles_33
+  - first:
+      213: -3409261191315197602
+    second: (Txt)BasicTiles_34
+  - first:
+      213: 5388749930759663755
+    second: (Txt)BasicTiles_35
+  - first:
+      213: -7945796621626131734
+    second: (Txt)BasicTiles_36
+  - first:
+      213: -467097585843290642
+    second: (Txt)BasicTiles_37
+  - first:
+      213: 7355746856466564449
+    second: (Txt)BasicTiles_38
+  - first:
+      213: -675663760302856686
+    second: (Txt)BasicTiles_39
+  - first:
+      213: 184239195590707484
+    second: (Txt)BasicTiles_40
+  - first:
+      213: 3014469770202997741
+    second: (Txt)BasicTiles_41
+  - first:
+      213: 4583543720816150644
+    second: (Txt)BasicTiles_42
+  - first:
+      213: 341639586297784946
+    second: (Txt)BasicTiles_43
+  - first:
+      213: -1589720381484214528
+    second: (Txt)BasicTiles_44
+  - first:
+      213: -7988266827727895694
+    second: (Txt)BasicTiles_45
+  - first:
+      213: -4456538424986619233
+    second: (Txt)BasicTiles_46
+  - first:
+      213: -7163999150069102106
+    second: (Txt)BasicTiles_47
+  - first:
+      213: 1212144947696586052
+    second: (Txt)BasicTiles_48
+  - first:
+      213: -1572137235458302321
+    second: (Txt)BasicTiles_49
+  - first:
+      213: -3817880875124774854
+    second: (Txt)BasicTiles_50
+  - first:
+      213: 7963388186836517704
+    second: (Txt)BasicTiles_51
+  - first:
+      213: -1791294268215391348
+    second: (Txt)BasicTiles_52
+  - first:
+      213: -5044887312788212342
+    second: (Txt)BasicTiles_53
+  - first:
+      213: -3563426774058556534
+    second: (Txt)BasicTiles_20
+  - first:
+      213: -7037309770997335331
+    second: (Txt)BasicTiles_21
+  - first:
+      213: 8713876932161270629
+    second: (Txt)BasicTiles_22
+  - first:
+      213: 8195375643605107861
+    second: (Txt)BasicTiles_23
+  - first:
+      213: -9003359040062555360
+    second: (Txt)BasicTiles_24
+  - first:
+      213: -3862255564559389242
+    second: (Txt)BasicTiles_25
+  - first:
+      213: 1797226496103527798
+    second: (Txt)BasicTiles_26
+  - first:
+      213: -7637316394902858188
+    second: (Txt)BasicTiles_27
+  - first:
+      213: 573512857210493668
+    second: (Txt)BasicTiles_28
+  - first:
+      213: -6441997978123103916
+    second: (Txt)BasicTiles_29
+  - first:
+      213: 7958940095535004677
+    second: (Txt)BasicTiles_30
+  - first:
+      213: -419138785649011740
+    second: (Txt)BasicTiles_31
+  - first:
+      213: 1267656569624009591
+    second: (Txt)BasicTiles_32
+  - first:
+      213: 5718043734628908204
+    second: (Txt)BasicTiles_33
+  - first:
+      213: 9109262698953869954
+    second: (Txt)BasicTiles_34
+  - first:
+      213: -2744877697666521447
+    second: (Txt)BasicTiles_35
+  - first:
+      213: 6881756340743088068
+    second: (Txt)BasicTiles_36
+  - first:
+      213: 3957294826133408836
+    second: (Txt)BasicTiles_37
+  - first:
+      213: 4406359879517870422
+    second: (Txt)BasicTiles_38
+  - first:
+      213: -7329280322592235089
+    second: (Txt)BasicTiles_39
+  - first:
+      213: -5976602943797070922
+    second: (Txt)BasicTiles_40
+  - first:
+      213: -8495032026225585806
+    second: (Txt)BasicTiles_41
+  - first:
+      213: 8447561502218978494
+    second: (Txt)BasicTiles_42
+  - first:
+      213: -8791461874777314291
+    second: (Txt)BasicTiles_43
+  - first:
+      213: 6964140866889076556
+    second: (Txt)BasicTiles_44
+  - first:
+      213: -2482044782555128492
+    second: (Txt)BasicTiles_45
+  - first:
+      213: -1710627362852910515
+    second: (Txt)BasicTiles_46
+  - first:
+      213: -4852332492111479918
+    second: (Txt)BasicTiles_47
+  - first:
+      213: 7279383221820193242
+    second: (Txt)BasicTiles_48
+  - first:
+      213: 7111012898977197367
+    second: (Txt)BasicTiles_49
+  - first:
+      213: -1916741677369344757
+    second: (Txt)BasicTiles_50
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 143
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c3588019a684cd70800000000000000
+      internalID: -8333468881095038115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 143
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1f4d8587f1d5ac70800000000000000
+      internalID: -3662749018686710496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 143
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 004304bc78c18d1d0800000000000000
+      internalID: -4300498491749038576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_3
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 143
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58678a527714108b0800000000000000
+      internalID: -4097747750446958595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_4
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 143
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c92cdfa929fa0eb50800000000000000
+      internalID: -6310326247980042619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_5
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 111
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24b9f6fa6ca12ee90800000000000000
+      internalID: 8852316642477010114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_6
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 111
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 835f1232aacc0c230800000000000000
+      internalID: -2877273252713883784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 111
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c0d2bb6f088f36c0800000000000000
+      internalID: -8237400757376502724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_8
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 111
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c401fb61e59f92640800000000000000
+      internalID: -2929642574475075070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_9
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 111
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bc86f5ebcbbfb040800000000000000
+      internalID: -2971945338707715130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_10
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 111
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60ed534b586fdade0800000000000000
+      internalID: -6103435661147239856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_11
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 111
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 921f8bf813e1ced00800000000000000
+      internalID: -4197079157241554783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_12
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 111
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bc45a0192192bb30800000000000000
+      internalID: -3671353858880883373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_13
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 111
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24e46ab13b1d86340800000000000000
+      internalID: 3836419660872133452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_14
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 111
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7537556bebdfac50800000000000000
+      internalID: -3937526595750635907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_15
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 111
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce724dd57673bb550800000000000000
+      internalID: 5880693313322093386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_16
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 111
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25d14a0891a84f7c0800000000000000
+      internalID: -7288002322761824471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_17
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 111
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb596b8cda75f6b10800000000000000
+      internalID: 7873385456014051335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_18
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 111
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe9594af128717f90800000000000000
+      internalID: 1557760176142290380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_19
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 111
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d80d99d6b0eb9b80800000000000000
+      internalID: -8152403601014270731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_20
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 79
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a83af159a3a2c8ec0800000000000000
+      internalID: 9069444966101369462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_21
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 79
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dda715d6c04765e90800000000000000
+      internalID: 7607912798978204368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_22
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 79
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56371f5d6e8ede870800000000000000
+      internalID: -1441539790508382754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_23
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 79
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59488f51ab2dbb170800000000000000
+      internalID: 2490676441049271289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_24
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 79
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02bf4c7a7a4ad0380800000000000000
+      internalID: -4230759476823248432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_25
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 79
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cd69a2f603866ac0800000000000000
+      internalID: -6437353997575394364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_26
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 79
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 675bb21e9f701f810800000000000000
+      internalID: -6663538678641713127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_27
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 79
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4365c8cf33dc20690800000000000000
+      internalID: -3503567897277438494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_28
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 79
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ea9620b7e685f700800000000000000
+      internalID: 6706233531723793270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_29
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 79
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 451103658fc6996a0800000000000000
+      internalID: 1096176009011265561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_30
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 79
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50c3afe39d5d37e60800000000000000
+      internalID: 6314006883923418358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_31
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 79
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e35dc1ce7bee2af0800000000000000
+      internalID: 293132049884583871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_32
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 79
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77b11a90fee979110800000000000000
+      internalID: 9179793543734702218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_33
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 79
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cac34bc2b729a5f40800000000000000
+      internalID: 7572856127858219183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_34
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 79
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28a8cd8692a9a6e70800000000000000
+      internalID: -3409261191315197602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_35
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 47
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 996e1b6e64c38e9d0800000000000000
+      internalID: 5388749930759663755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_36
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 47
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c7a8c84ee8e08f50800000000000000
+      internalID: -7945796621626131734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_37
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 47
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44c4c2f7da22be630800000000000000
+      internalID: -467097585843290642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_38
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 47
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 659123be6f8862d30800000000000000
+      internalID: 7355746856466564449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_39
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 47
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa121a8f06a294a90800000000000000
+      internalID: -675663760302856686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_40
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 47
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b3fb6bb947de0da0800000000000000
+      internalID: 184239195590707484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_41
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 47
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 271d14971659b1a80800000000000000
+      internalID: 3014469770202997741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_42
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 47
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb4070edd64cb3570800000000000000
+      internalID: 4583543720816150644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_43
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 47
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0c228901047ef580800000000000000
+      internalID: 341639586297784946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_44
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 47
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4f44b8883995a060800000000000000
+      internalID: -1589720381484214528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_45
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 47
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45d9033bb610e8dd0800000000000000
+      internalID: -7988266827727895694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_46
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 47
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4ac61e0a71a248e0800000000000000
+      internalID: -4456538424986619233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_47
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 15
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29bfb93ae4d09acb0800000000000000
+      internalID: -7163999150069102106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_48
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 15
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad9f780f870950560800000000000000
+      internalID: 1212144947696586052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_49
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 15
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73da1cc4e846fa260800000000000000
+      internalID: -1572137235458302321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: (Txt)BasicTiles_50
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 15
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0db63a899d5665e0800000000000000
+      internalID: -3817880875124774854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 481db1ba44c277143be0a932b07749c2
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      (Txt)BasicTiles_0: -8333468881095038115
+      (Txt)BasicTiles_1: -3662749018686710496
+      (Txt)BasicTiles_10: -6103435661147239856
+      (Txt)BasicTiles_11: -4197079157241554783
+      (Txt)BasicTiles_12: -3671353858880883373
+      (Txt)BasicTiles_13: 3836419660872133452
+      (Txt)BasicTiles_14: -3937526595750635907
+      (Txt)BasicTiles_15: 5880693313322093386
+      (Txt)BasicTiles_16: -7288002322761824471
+      (Txt)BasicTiles_17: 7873385456014051335
+      (Txt)BasicTiles_18: 1557760176142290380
+      (Txt)BasicTiles_19: -8152403601014270731
+      (Txt)BasicTiles_2: -4300498491749038576
+      (Txt)BasicTiles_20: 9069444966101369462
+      (Txt)BasicTiles_21: 7607912798978204368
+      (Txt)BasicTiles_22: -1441539790508382754
+      (Txt)BasicTiles_23: 2490676441049271289
+      (Txt)BasicTiles_24: -4230759476823248432
+      (Txt)BasicTiles_25: -6437353997575394364
+      (Txt)BasicTiles_26: -6663538678641713127
+      (Txt)BasicTiles_27: -3503567897277438494
+      (Txt)BasicTiles_28: 6706233531723793270
+      (Txt)BasicTiles_29: 1096176009011265561
+      (Txt)BasicTiles_3: -4097747750446958595
+      (Txt)BasicTiles_30: 6314006883923418358
+      (Txt)BasicTiles_31: 293132049884583871
+      (Txt)BasicTiles_32: 9179793543734702218
+      (Txt)BasicTiles_33: 7572856127858219183
+      (Txt)BasicTiles_34: -3409261191315197602
+      (Txt)BasicTiles_35: 5388749930759663755
+      (Txt)BasicTiles_36: -7945796621626131734
+      (Txt)BasicTiles_37: -467097585843290642
+      (Txt)BasicTiles_38: 7355746856466564449
+      (Txt)BasicTiles_39: -675663760302856686
+      (Txt)BasicTiles_4: -6310326247980042619
+      (Txt)BasicTiles_40: 184239195590707484
+      (Txt)BasicTiles_41: 3014469770202997741
+      (Txt)BasicTiles_42: 4583543720816150644
+      (Txt)BasicTiles_43: 341639586297784946
+      (Txt)BasicTiles_44: -1589720381484214528
+      (Txt)BasicTiles_45: -7988266827727895694
+      (Txt)BasicTiles_46: -4456538424986619233
+      (Txt)BasicTiles_47: -7163999150069102106
+      (Txt)BasicTiles_48: 1212144947696586052
+      (Txt)BasicTiles_49: -1572137235458302321
+      (Txt)BasicTiles_5: 8852316642477010114
+      (Txt)BasicTiles_50: -3817880875124774854
+      (Txt)BasicTiles_6: -2877273252713883784
+      (Txt)BasicTiles_7: -8237400757376502724
+      (Txt)BasicTiles_8: -2929642574475075070
+      (Txt)BasicTiles_9: -2971945338707715130
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

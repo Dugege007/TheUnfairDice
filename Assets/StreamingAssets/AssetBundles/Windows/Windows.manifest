@@ -1,0 +1,26 @@
+ManifestFileVersion: 0
+CRC: 3461254332
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: uigamepanel_prefab
+      Dependencies:
+        Dependency_0: fusion-pixel-12px-zh_hans_ttf
+    Info_1:
+      Name: uigamestartpanel_prefab
+      Dependencies:
+        Dependency_0: fusion-pixel-12px-zh_hans_ttf
+    Info_2:
+      Name: uigamepasspanel_prefab
+      Dependencies:
+        Dependency_0: fusion-pixel-12px-zh_hans_ttf
+    Info_3:
+      Name: uigameoverpanel_prefab
+      Dependencies:
+        Dependency_0: fusion-pixel-12px-zh_hans_ttf
+    Info_4:
+      Name: sfx
+      Dependencies: {}
+    Info_5:
+      Name: fusion-pixel-12px-zh_hans_ttf
+      Dependencies: {}

@@ -1,0 +1,36 @@
+ManifestFileVersion: 0
+CRC: 399331329
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: ecb67f74c70dce47468bf851750c4d72
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9a2ca7bdbd1871f7131daf57de908e0c
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: ecb67f74c70dce47468bf851750c4d72
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Art/Audio/SFX/Click.wav
+- Assets/Art/Audio/SFX/Dagger.wav
+- Assets/Art/Audio/SFX/LevelUp.wav
+- Assets/Art/Audio/SFX/Upgrade.wav
+- Assets/Art/Audio/SFX/HolyFireHit.wav
+- Assets/Art/Audio/SFX/Sword.wav
+- Assets/Art/Audio/SFX/HumanHurt.wav
+- Assets/Art/Audio/SFX/PickUp.wav
+- Assets/Art/Audio/SFX/HolyLight.ogg
+- Assets/Art/Audio/SFX/EnemyHurt.wav
+- Assets/Art/Audio/SFX/SwordImpact.wav
+- Assets/Art/Audio/SFX/GamePass.wav
+- Assets/Art/Audio/SFX/PlayerHurt.wav
+- Assets/Art/Audio/SFX/EnemyDead.mp3
+- Assets/Art/Audio/SFX/DiceRoll.mp3
+- Assets/Art/Audio/SFX/GameOver.wav
+- Assets/Art/Audio/SFX/HolyFire.wav
+Dependencies: []
