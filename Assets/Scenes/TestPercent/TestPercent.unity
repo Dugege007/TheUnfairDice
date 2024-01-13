@@ -242,7 +242,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &346211711
 Transform:
   m_ObjectHideFlags: 0
@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45e0f800e2245144a1c5769d391bf89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InitCritPercent: 0.2
+  InitCritPercent: 0.1785274
 --- !u!1 &564120239
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,7 +287,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &564120240
 Transform:
   m_ObjectHideFlags: 0
@@ -322,6 +322,7 @@ MonoBehaviour:
   - Face4
   - Face5
   - Face6
+  SamplePointList: []
 --- !u!1 &612637865
 GameObject:
   m_ObjectHideFlags: 0

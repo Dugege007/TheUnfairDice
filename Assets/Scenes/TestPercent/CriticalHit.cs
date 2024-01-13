@@ -3,13 +3,13 @@ using UnityEngine;
 public class CriticalHit : MonoBehaviour
 {
     // 初始暴击率
-    public float InitCritPercent = 0.2f;
+    public double InitCritPercent = 0.1785274;
     // 当前暴击概率
-    private float currentCritPercent;
+    private double currentCritPercent;
 
-    private float deltaCritPercent;
+    private double deltaCritPercent;
 
-    private float dynamicCritPercent;
+    private double dynamicCritPercent;
 
     // 当前总攻击次数
     private int attackTotalCount = 0;
@@ -36,7 +36,7 @@ public class CriticalHit : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            for (int i = 0; i < 10000; i++) PerformAttack();
+            for (int i = 0; i < 100000; i++) PerformAttack();
         }
     }
 
@@ -54,15 +54,15 @@ public class CriticalHit : MonoBehaviour
         if (attackTotalCount > 0)
         {
             // 计算当前暴击概率 = 总暴击数 / 总攻击数
-            currentCritPercent = (float)critTotalCount / attackTotalCount;
+            currentCritPercent = (double)critTotalCount / attackTotalCount;
 
-            deltaCritPercent = Mathf.Abs(InitCritPercent - currentCritPercent);
+            deltaCritPercent = InitCritPercent - currentCritPercent;
 
-            dynamicCritPercent = (attackTotalCount * (InitCritPercent - currentCritPercent) + currentCritPercent) * Mathf.Pow(deltaCritPercent, 0.5f);
+            dynamicCritPercent = (attackTotalCount * deltaCritPercent + currentCritPercent) * deltaCritPercent;
         }
 
         // 检查是否需要强制暴击
-        if (noCritStreakCount < GetOptimalN(InitCritPercent))
+        if (noCritStreakCount < 9)
         {
             float percent = Random.Range(0f, 1f);
             if (percent < InitCritPercent)

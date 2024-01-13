@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using QFramework;
 using Unity.VisualScripting;
-using UnityEngine.Rendering;
 
 namespace TheUnfairDice
 {

@@ -1,6 +1,6 @@
 {
     "Id": "",
-    "Version": "v1.0.95",
+    "Version": "v1.0.101",
     "Type": 0,
     "AccessRight": 0,
     "DownloadUrl": "",
@@ -11,10 +11,10 @@
     ],
     "DocUrl": "https://liangxiegame.com",
     "Readme": {
-        "version": "v1.0.95",
-        "content": "SingletonKit：增加 PrefabSingleton 和 ScriptableSingleton",
+        "version": "v1.0.101",
+        "content": "改进 ConsoleKit 的开关 API",
         "author": "liangxie",
-        "date": "2023 年 09 月 30 日 17:59",
+        "date": "2023 年 10 月 24 日 10:16",
         "PackageId": ""
     }
 }
